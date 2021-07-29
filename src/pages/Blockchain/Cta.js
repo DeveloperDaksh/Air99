@@ -17,7 +17,7 @@ export default class Cta extends Component {
                             <Col xs={12}>
                                 <div className="section-title text-center mb-4 pb-2">
                                     <h4 className="title text-white title-dark mb-4">From Zero to Crypto in Minutes.</h4>
-                                    <p className="text-light para-dark para-desc mx-auto">Start working with Landrick that can provide everything you need to generate awareness, drive traffic, connect.</p>
+                                    <p className="text-light para-dark para-desc mx-auto">Start working with Air99 that can provide everything you need to generate awareness, drive traffic, connect.</p>
                                 </div>
                                 <div className="subcribe-form mt-4">
                                     <Form>

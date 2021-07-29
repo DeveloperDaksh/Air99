@@ -23,7 +23,7 @@ class About extends Component {
                   <p className="text-muted">
                     Start working with{" "}
                     <span className="text-primary fw-bold">
-                      Landrick Space
+                      Air99 Space
                     </span>{" "}
                     that can provide everything you need to generate awareness,
                     drive traffic, connect. Dummy text is text that is used in

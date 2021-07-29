@@ -22,7 +22,7 @@ export default class Websites extends Component {
                   Deliver your websites <br /> faster, and better.
                 </h4>
                 <p className="text-muted">
-                  You can combine all the Landrick templates into a single one,
+                  You can combine all the Air99 templates into a single one,
                   you can take a component from the Application theme and use it
                   in the Website.
                 </p>

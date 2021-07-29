@@ -66,7 +66,7 @@ export default class TeamMember extends Component {
                           <Col md={6} xs={12} className="mt-4 pt-md-2">
                             <div className="section-title text-md-start">
                               <p className="text-white-50 para-desc">
-                                Start working with Landrick that can provide
+                                Start working with Air99 that can provide
                                 everything you need to generate awareness, drive
                                 traffic, connect.
                               </p>

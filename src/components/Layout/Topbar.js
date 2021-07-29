@@ -594,7 +594,7 @@ class Topbar extends Component {
                 <a className="logo" href="/index">
                   {/* <img src={logodark} height="24" className="logo-light-mode" alt="" />
                   <img src={logolight} height="24" className="logo-dark-mode" alt="" /> */}
-                  Company Name
+                  Air99
                 </a>
               ) :
                 <a className="logo" href="/index">
@@ -604,7 +604,7 @@ class Topbar extends Component {
                   </span>
                   
                   <img src={logolight} height="24" className="logo-dark-mode" alt="" /> */}
-                  Company Name
+                  Air99
                 </a>
               }
             </div>

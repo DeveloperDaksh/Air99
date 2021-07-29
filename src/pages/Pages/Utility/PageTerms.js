@@ -376,7 +376,7 @@ class PageTerms extends Component {
                             >
                               <h6 className="title mb-0">
                                 Is{" "}
-                                <span className="text-primary">Landrick</span>{" "}
+                                <span className="text-primary">Air99</span>{" "}
                                 safer to use with my account ?
                                 <i
                                   className={

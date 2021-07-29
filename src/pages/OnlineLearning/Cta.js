@@ -50,7 +50,7 @@ class Cta extends Component {
                         Register Now !
                       </h4>
                       <p className="text-light title-dark para-desc">
-                        Start working with Landrick that can provide everything
+                        Start working with Air99 that can provide everything
                         you need to generate awareness, drive traffic, connect.
                       </p>
                       <div className="mt-4">

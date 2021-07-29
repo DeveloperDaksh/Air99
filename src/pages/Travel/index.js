@@ -116,7 +116,7 @@ export default class index extends Component {
           <Container className=" mt-100 mt-60">
             {/* section title */}
             <SectionTitle
-              title="Whats Our Clients Said About Landrick Project"
+              title="Whats Our Clients Said About Air99 Project"
               desc=" that can provide everything you need to generate awareness, drive traffic, connect."
             />
 

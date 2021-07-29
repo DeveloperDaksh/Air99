@@ -38,7 +38,7 @@ class Section extends Component {
                     The Most Comprehensive Book!{" "}
                   </h4>
                   <p className="text-muted para-desc mb-0">
-                    Start working with Landrick that can provide everything you
+                    Start working with Air99 that can provide everything you
                     need to generate awareness, drive traffic, connect.
                   </p>
                   <div className="mt-4 pt-2">

@@ -122,7 +122,7 @@ class About extends Component {
                     I'm Passionate Web Designer
                   </h6>
                   <p className="text-muted mb-0">
-                    Start working with landrick that can provide everything you
+                    Start working with Air99 that can provide everything you
                     need to generate awareness, drive traffic, connect. Dummy
                     text is also used to demonstrate the appearance of different
                     typefaces and layouts, and in general the content of dummy

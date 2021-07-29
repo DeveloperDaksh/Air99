@@ -12,7 +12,7 @@ export default class Treading extends Component {
                             <Col xs={12}>
                                 <div className="section-title text-center mb-4 pb-2">
                                     <h4 className="title mb-4">Treading. Anytime. Anywhare.</h4>
-                                    <p className="text-muted para-desc mx-auto mb-0">Start working with <span className="text-primary fw-bold">Landrick</span> that can provide everything you need to generate awareness, drive traffic, connect.</p>
+                                    <p className="text-muted para-desc mx-auto mb-0">Start working with <span className="text-primary fw-bold">Air99</span> that can provide everything you need to generate awareness, drive traffic, connect.</p>
                                 </div>
                             </Col>
                         </Row>
@@ -73,7 +73,7 @@ export default class Treading extends Component {
                                 </Card>
 
                                 <div className="mt-4 text-center">
-                                    <Link to="#" className="text-primary h6">Official Landrick API Documentation</Link>
+                                    <Link to="#" className="text-primary h6">Official Air99 API Documentation</Link>
                                 </div>
                             </Col>
                         </Row>

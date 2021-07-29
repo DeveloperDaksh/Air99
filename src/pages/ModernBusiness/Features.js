@@ -396,7 +396,7 @@ class Features extends Component {
                 <div className="section-title mb-4 pb-2">
                   <h4 className="title mb-4">
                     See everything about your{" "}
-                    <span className="text-primary">Landrick</span>
+                    <span className="text-primary">Air99</span>
                   </h4>
                   <p className="text-muted para-desc mx-auto mb-0">
                     Start working with{" "}

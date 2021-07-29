@@ -33,7 +33,7 @@ class Cta extends Component {
           price: "19",
           duration: "mo",
           desc:
-            "Start working with Landrick that can provide everything you need to generate awareness, drive traffic, connect.",
+            "Start working with Air99 that can provide everything you need to generate awareness, drive traffic, connect.",
           btnName: "Buy Now",
         },
         {
@@ -43,7 +43,7 @@ class Cta extends Component {
           price: "39",
           duration: "mo",
           desc:
-            "Start working with Landrick that can provide everything you need to generate awareness, drive traffic, connect.",
+            "Start working with Air99 that can provide everything you need to generate awareness, drive traffic, connect.",
           btnName: "Get Started",
           isActive: true,
         },
@@ -54,7 +54,7 @@ class Cta extends Component {
           price: "49",
           duration: "mo",
           desc:
-            "Start working with Landrick that can provide everything you need to generate awareness, drive traffic, connect.",
+            "Start working with Air99 that can provide everything you need to generate awareness, drive traffic, connect.",
           btnName: "Get Started",
         },
         {
@@ -64,7 +64,7 @@ class Cta extends Component {
           price: "59",
           duration: "mo",
           desc:
-            "Start working with Landrick that can provide everything you need to generate awareness, drive traffic, connect.",
+            "Start working with Air99 that can provide everything you need to generate awareness, drive traffic, connect.",
           btnName: "Try It Now",
         },
       ],
@@ -112,7 +112,7 @@ class Cta extends Component {
                       We Are Creative Dreamers and Co-workers
                     </h4>
                     <p className="text-muted mx-auto para-desc mb-0">
-                      Start working with Landrick that can provide everything
+                      Start working with Air99 that can provide everything
                       you need to generate awareness, drive traffic, connect.
                     </p>
                   </CardBody>

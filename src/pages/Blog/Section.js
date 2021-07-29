@@ -70,7 +70,7 @@ export default class Section extends Component {
                             </li>
                           </ul>
                           <p className="para-desc mx-auto text-white-50 mb-0">
-                            Start working with Landrick that can provide everything
+                            Start working with Air99 that can provide everything
                             you need to generate awareness, drive traffic, connect.
                           </p>
                           <div className="mt-4">

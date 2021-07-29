@@ -65,7 +65,7 @@ export default class AboutUs extends Component {
                                 <div className="section-title">
                                     <span className="badge bg-soft-primary rounded-pill fw-bold">About us</span>
                                     <h4 className="title mb-4 mt-3">We design and develop <br /> world-class web applications.</h4>
-                                    <p className="text-muted para-desc">Start working with <span className="text-primary fw-bold">Landrick</span> that can provide everything you need to generate awareness, drive traffic, connect. The most well-known dummy text is the 'Lorem Ipsum', which is said to have originated in the 16th century.</p>
+                                    <p className="text-muted para-desc">Start working with <span className="text-primary fw-bold">Air99</span> that can provide everything you need to generate awareness, drive traffic, connect. The most well-known dummy text is the 'Lorem Ipsum', which is said to have originated in the 16th century.</p>
                                 </div>
 
                                 <div className="mt-4 pt-2">

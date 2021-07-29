@@ -79,7 +79,7 @@ class Features extends Component {
               <div className="section-title ms-lg-5">
                 <SectionTitleLeft
                   title="Health Insurance"
-                  desc="You can combine all the Landrick templates into a single one, you can take a component from the Application theme and use it in the Website."
+                  desc="You can combine all the Air99 templates into a single one, you can take a component from the Application theme and use it in the Website."
                   features={this.state.featuresSmall}
                   class=""
                 />
@@ -116,7 +116,7 @@ class Features extends Component {
               <div className="section-title me-lg-5">
                 <SectionTitleLeft
                   title="Investment Plans"
-                  desc="You can combine all the Landrick templates into a single one, you can take a component from the Application theme and use it in the Website."
+                  desc="You can combine all the Air99 templates into a single one, you can take a component from the Application theme and use it in the Website."
                   features={this.state.featuresSmall1}
                   class=""
                 />

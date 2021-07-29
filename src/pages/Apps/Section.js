@@ -16,7 +16,7 @@ class Section extends Component {
                 <div className="title-heading">
                   <h1 className="heading mb-3">
                     Manage all of you stuff using{" "}
-                    <span className="text-primary">Landrick.</span> app
+                    <span className="text-primary">Air99.</span> app
                   </h1>
                   <p className="para-desc text-muted">
                     Launch your campaign and benefit from our expertise on

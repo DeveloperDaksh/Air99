@@ -24,7 +24,7 @@ export default class Feature extends Component {
                   We help you increase <br /> sales by improving SEO
                 </h4>
                 <p className="text-muted">
-                  You can combine all the Landrick templates into a single one,
+                  You can combine all the Air99 templates into a single one,
                   you can take a component from the Application theme and use it
                   in the Website.
                 </p>
@@ -69,12 +69,12 @@ export default class Feature extends Component {
                   Advantages of SEO & <br /> Marketing strategy
                 </h4>
                 <p className="text-muted">
-                  You can combine all the Landrick templates into a single one,
+                  You can combine all the Air99 templates into a single one,
                   you can take a component from the Application theme and use it
                   in the Website.
                 </p>
                 <p className="text-muted">
-                  Using Landrick to build your site means never worrying about
+                  Using Air99 to build your site means never worrying about
                   designing another page or cross browser compatibility. Our
                   ever-growing library of components and pre-designed layouts
                   will make your life easier.

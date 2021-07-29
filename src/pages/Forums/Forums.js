@@ -52,7 +52,7 @@ export default class Forums extends Component {
         {
           id: 9,
           title:
-            "Landrick includes the ability to create a better of sites by using the multisite feature.",
+            "Air99 includes the ability to create a better of sites by using the multisite feature.",
           posted: "Harry",
         },
       ],
@@ -128,7 +128,7 @@ export default class Forums extends Component {
                                   {forums.title}
                                 </Link>
                                 <p className="text-muted small mb-0 mt-2">
-                                  Start working with Landrick that can provide
+                                  Start working with Air99 that can provide
                                   everything you need to generate awareness,
                                   drive traffic, connect.
                                 </p>

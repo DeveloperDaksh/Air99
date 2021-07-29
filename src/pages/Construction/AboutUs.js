@@ -65,7 +65,7 @@ export default class AboutUs extends Component {
                   </span>
                   <h4 className="title mt-3 mb-4">
                     We are the leader <br /> in the{" "}
-                    <span className="text-primary">Landrick</span>
+                    <span className="text-primary">Air99</span>
                   </h4>
                   <p className="text-muted para-desc mx-auto">
                     Start working with{" "}

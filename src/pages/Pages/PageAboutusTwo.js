@@ -104,14 +104,14 @@ export default class PageAboutusTwo extends Component {
                 <div className="page-next-level title-heading">
                   <h1 className="text-white title-dark"> Aboutus </h1>
                   <p className="text-white-50 para-desc mb-0 mx-auto">
-                    Start working with Landrick that can provide everything you
+                    Start working with Air99 that can provide everything you
                     need to generate awareness, drive traffic, connect.
                   </p>
                   <div className="page-next">
                     <nav aria-label="breadcrumb" className="d-inline-block">
                       <ul className="breadcrumb bg-white rounded shadow mb-0">
                         <li className="breadcrumb-item">
-                          <Link to="/index">Landrick</Link>
+                          <Link to="/index">Air99</Link>
                         </li>
                         <li className="breadcrumb-item">
                           <Link to="#">Company</Link>

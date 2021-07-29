@@ -158,22 +158,15 @@ class PopularDestination extends Component {
       <React.Fragment>
         <Container className=" mt-100 mt-60">
           <Row className="align-items-end mb-4 pb-2">
-            <Col lg={8}>
+          <Col lg={18}  style={{display:"flex",justifyContent:"space-between"}}>
               {/* section title */}
               <div className="section-title text-center text-md-start">
+                <div>
                 <h6 className="text-primary">Find Out Most</h6>
                 <h4 className="title mb-4">Popular Destination</h4>
-                <p className="text-muted mb-0 para-desc">
-                  Start working with{" "}
-                  <span className="text-primary fw-bold">
-                    Landrick
-                  </span>{" "}
-                  that can provide everything you need to generate awareness,
-                  drive traffic, connect.
-                </p>
+                </div>
+                
               </div>
-            </Col>
-            <Col md={4} className="mt-4 mt-sm-0">
               <div className="text-center text-md-end">
                 <Link to="#" className="text-primary h6">
                   See More{" "}
@@ -183,7 +176,8 @@ class PopularDestination extends Component {
                 </Link>
               </div>
             </Col>
-          </Row>
+           
+            </Row>
         </Container>
         <Container fluid>
           <Row>

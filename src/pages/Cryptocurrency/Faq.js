@@ -176,7 +176,7 @@ class Faq extends Component {
                           <h6 className="title mb-0">
                             {" "}
                             How our{" "}
-                            <span className="text-primary">Landrick</span> work
+                            <span className="text-primary">Air99</span> work
                             ?
                             <i
                               className={

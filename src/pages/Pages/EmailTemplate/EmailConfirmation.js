@@ -73,7 +73,7 @@ class EmailConfirmation extends Component {
                 <td
                   style={{ padding: "15px 24px 15px", color: " #8492a6" }}
                 >
-                  Thanks for creating an Landrick account. To continue,
+                  Thanks for creating an Air99 account. To continue,
                   please confirm your email address by clicking the button
                   below :
                       </td>
@@ -110,7 +110,7 @@ class EmailConfirmation extends Component {
                 <td
                   style={{ padding: "15px 24px 15px", color: "#8492a6" }}
                 >
-                  Landrick <br /> Support Team
+                  Air99 <br /> Support Team
                       </td>
               </tr>
               <tr>

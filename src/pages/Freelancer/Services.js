@@ -12,7 +12,7 @@ export default class Services extends Component {
                             <div className="section-title text-center text-lg-start mb-4 mb-lg-0 pb-2 pb-lg-0">
                                 <span className="badge rounded-pill bg-soft-primary">Services</span>
                                 <h4 className="title mt-3 mb-4">Make more, Manage less</h4>
-                                <p className="text-muted para-desc mx-auto ms-lg-auto mb-0">Start working with <span className="text-primary fw-bold">Landrick</span> that can provide everything you need to generate awareness, drive traffic, connect.</p>
+                                <p className="text-muted para-desc mx-auto ms-lg-auto mb-0">Start working with <span className="text-primary fw-bold">Air99</span> that can provide everything you need to generate awareness, drive traffic, connect.</p>
                                 <div className="mt-4 d-lg-block d-none">
                                     <Link to="#" className="btn btn-primary">See more</Link>
                                 </div>

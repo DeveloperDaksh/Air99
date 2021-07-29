@@ -232,7 +232,7 @@ class Pricing extends Component {
                 <div className="section-title">
                   <h4 className="title mb-4">
                     See everything about your{" "}
-                    <span className="text-primary">Landrick</span> Business
+                    <span className="text-primary">Air99</span> Business
                   </h4>
                   <p className="text-muted para-desc">
                     Start working with{" "}

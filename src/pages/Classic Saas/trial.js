@@ -15,7 +15,7 @@ class Trial extends Component {
                     Start your free 2 week trial today
                   </h4>
                   <p className="text-white-50 mb-0">
-                    Start working with Landrick that can provide everything you
+                    Start working with Air99 that can provide everything you
                     need to generate awareness, drive traffic, connect.
                   </p>
                 </div>

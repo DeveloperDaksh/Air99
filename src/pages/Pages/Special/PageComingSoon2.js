@@ -116,7 +116,7 @@ class PageComingsoon2 extends Component {
                 </h1>
                 <p className="text-light para-dark para-desc">
                   Start working with{" "}
-                  <span className="fw-bold">Landrick</span> that can
+                  <span className="fw-bold">Air99</span> that can
                   provide everything you need to generate awareness, drive
                   traffic, connect.
                 </p>

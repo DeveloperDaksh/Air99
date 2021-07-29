@@ -176,7 +176,7 @@ class Documentation extends Component {
                   <span className="text-danger"> &lt;title&gt;</span>
                   <span className="text-primary">
                     {" "}
-                    Landrick - Saas & Software Landing Page Template{" "}
+                    Air99 - Saas & Software Landing Page Template{" "}
                   </span>
                   <span className="text-danger">&lt;/title&gt;</span> <br />
                   <span className="text-danger">

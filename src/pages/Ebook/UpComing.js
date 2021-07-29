@@ -28,7 +28,7 @@ class UpComing extends Component {
                     Upcoming Book
                   </h1>
                   <p className="text-white-50 para-dark">
-                    Start working with Landrick that can provide everything you
+                    Start working with Air99 that can provide everything you
                     need to generate awareness, drive traffic, connect.
                   </p>
 

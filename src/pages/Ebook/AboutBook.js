@@ -32,7 +32,7 @@ class AboutBook extends Component {
               <div className="section-title">
                 <h4 className="title mb-4">About the Book</h4>
                 <p className="text-muted para-desc">
-                  Start working with Landrick that can provide everything you
+                  Start working with Air99 that can provide everything you
                   need to generate awareness, drive traffic, connect.
                 </p>
                 <ul className="list-unstyled text-muted my-4">

@@ -42,7 +42,7 @@ export default class ForumsComments extends Component {
                     <nav aria-label="breadcrumb" className="d-inline-block">
                       <ul className="breadcrumb bg-white rounded shadow mb-0">
                         <li className="breadcrumb-item">
-                          <a href="index">Landrick</a>
+                          <a href="index">Air99</a>
                         </li>
                         <li className="breadcrumb-item">
                           <a href="forums">Forums</a>

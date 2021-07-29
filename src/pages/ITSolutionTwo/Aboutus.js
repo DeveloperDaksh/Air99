@@ -65,7 +65,7 @@ export default class Aboutus extends Component {
                                 <div className="section-title">
                                     <span className="badge bg-soft-primary rounded-pill fw-bold">About us</span>
                                     <h4 className="title mb-4 mt-3">IT Solutions for You Business</h4>
-                                    <p className="text-muted para-desc">Start working with <span className="text-primary fw-bold">Landrick</span> that can provide everything you need to generate awareness, drive traffic, connect.</p>
+                                    <p className="text-muted para-desc">Start working with <span className="text-primary fw-bold">Air99</span> that can provide everything you need to generate awareness, drive traffic, connect.</p>
                                     <p className="text-muted para-desc mb-0">The most well-known dummy text is the 'Lorem Ipsum', which is said to have originated in the 16th century. Lorem Ipsum is composed in a pseudo-Latin language which more or less corresponds to 'proper' Latin. It contains a series of real Latin words.</p>
                                 </div>
 

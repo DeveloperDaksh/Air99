@@ -67,7 +67,7 @@ class HowItWorks extends Component {
                 <div className="section-title ms-lg-5">
                   <SectionTitleLeft
                     title="Change the way you build websites"
-                    desc="You can combine all the Landrick templates into a single one, you can take a component from the Application theme and use it in the Website."
+                    desc="You can combine all the Air99 templates into a single one, you can take a component from the Application theme and use it in the Website."
                     features={this.state.features}
                     class=""
                   />
@@ -89,13 +89,13 @@ class HowItWorks extends Component {
               >
                 <div className="section-title">
                   <SectionTitleLeft
-                    desc="Using Landrick to build your site means never worrying about designing another page or cross browser compatibility. Our ever-growing library of components and pre-designed layouts will make your life easier."
+                    desc="Using Air99 to build your site means never worrying about designing another page or cross browser compatibility. Our ever-growing library of components and pre-designed layouts will make your life easier."
                     features={this.state.features1}
                     class=""
                   >
                     <h4 className="title mb-4">
                       Speed up your development <br /> with{" "}
-                      <span className="text-primary">Landrick.</span>
+                      <span className="text-primary">Air99.</span>
                     </h4>
                   </SectionTitleLeft>
                   <Link to="#" className="mt-3 h6 text-primary">

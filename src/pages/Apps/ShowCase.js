@@ -75,11 +75,11 @@ class ShowCase extends Component {
               <Col lg={7} md={6} className="mt-4 pt-2">
                 <div className="section-title ms-lg-5">
                   <SectionTitleLeft
-                    desc="You can combine all the Landrick templates into a single one, you can take a component from the Application theme and use it in the Website."
+                    desc="You can combine all the Air99 templates into a single one, you can take a component from the Application theme and use it in the Website."
                     features={this.state.features}
                   >
                     <h4 className="title mb-4">
-                      Best <span className="text-primary">Landrick</span> App
+                      Best <span className="text-primary">Air99</span> App
                       Partner For Your Life
                     </h4>
                   </SectionTitleLeft>
@@ -96,7 +96,7 @@ class ShowCase extends Component {
               <Col xs="12" className="text-center">
                 <div className="section-title mb-4 pb-2">
                   <h4 className="title mb-4">
-                    <span className="text-primary">Landrick</span> App Showcase
+                    <span className="text-primary">Air99</span> App Showcase
                   </h4>
                   <p className="text-muted para-desc mb-0 mx-auto">
                     Start working with{" "}
@@ -189,7 +189,7 @@ class ShowCase extends Component {
                       <Col md={6} className="mt-4 mt-sm-0 pt-2 pt-sm-0">
                         <div className="section-title">
                           <SectionTitleLeft
-                            desc="You can combine all the Landrick templates into a single one, you can take a component from the Application theme and use it in the Website."
+                            desc="You can combine all the Air99 templates into a single one, you can take a component from the Application theme and use it in the Website."
                             features={this.state.features1}
                             className=""
                           >
@@ -219,7 +219,7 @@ class ShowCase extends Component {
                       <Col md={6} className="mt-4 mt-sm-0 pt-2 pt-sm-0">
                         <div className="section-title">
                           <SectionTitleLeft
-                            desc="You can combine all the Landrick templates into a single one, you can take a component from the Application theme and use it in the Website."
+                            desc="You can combine all the Air99 templates into a single one, you can take a component from the Application theme and use it in the Website."
                             features={this.state.features2}
                             className=""
                           >
@@ -249,7 +249,7 @@ class ShowCase extends Component {
                       <Col md={6} className="mt-4 mt-sm-0 pt-2 pt-sm-0">
                         <div className="section-title">
                           <SectionTitleLeft
-                            desc="You can combine all the Landrick templates into a single one, you can take a component from the Application theme and use it in the Website."
+                            desc="You can combine all the Air99 templates into a single one, you can take a component from the Application theme and use it in the Website."
                             features={this.state.features3}
                             className=""
                           >

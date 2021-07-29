@@ -9,7 +9,7 @@ class SectionTitleLeft extends Component {
         ) : (
           <h4 className="title mb-4">{this.props.title}</h4>
         )}
-        <p className="text-muted">You can combine all the <span className="text-primary fw-bold">Landrick</span>{" "} {this.props.desc} </p>
+        <p className="text-muted">You can combine all the <span className="text-primary fw-bold">Air99</span>{" "} {this.props.desc} </p>
         <ul
           className="list-unstyled text-muted"
           name="featurelines"

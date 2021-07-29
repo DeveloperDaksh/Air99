@@ -14,7 +14,7 @@ export default class Section extends Component {
                             <Col xs={12} className="mt-5 pt-md-5">
                                 <div className="title-heading text-center">
                                     <h4 className="heading text-white title-dark mb-4">Buy & sell Cryptocurrency in minutes</h4>
-                                    <p className="text-light para-dark para-desc mx-auto">Start working with Landrick that can provide everything you need to generate awareness, drive traffic, connect.</p>
+                                    <p className="text-light para-dark para-desc mx-auto">Start working with Air99 that can provide everything you need to generate awareness, drive traffic, connect.</p>
 
                                     <div className="subcribe-form mt-4 pt-2">
                                         <Form>

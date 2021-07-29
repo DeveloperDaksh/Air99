@@ -10,7 +10,7 @@ export default class Features extends Component {
                         <Col xs={12}>
                             <div className="section-title text-center mb-4 pb-2">
                                 <h4 className="title mb-4">Exchange <span className="text-primary">Better, Faster & Together</span></h4>
-                                <p className="text-muted para-desc mx-auto mb-0">Start working with <span className="text-primary fw-bold">Landrick</span> that can provide everything you need to generate awareness, drive traffic, connect.</p>
+                                <p className="text-muted para-desc mx-auto mb-0">Start working with <span className="text-primary fw-bold">Air99</span> that can provide everything you need to generate awareness, drive traffic, connect.</p>
                             </div>
                         </Col>
                     </Row>

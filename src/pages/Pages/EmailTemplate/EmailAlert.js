@@ -124,7 +124,7 @@ class EmailAlert extends Component {
 
               <tr>
                 <td style={{ padding: "15px 24px 0", color: "#8492a6" }}>
-                  Thanks for choosing Landrick Template.
+                  Thanks for choosing Air99 Template.
                       </td>
               </tr>
 
@@ -132,7 +132,7 @@ class EmailAlert extends Component {
                 <td
                   style={{ padding: "15px 24px 15px", color: "#8492a6" }}
                 >
-                  Landrick <br /> Support Team
+                  Air99 <br /> Support Team
                       </td>
               </tr>
 

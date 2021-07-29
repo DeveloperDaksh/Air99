@@ -21,7 +21,7 @@ class SectionTitle extends Component {
                 name="sectiondesc"
               >
                 Start working with{" "}
-                <span className="text-primary fw-bold">Landrick</span>{" "}
+                <span className="text-primary fw-bold">Air99</span>{" "}
                 {this.props.desc}{" "}
               </p>
             </div>

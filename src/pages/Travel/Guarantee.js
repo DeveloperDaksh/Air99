@@ -29,13 +29,13 @@ export default class Guarantee extends Component {
                   100% Money back <br /> Guarantee if You Cancel
                 </h4>
                 <p className="text-muted">
-                  You can combine all the Landrick templates into a single one,
+                  You can combine all the Air99 templates into a single one,
                   you can take a component from the Application theme and use it
                   in the Website.
                 </p>
               </div>
               <AccordianCommon2
-                question1="How our Landrick work ?"
+                question1="How our Air99 work ?"
                 answer1="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form."
                 question2="What is the main process open account ?"
                 answer2="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form."
@@ -56,7 +56,7 @@ export default class Guarantee extends Component {
                     <div className="col-lg-7 col-md-6 mt-4 mt-sm-0 pt-2 pt-sm-0">
                         <div className="section-title ms-lg-4">
                             <h4 className="title mb-4">We have More than 500 <br /> Selected Destination</h4>
-                            <p className="text-muted">You can combine all the Landrick templates into a single one, you can take a component from the Application theme and use it in the Website.</p>
+                            <p className="text-muted">You can combine all the Air99 templates into a single one, you can take a component from the Application theme and use it in the Website.</p>
                             <ul className="list-unstyled text-muted">
                                 <li className="mb-0"><span className="text-primary h5 me-2"><i className="uil uil-check-circle align-middle"></i></span>Digital Marketing Solutions for Tomorrow</li>
                                 <li className="mb-0"><span className="text-primary h5 me-2"><i className="uil uil-check-circle align-middle"></i></span>Our Talented & Experienced Marketing Agency</li>

@@ -15,7 +15,7 @@ export default class Revolution extends Component {
                             <div className="section-title text-center mb-4 pb-2">
                                 <i className="uil uil-chart-pie-alt text-primary h2"></i>
                                 <h4 className="title mt-3 mb-4">Join The Next Revolution. <br /> Create your Website Now!</h4>
-                                <p className="text-muted mx-auto para-desc">Start working with <span className="text-primary fw-bold">Landrick</span> that can provide everything you need to generate awareness, drive traffic, connect.</p>
+                                <p className="text-muted mx-auto para-desc">Start working with <span className="text-primary fw-bold">Air99</span> that can provide everything you need to generate awareness, drive traffic, connect.</p>
                             </div>
                         </Col>
                     </Row>

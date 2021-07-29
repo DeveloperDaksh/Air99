@@ -12,7 +12,7 @@ class CTA extends Component {
                             <Col xs="12" className="text-center">
                                 <div className="section-title">
                                     <h4 className="title mb-4">Connect your business with more customers today</h4>
-                                    <p className="text-muted para-desc mb-0 mx-auto">Start working with <span className="text-primary fw-bold">Landrick</span> that can provide everything you need to generate awareness, drive traffic, connect.</p>
+                                    <p className="text-muted para-desc mb-0 mx-auto">Start working with <span className="text-primary fw-bold">Air99</span> that can provide everything you need to generate awareness, drive traffic, connect.</p>
                                 </div>
 
                                 <div className="contact-detail mt-5">

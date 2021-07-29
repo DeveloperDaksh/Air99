@@ -34,7 +34,7 @@ export default class Cta extends Component {
                             <div className="col-12 text-center">
                                 <div className="section-title">
                                     <h4 className="title title-dark text-white mb-4">Stop leaving money on the table.</h4>
-                                    <p className="text-light para-dark para-desc mx-auto">Start working with Landrick that can provide everything you need to generate awareness, drive traffic, connect.</p>
+                                    <p className="text-light para-dark para-desc mx-auto">Start working with Air99 that can provide everything you need to generate awareness, drive traffic, connect.</p>
                                     <Link to="#" onClick={this.openModal} className="play-btn border border-light mt-4 lightbox">
                                         <FeatherIcon
                                             icon="play"

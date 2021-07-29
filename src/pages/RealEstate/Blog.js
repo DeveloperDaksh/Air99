@@ -23,7 +23,7 @@ export default class Blog extends Component {
                   <h4 className="title mb-4">Latest Blog & News</h4>
                   <p className="text-muted para-desc mx-auto mb-0">
                     Start working with{" "}
-                    <span className="text-primary fw-bold">Landrick</span>{" "}
+                    <span className="text-primary fw-bold">Air99</span>{" "}
                     that can provide everything you need to generate awareness,
                     drive traffic, connect.
                   </p>

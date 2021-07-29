@@ -33,8 +33,8 @@ export default class Encryption extends Component {
                     <Row className="justify-content-center">
                         <Col xs={12}>
                             <div className="section-title text-center">
-                                <h4 className="title mb-4">Get started with <span className="text-primary fw-bold">Landrick</span> for free</h4>
-                                <p className="text-muted para-desc mx-auto">Start working with <span className="text-primary fw-bold">Landrick</span> that can provide everything you need to generate awareness, drive traffic, connect.</p>
+                                <h4 className="title mb-4">Get started with <span className="text-primary fw-bold">Air99</span> for free</h4>
+                                <p className="text-muted para-desc mx-auto">Start working with <span className="text-primary fw-bold">Air99</span> that can provide everything you need to generate awareness, drive traffic, connect.</p>
 
                                 <div className="mt-4">
                                     <Link to="#" className="btn btn-primary m-1"><i className="uil uil-apple"></i> App Store</Link>

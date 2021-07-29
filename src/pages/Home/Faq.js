@@ -16,7 +16,7 @@ class Faq extends Component {
                                 <div className="d-flex">
                                     <i><FeatherIcon icon="help-circle" className="fea icon-ex-md text-primary me-2 mt-1" /></i>
                                     <div className="flex-1">
-                                        <h5 className="mt-0">How our <span className="text-primary">Landrick</span> work ?</h5>
+                                        <h5 className="mt-0">How our <span className="text-primary">Air99</span> work ?</h5>
                                         <p className="answer text-muted mb-0">Due to its widespread use as filler text for layouts, non-readability is of great importance: human perception is tuned to recognize certain patterns and repetitions in texts.</p>
                                     </div>
                                 </div>
@@ -46,7 +46,7 @@ class Faq extends Component {
                                 <div className="d-flex">
                                     <i><FeatherIcon icon="help-circle" className="fea icon-ex-md text-primary me-2 mt-1" /></i>
                                     <div className="flex-1">
-                                        <h5 className="mt-0"> Is <span className="text-primary">Landrick</span> safer to use with my account ?</h5>
+                                        <h5 className="mt-0"> Is <span className="text-primary">Air99</span> safer to use with my account ?</h5>
                                         <p className="answer text-muted mb-0">The most well-known dummy text is the 'Lorem Ipsum', which is said to have originated in the 16th century. Lorem Ipsum is composed in a pseudo-Latin language which more or less corresponds to 'proper' Latin.</p>
                                     </div>
                                 </div>
@@ -57,7 +57,7 @@ class Faq extends Component {
                             <Col xs={12} className="text-center">
                                 <div className="section-title">
                                     <h4 className="title mb-4">Have Question ? Get in touch!</h4>
-                                    <p className="text-muted para-desc mx-auto">Start working with <span className="text-primary fw-bold">Landrick</span> that can provide everything you need to generate awareness, drive traffic, connect.</p>
+                                    <p className="text-muted para-desc mx-auto">Start working with <span className="text-primary fw-bold">Air99</span> that can provide everything you need to generate awareness, drive traffic, connect.</p>
                                     <Link to="page-contact-two" className="btn btn-primary mt-4"> <i className="uil uil-phone"></i> Contact us</Link>
                                 </div>
                             </Col>

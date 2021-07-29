@@ -42,7 +42,7 @@ class Process extends Component {
                   data-aos="fade-up"
                   data-aos-duration="1400"
                 >
-                  You can combine all the Landrick templates into a single one,
+                  You can combine all the Air99 templates into a single one,
                   you can take a component from the Application theme and use it
                   in the Website.
                 </p>

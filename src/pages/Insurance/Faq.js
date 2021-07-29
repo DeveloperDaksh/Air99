@@ -20,7 +20,7 @@ class Faq extends Component {
                 </i>
                 <div className="flex-1">
                   <h5 className="mt-0">
-                    How our <span className="text-primary">Landrick</span> work
+                    How our <span className="text-primary">Air99</span> work
                     ?
                   </h5>
                   <p className="answer text-muted mb-0">
@@ -85,7 +85,7 @@ class Faq extends Component {
                 <div className="flex-1">
                   <h5 className="mt-0">
                     {" "}
-                    Is <span className="text-primary">Landrick</span> safer to
+                    Is <span className="text-primary">Air99</span> safer to
                     use with my account ?
                   </h5>
                   <p className="answer text-muted mb-0">

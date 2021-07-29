@@ -31,7 +31,7 @@ class Price extends Component {
           price: "09",
           duration: "Day",
           desc:
-            "Start working with Landrick that can provide everything you need to generate awareness, drive traffic, connect.",
+            "Start working with Air99 that can provide everything you need to generate awareness, drive traffic, connect.",
         },
         {
           id: 2,
@@ -40,7 +40,7 @@ class Price extends Component {
           price: "24",
           duration: "Full",
           desc:
-            "Start working with Landrick that can provide everything you need to generate awareness, drive traffic, connect.",
+            "Start working with Air99 that can provide everything you need to generate awareness, drive traffic, connect.",
           isActive: true,
         },
         {
@@ -50,7 +50,7 @@ class Price extends Component {
           price: "16",
           duration: "Day",
           desc:
-            "Start working with Landrick that can provide everything you need to generate awareness, drive traffic, connect.",
+            "Start working with Air99 that can provide everything you need to generate awareness, drive traffic, connect.",
         },
       ],
       clients: [

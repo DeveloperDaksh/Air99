@@ -44,7 +44,7 @@ export default class overview extends Component {
                     <nav aria-label="breadcrumb" className="d-inline-block">
                       <ul className="breadcrumb bg-white rounded shadow mb-0">
                         <li className="breadcrumb-item">
-                          <Link to="/index">Landrick</Link>
+                          <Link to="/index">Air99</Link>
                         </li>
                         <li
                           className="breadcrumb-item active"
@@ -142,7 +142,7 @@ export default class overview extends Component {
                                 Introductions: Landrick
                               </Link>
                               <p className="text-muted small mb-0 mt-2">
-                                Start working with Landrick that can provide
+                                Start working with Air99 that can provide
                                 everything you need to generate awareness, drive
                                 traffic, connect.
                               </p>
@@ -166,7 +166,7 @@ export default class overview extends Component {
                                 Web Designing and Developing
                               </Link>
                               <p className="text-muted small mb-0 mt-2">
-                                Start working with Landrick that can provide
+                                Start working with Air99 that can provide
                                 everything you need to generate awareness, drive
                                 traffic, connect.
                               </p>
@@ -190,7 +190,7 @@ export default class overview extends Component {
                                 Hosting and providers
                               </Link>
                               <p className="text-muted small mb-0 mt-2">
-                                Start working with Landrick that can provide
+                                Start working with Air99 that can provide
                                 everything you need to generate awareness, drive
                                 traffic, connect.
                               </p>
@@ -214,7 +214,7 @@ export default class overview extends Component {
                                 SEO starter guide
                               </Link>
                               <p className="text-muted small mb-0 mt-2">
-                                Start working with Landrick that can provide
+                                Start working with Air99 that can provide
                                 everything you need to generate awareness, drive
                                 traffic, connect.
                               </p>
@@ -238,7 +238,7 @@ export default class overview extends Component {
                                 Troubleshooting and managing issues
                               </Link>
                               <p className="text-muted small mb-0 mt-2">
-                                Start working with Landrick that can provide
+                                Start working with Air99 that can provide
                                 everything you need to generate awareness, drive
                                 traffic, connect.
                               </p>
@@ -262,7 +262,7 @@ export default class overview extends Component {
                                 Backup and restore
                               </Link>
                               <p className="text-muted small mb-0 mt-2">
-                                Start working with Landrick that can provide
+                                Start working with Air99 that can provide
                                 everything you need to generate awareness, drive
                                 traffic, connect.
                               </p>
@@ -286,7 +286,7 @@ export default class overview extends Component {
                                 Errors and how to fix them
                               </Link>
                               <p className="text-muted small mb-0 mt-2">
-                                Start working with Landrick that can provide
+                                Start working with Air99 that can provide
                                 everything you need to generate awareness, drive
                                 traffic, connect.
                               </p>
@@ -310,7 +310,7 @@ export default class overview extends Component {
                                 Template features & Services
                               </Link>
                               <p className="text-muted small mb-0 mt-2">
-                                Start working with Landrick that can provide
+                                Start working with Air99 that can provide
                                 everything you need to generate awareness, drive
                                 traffic, connect.
                               </p>
@@ -331,11 +331,11 @@ export default class overview extends Component {
                                 to="forums-topic"
                                 className="forum-title text-primary fw-bold"
                               >
-                                Landrick includes the ability to create a better
+                                Air99 includes the ability to create a better
                                 of sites by using the multisite feature.
                               </Link>
                               <p className="text-muted small mb-0 mt-2">
-                                Start working with Landrick that can provide
+                                Start working with Air99 that can provide
                                 everything you need to generate awareness, drive
                                 traffic, connect.
                               </p>

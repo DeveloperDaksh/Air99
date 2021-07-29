@@ -169,11 +169,11 @@ class Price extends Component {
               <Col lg="7" md="6" className="mt-4 mt-sm-0 pt-2 pt-sm-0">
                 <div className="section-title ms-lg-5">
                   <h4 className="title mb-4">
-                    A better compose with landrick marketing
+                    A better compose with Air99 marketing
                   </h4>
                   <p className="text-muted">
                     {" "}
-                    You can combine all the Landrick templates into a single
+                    You can combine all the Air99 templates into a single
                     one, you can take a component from the Application theme and
                     use it in the Website.{" "}
                   </p>

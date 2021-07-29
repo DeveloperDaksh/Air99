@@ -33,7 +33,7 @@ class Section extends Component {
                         <Row className="align-items-center">
                             <Col lg={7} md={{ size: 7, order: 2 }} xs={{ order: 1 }}>
                                 <div className="title-heading mt-4 ms-lg-5">
-                                    <h1 className="heading mb-3">We are Startup Creative <span className="text-primary">Landrick</span> Agency</h1>
+                                    <h1 className="heading mb-3">We are Startup Creative <span className="text-primary">Air99</span> Agency</h1>
                                     <p className="para-desc text-muted">Launch your campaign and benefit from our expertise on designing and managing conversion centered bootstrap v5 html page.</p>
                                     <div className="mt-4 pt-2">
                                         <Link to="#" className="btn btn-primary m-1">Learn More <i className="uil uil-angle-right-b"></i></Link>

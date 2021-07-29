@@ -44,7 +44,7 @@ export default class KeyFeatures extends Component {
                 <h4 className="title mb-4">Key Features</h4>
                 <p className="para-desc text-muted mb-0">
                   Start working with{" "}
-                  <span className="text-primary fw-bold">Landrick</span>{" "}
+                  <span className="text-primary fw-bold">Air99</span>{" "}
                 that can provide everything you need to generate awareness,
                 drive traffic, connect.
               </p>

@@ -188,7 +188,7 @@ class EmailInvoice extends Component {
                               borderTop: "1px solid #dee2e6",
                             }}
                           >
-                            Landrick Template
+                            Air99 Template
                                 </td>
                           <td
                             style={{

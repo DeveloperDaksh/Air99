@@ -31,7 +31,7 @@ export default class Client extends Component {
                         <Row className="justify-content-center" id="counter">
                             <Col xs={12} className="text-center">
                                 <h4>Trusted client by over <span className="text-primary fw-bold"><span className="counter-value" data-target="1100">100</span>+</span> of the world’s</h4>
-                                <p className="text-muted mb-0 mx-auto">Trust <span className="text-primary fw-bold">Landrick</span> to host webinars and online meetings</p>
+                                <p className="text-muted mb-0 mx-auto">Trust <span className="text-primary fw-bold">Air99</span> to host webinars and online meetings</p>
                             </Col>
                         </Row>
 

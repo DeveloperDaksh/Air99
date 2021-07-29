@@ -40,10 +40,10 @@ class Cta extends Component {
               <Col xs="12" className="text-center">
                 <div className="section-title">
                   <h4 className="title title-dark text-white mb-4">
-                    Resembling Tour of Landrick Resort
+                    Resembling Tour of Air99 Resort
                   </h4>
                   <p className="text-light para-dark para-desc mx-auto">
-                    Start working with Landrick that can provide everything you
+                    Start working with Air99 that can provide everything you
                     need to generate awareness, drive traffic, connect.
                   </p>
                   <Link

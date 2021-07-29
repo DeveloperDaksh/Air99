@@ -46,7 +46,7 @@ export default class Cta extends Component {
                                         <span className="content">Download now <i className="uil uil-angle-right-b align-middle"></i></span>
                                     </div>
                                     <h4 className="title mb-4">Available for your <br /> Smartphones</h4>
-                                    <p className="text-muted para-desc mb-0">Start working with <span className="text-primary fw-bold">Landrick</span> that can provide everything you need to generate awareness, drive traffic, connect.</p>
+                                    <p className="text-muted para-desc mb-0">Start working with <span className="text-primary fw-bold">Air99</span> that can provide everything you need to generate awareness, drive traffic, connect.</p>
                                     <div className="my-4">
                                         <Link to="#" className="btn btn-lg btn-dark mt-2 me-2"><i className="uil uil-apple"></i> App Store</Link>
                                         <Link to="#" className="btn btn-lg btn-dark mt-2"><i className="uil uil-google-play"></i> Play Store</Link>

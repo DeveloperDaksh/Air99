@@ -138,7 +138,7 @@ class HelpCenterGuides extends Component {
                   <li className="mt-2">
                     <Link to="#" className="text-muted">
                       <i className="mdi mdi-arrow-right text-primary me-2"></i>
-                      Landrick Plus
+                      Air99 Plus
                     </Link>
                   </li>
                   <li className="mt-2">
@@ -192,13 +192,13 @@ class HelpCenterGuides extends Component {
                   <li className="mt-2">
                     <Link to="#" className="text-muted">
                       <i className="mdi mdi-arrow-right text-primary me-2"></i>
-                      Landrick safely
+                      Air99 safely
                     </Link>
                   </li>
                   <li className="mt-2">
                     <Link to="#" className="text-muted">
                       <i className="mdi mdi-arrow-right text-primary me-2"></i>
-                      Landrick Experiences and Adventures
+                      Air99 Experiences and Adventures
                     </Link>
                   </li>
                   <li className="mt-2">

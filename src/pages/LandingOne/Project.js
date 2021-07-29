@@ -159,7 +159,7 @@ export default class Project extends Component {
             >
               <div className="section-title text-md-start text-center">
                 <h4 className="title mb-4">
-                  Whats our clients said <br /> about landrick project
+                  Whats our clients said <br /> about Air99 project
                 </h4>
                 <p className="text-muted mb-0 para-desc">
                   Start working with{" "}

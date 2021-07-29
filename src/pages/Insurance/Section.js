@@ -39,7 +39,7 @@ class Section extends Component {
               <Col lg={12}>
                 <div className="title-heading text-center">
                   <h1 className="heading title-dark text-white mb-3">
-                    Landrick Insurance
+                    Air99 Insurance
                   </h1>
                   <p className="para-desc mx-auto text-white-50">
                     Launch your campaign and benefit from our expertise on

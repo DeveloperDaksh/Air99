@@ -43,7 +43,7 @@
     "react-typist": "^2.0.5",
     "reactstrap": "^8.9.0",
     "slick-carousel": "^1.8.1",
-    "webpack": "4.44.0"
+    "webpack": "^4.44.2"
   },
   "scripts": {
     "start": "react-scripts start",

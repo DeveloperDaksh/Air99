@@ -58,7 +58,7 @@ class SmallFeatures extends Component {
                   </i>
                 </p>
                 <SectionTitleLeft
-                  desc="Start working with Landrick that can provide everything you need to generate awareness, drive traffic, connect."
+                  desc="Start working with Air99 that can provide everything you need to generate awareness, drive traffic, connect."
                   features={this.state.featuresSmall}
                   class=""
                 >

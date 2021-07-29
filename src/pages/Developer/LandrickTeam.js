@@ -11,7 +11,7 @@ export default class landrickTeam extends Component {
             <div className="col-12">
               <div className="section-title text-center mb-4 pb-2">
                 <h4 className="title mb-4">
-                  Our rates for developer from landrick team
+                  Our rates for developer from Air99 team
                 </h4>
                 <p className="para-desc mx-auto text-muted mb-0">
                   Start working with{" "}
@@ -215,7 +215,7 @@ export default class landrickTeam extends Component {
                 </h4>
                 <p className="text-muted para-desc mx-auto">
                   Start working with{" "}
-                  <span className="text-primary fw-bold">Landrick</span>{" "}
+                  <span className="text-primary fw-bold">Air99</span>{" "}
                   that can provide everything you need to generate awareness,
                   drive traffic, connect.
                 </p>

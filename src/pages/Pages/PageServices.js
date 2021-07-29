@@ -149,7 +149,7 @@ class PageServices extends Component {
                             <Col xs="12" className="text-center">
                                 <div className="section-title">
                                     <h4 className="title mb-4">See everything about your employee at one place.</h4>
-                                    <p className="text-muted para-desc mx-auto">Start working with <span className="text-primary fw-bold">Landrick</span> that can provide everything you need to generate awareness, drive traffic, connect.</p>
+                                    <p className="text-muted para-desc mx-auto">Start working with <span className="text-primary fw-bold">Air99</span> that can provide everything you need to generate awareness, drive traffic, connect.</p>
                                     <div className="mt-4">
                                         <Link to="#" className="btn btn-primary mt-2 me-2">Get Started Now</Link>{" "}
                                         <Link to="#" className="btn btn-outline-primary mt-2">Free Trial</Link>

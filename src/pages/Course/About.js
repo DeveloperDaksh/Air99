@@ -20,12 +20,12 @@ class About extends Component {
                 <div className="section-title ms-lg-4">
                   <h4 className="title mb-4">
                     Our Story :{" "}
-                    <span className="text-primary">Landrick Education</span>
+                    <span className="text-primary">Air99 Education</span>
                   </h4>
                   <p className="text-muted">
                     Start Course with{" "}
                     <span className="text-primary fw-bold">
-                      Landrick Education
+                      Air99 Education
                     </span>{" "}
                     that can provide everything you need to generate awareness,
                     drive traffic, connect. Dummy text is text that is used in

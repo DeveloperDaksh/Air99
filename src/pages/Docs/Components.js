@@ -436,7 +436,7 @@ class Components extends Component {
                         <h6 className="text-muted mb-2 pb-2">
                           Ex.{" "}
                           <code className="text-danger">
-                            &lt;div className="bg-primary"&gt; Landrick Saas &
+                            &lt;div className="bg-primary"&gt; Air99 Saas &
                             Software Template &lt;/div&gt;
                           </code>
                         </h6>
@@ -687,7 +687,7 @@ class Components extends Component {
                         <h6 className="text-muted mb-4 pb-2">
                           Ex.{" "}
                           <code className="text-danger">
-                            &lt;div className="text-primary"&gt; Landrick Saas &
+                            &lt;div className="text-primary"&gt; Air99 Saas &
                             Software Template &lt;/div&gt;
                           </code>
                         </h6>
@@ -2843,7 +2843,7 @@ class Components extends Component {
                           listClassName="bg-white rounded shadow mb-0"
                         >
                           <BreadcrumbItem>
-                            <a href="index">Landrick</a>
+                            <a href="index">Air99</a>
                           </BreadcrumbItem>
                           <BreadcrumbItem>
                             <Link to="#">Docs</Link>
@@ -3086,7 +3086,7 @@ class Components extends Component {
                             <TabContent activeTab={this.state.activeTab}>
                               <TabPane tabId="1" className="p-3">
                                 <p className="text-muted mb-0">
-                                  You can combine all the Landrick templates
+                                  You can combine all the Air99 templates
                                   into a single one, you can take a component
                                   from the Application theme and use it in the
                                   Website.
@@ -3094,14 +3094,14 @@ class Components extends Component {
                               </TabPane>
                               <TabPane tabId="2" className="p-3">
                                 <p className="text-muted mb-0">
-                                  Can combine all the Landrick templates into a
+                                  Can combine all the Air99 templates into a
                                   single one, you can take a component from the
                                   Application theme and use it in the Website.
                                 </p>
                               </TabPane>
                               <TabPane tabId="3" className="p-3">
                                 <p className="text-muted mb-0">
-                                  You can combine all the Landrick templates
+                                  You can combine all the Air99 templates
                                   into a single one, you can take a component
                                   from the Application theme and use it in the
                                   Website.

@@ -104,7 +104,7 @@ class ShopCheckouts extends Component {
                       <Col xs={12}>
                         <div className="mb-3">
                           <Label className="form-label">
-                            Company Name{" "}
+                            Air99{" "}
                             <span className="text-muted">(Optional)</span>
                           </Label>
                           <Input
@@ -112,7 +112,7 @@ class ShopCheckouts extends Component {
                             id="companyname"
                             type="text"
                             className="form-control"
-                            placeholder="Company Name :"
+                            placeholder="Air99 :"
                           />
                         </div>
                       </Col>

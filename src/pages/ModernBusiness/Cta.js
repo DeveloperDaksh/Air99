@@ -41,7 +41,7 @@ class Cta extends Component {
                     We Are Creative Dreamers and Innovators
                   </h4>
                   <p className="text-light para-dark para-desc mx-auto">
-                    Start working with Landrick that can provide everything you
+                    Start working with Air99 that can provide everything you
                     need to generate awareness, drive traffic, connect.
                   </p>
                   <Link

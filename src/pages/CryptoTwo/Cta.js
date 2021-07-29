@@ -22,7 +22,7 @@ export default class Cta extends Component {
                             <Col lg={7} md={6} className="mt-4 mt-sm-0 pt-2 pt-sm-0">
                                 <div className="section-title ms-lg-5">
                                     <h4 className="title mb-4">The Easiest and Most Powerful Crypto Wallet</h4>
-                                    <p className="text-muted">You can combine all the Landrick templates into a single one, you can take a component from the Application theme and use it in the Website.</p>
+                                    <p className="text-muted">You can combine all the Air99 templates into a single one, you can take a component from the Application theme and use it in the Website.</p>
                                     <ul className="list-unstyled text-muted">
                                         <li className="mb-0"><span className="text-primary h5 me-2"><i className="uil uil-check-circle align-middle"></i></span>Digital Marketing Solutions for Tomorrow</li>
                                         <li className="mb-0"><span className="text-primary h5 me-2"><i className="uil uil-check-circle align-middle"></i></span>Our Talented & Experienced Marketing Agency</li>
@@ -41,7 +41,7 @@ export default class Cta extends Component {
                                     <AccordianCommon2
                                         question1="How does it work ?"
                                         answer1="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form."
-                                        question2="Do I need a designer to use Landrick ?"
+                                        question2="Do I need a designer to use Air99 ?"
                                         answer2="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form."
                                         question3="What do I need to do to start selling ?"
                                         answer3="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form."

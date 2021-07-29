@@ -21,7 +21,7 @@ export default class Website extends Component {
                       Check your website SEO
                     </h4>
                     <p className="text-white-50 para-desc mb-0 mx-auto">
-                      Start working with Landrick that can provide everything
+                      Start working with Air99 that can provide everything
                       you need to generate awareness, drive traffic, connect.
                     </p>
                     <div className="subcribe-form mt-4 pt-2">

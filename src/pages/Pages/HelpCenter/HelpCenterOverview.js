@@ -249,7 +249,7 @@ class HelpCenterOverview extends Component {
                         >
                           <h6 className="title mb-0">
                             {" "}
-                            Do I need a designer to use Landrick ?
+                            Do I need a designer to use Air99 ?
                             <i
                               className={
                                 this.state.col2

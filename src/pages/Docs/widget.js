@@ -205,7 +205,7 @@ class Widget extends Component {
                   <div className="content mt-3">
                     <h5 className="fw-bold">Phone</h5>
                     <p className="text-muted">
-                      Start working with Landrick that can provide everything
+                      Start working with Air99 that can provide everything
                       </p>
                     <Link to="tel:+152534-468-854" className="text-primary">
                       +152 534-468-854
@@ -1279,7 +1279,7 @@ class Widget extends Component {
                   </i>
                   <div className="flex-1">
                     <h5 className="mt-0">
-                      How our <span className="text-primary">Landrick</span>{" "}
+                      How our <span className="text-primary">Air99</span>{" "}
                       work ?
                     </h5>
                     <p className="answer text-muted mb-0">

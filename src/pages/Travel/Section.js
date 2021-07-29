@@ -25,6 +25,10 @@ import {
 
 //Import Icons
 import FeatherIcon from 'feather-icons-react';
+import Button from '@material-ui/core/Button';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
 
 //Import Flatepicker
 import 'flatpickr/dist/themes/material_blue.css';
@@ -33,24 +37,60 @@ import Flatpickr from 'react-flatpickr';
 import travelBg from '../../assets/images/travel/bg.jpg';
 
 export default class Section extends Component {
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     CheckIn: new Date(),
+  //     CheckOut: new Date(),
+  //     source: '',
+  //     destination: '',
+  //     dropdownOpen: false,
+  //     lastClicked: null,
+  //     flightClass: '',
+      
+  //   };
+  //   // this.toggleIt.bind(this)
+  //   // this.setLastClicked.bind(this)
+  //   this.formSubmit = this.formSubmit.bind(this);
+
+  //   // this.findAcc = this.findAcc.bind(this)
+  // }
   constructor(props) {
     super(props);
     this.state = {
       CheckIn: new Date(),
       CheckOut: new Date(),
-      source: '',
-      destination: '',
-      dropdownOpen: false,
-      lastClicked: null,
-      flightClass: '',
+      source : "",
+      destination: "",
+      dropdownOpen:false,
+      lastClicked:null,
+      flightClass:"",
       coordinates: { lat: null, lng: null },
       address: '',
+      open:false,
+      adult:0,
+      children:0,
+      infant:0,
+      infantLap:0
     };
     // this.toggleIt.bind(this)
     // this.setLastClicked.bind(this)
-    this.formSubmit = this.formSubmit.bind(this);
-
-    // this.findAcc = this.findAcc.bind(this)
+    this.formSubmit = this.formSubmit.bind(this) 
+    this.handleClickOpen = this.handleClickOpen.bind(this)
+    this.handleClose = this.handleClose.bind(this)
+    this.handleTravellerCounter= this.handleTravellerCounter.bind(this)
+    // this.findAcc = this.findAcc.bind(this)  
+  }
+  handleTravellerCounter(event){
+    console.log(event.target);
+    this.setState((prev)=>({[event.target.name] : Math.max(0,prev[event.target.name] + parseInt(event.target.value))}))
+    console.log(this.state);
+  }
+  handleClickOpen = () => {
+    this.setState({open:true});
+  }
+  handleClose = ()=>{
+    this.setState({open:false})
   }
 
   // findAcc (){
@@ -303,115 +343,52 @@ export default class Section extends Component {
                           </div>
                         </Col>
                         <Col md={6}>
-                          <div>
-                            <Dropdown isOpen={false}>
-                              <DropdownToggle caret>Traveller</DropdownToggle>
-                              <DropdownMenu container="body" toggle={() => {}}>
-                                <DropdownItem toggle={false}>
-                                  <div
-                                    style={{
-                                      width: '100%',
-                                      display: 'flex',
-                                      justifyContent: 'space-between',
-                                    }}
-                                  >
-                                    <div>Adult : </div>
-                                    <div>
-                                      <button>+</button>
-                                      <div
-                                        style={{
-                                          display: 'inline-block',
-                                          width: '20px',
-                                          textAlign: 'center',
-                                          backgroundColor: '#bdb9b9',
-                                        }}
-                                      >
-                                        {3}
-                                      </div>
-                                      <button>-</button>
-                                    </div>
-                                  </div>
-                                </DropdownItem>
-                                <DropdownItem toggle={false}>
-                                  <div
-                                    style={{
-                                      width: '100%',
-                                      display: 'flex',
-                                      justifyContent: 'space-between',
-                                    }}
-                                  >
-                                    <div>Children (Below-18): </div>
-                                    <div>
-                                      <button>+</button>
-                                      <div
-                                        style={{
-                                          display: 'inline-block',
-                                          width: '20px',
-                                          textAlign: 'center',
-                                          backgroundColor: '#bdb9b9',
-                                        }}
-                                      >
-                                        {3}
-                                      </div>
-                                      <button>-</button>
-                                    </div>
-                                  </div>
-                                </DropdownItem>
-                                <DropdownItem toggle={false}>
-                                  <div
-                                    style={{
-                                      width: '100%',
-                                      display: 'flex',
-                                      justifyContent: 'space-between',
-                                    }}
-                                  >
-                                    <div>Infant (Below-2): </div>
-                                    <div>
-                                      <button>+</button>
-                                      <div
-                                        style={{
-                                          display: 'inline-block',
-                                          width: '20px',
-                                          textAlign: 'center',
-                                          backgroundColor: '#bdb9b9',
-                                        }}
-                                      >
-                                        {3}
-                                      </div>
-                                      <button>-</button>
-                                    </div>
-                                  </div>
-                                </DropdownItem>
-                                <DropdownItem onClick={() => {}} toggle={false}>
-                                  <div
-                                    style={{
-                                      width: '100%',
-                                      display: 'flex',
-                                      justifyContent: 'space-between',
-                                    }}
-                                  >
-                                    <div>Infant-Lap (Below-2) : </div>
-                                    <div>
-                                      <button>+</button>
-                                      <div
-                                        style={{
-                                          display: 'inline-block',
-                                          width: '20px',
-                                          textAlign: 'center',
-                                          backgroundColor: '#bdb9b9',
-                                        }}
-                                      >
-                                        {3}
-                                      </div>
-                                      <button>-</button>
-                                    </div>
-                                  </div>
-                                </DropdownItem>
-                              </DropdownMenu>
-                            </Dropdown>
-                          </div>
-                        </Col>
-                        <Col md={12}>
+                        <div>
+      <Button color="primary" variant="contained" onClick ={this.handleClickOpen}>
+        Travellers
+      </Button>
+      
+      <Dialog
+        open={this.state.open}
+        onClose={this.handleClose}
+        aria-labelledby="alert-dialog-slide-title"
+        aria-describedby="alert-dialog-slide-description"
+      >
+        <DialogContent>
+         <div style={{display:"flex",justifyContent:"space-between",alignContent:"center"}}>
+         <h5>Adult : </h5>
+        <div>
+        <button name="adult" type="button" value={-1} onClick={this.handleTravellerCounter}>-</button>{this.state.adult}<button name="adult" type="button" value={1} onClick={this.handleTravellerCounter}>+</button>
+        </div>
+         </div>
+         <div style={{display:"flex",justifyContent:"space-between",alignContent:"center"}}>
+         <h5>Children : </h5>
+<div>         <button name="children" type="button" value={-1} onClick={this.handleTravellerCounter}>-</button>{this.state.children}<button name="children" type="button" value={1} onClick={this.handleTravellerCounter}>+</button>
+</div>
+         </div>
+         <div style={{display:"flex",justifyContent:"space-between",alignContent:"center"}}>
+         <h5>Infant(Below 2) : </h5>
+<div>
+<button name="infant" type="button" value={-1} onClick={this.handleTravellerCounter}>-</button>{this.state.infant}<button name="infant" type="button" value={1} onClick={this.handleTravellerCounter}>+</button>
+
+</div>
+         </div>
+         <div style={{display:"flex",justifyContent:"space-between",alignContent:"center"}}>
+         <h5>Infant (Lap) : </h5>
+<div>         <button name="infantLap" type="button" value={-1} onClick={this.handleTravellerCounter}>-</button>{this.state.infantLap}<button name="infantLap" type="button" value={1} onClick={this.handleTravellerCounter}>+</button>
+</div>
+         </div>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={this.handleClose} color="primary">
+            Submit
+          </Button>
+        </DialogActions>
+      </Dialog>
+    </div>
+                       </Col>
+                        
+                       <Col md={12}>
                           <div className="mb-3">
                             <Label className="form-label">Your Email</Label>
                             <div className="form-icon position-relative">

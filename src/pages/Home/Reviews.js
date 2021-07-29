@@ -127,7 +127,7 @@ class Reviews extends Component {
                             <Col xs={12}>
                                 <div className="section-title text-center">
                                     <h4 className="title mb-4 text-uppercase fw-bold">Get Started With Landrick<span className="text-primary">.</span></h4>
-                                    <p className="text-muted para-desc mx-auto">Start working with <span className="text-primary fw-bold">Landrick</span> that can provide everything you need to generate awareness, drive traffic, connect.</p>
+                                    <p className="text-muted para-desc mx-auto">Start working with <span className="text-primary fw-bold">Air99</span> that can provide everything you need to generate awareness, drive traffic, connect.</p>
                                     <div className="mt-4 pt-2">
                                         <Link to="https://1.envato.market/landrickreactjs" target="_blank" className="btn btn-primary">Download Now <span className="badge badge-pill badge-danger ms-2">v3.1</span></Link>
                                     </div>
