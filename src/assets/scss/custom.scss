@@ -1,0 +1,201 @@
+.Typist {
+  display: inline;
+}
+
+li.active > a {
+  color: #2f55d4 !important;
+}
+
+.pagination .active a {
+  color: #ffffff !important;
+}
+
+a {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.accordian-custom {
+  border: none;
+}
+
+#mt-1 {
+  margin-top: 5px !important;
+}
+
+#mb-1 {
+  margin-top: 5px !important;
+}
+
+.react-datepicker-wrapper {
+  width: 100% !important;
+}
+
+.masonry-container {
+  width: 100%;
+  margin: auto;
+}
+.masonry {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: stretch;
+  width: 100%;
+  margin: auto;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: stretch;
+  flex-grow: 1;
+}
+.tile {
+  img {
+    width: 100%;
+  }
+}
+
+.indicator-inactive,
+.indicator-active {
+  height: 12px !important;
+  width: 6px !important;
+  border-radius: 4px;
+  border: none;
+  margin-left: 7px;
+  margin-right: 7px;
+}
+
+.indicator-inactive {
+  background-color: #2f55d4 !important;
+  opacity: 0.6;
+}
+.indicator-active {
+  background-color: #2f55d4 !important;
+  transform: rotate(45deg);
+}
+
+.custom-owl-dots {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.classForContainer {
+  position: fixed;
+  right: -100px;
+  bottom: 30px;
+  transition: right 0.5s;
+  cursor: pointer;
+  background-color: rgba(47, 85, 212, 0.2);
+  padding: 5px;
+  align-items: center;
+  border-radius: 5px !important;
+  outline: none;
+
+  &:hover {
+    background-color: $primary !important;
+    svg {
+      stroke: $white !important;
+    }
+  }
+
+  svg {
+    height: 16px;
+    width: 16px;
+    vertical-align: middle;
+    overflow: hidden;
+    margin-top: 2px;
+    margin-left: 5px;
+    fill: none;
+    stroke: $primary !important;
+  }
+}
+
+.classForTransition {
+  right: 30px;
+}
+//masonry
+
+.my-masonry-grid {
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
+  display: flex;
+  margin-left: -30px; /* gutter size offset */
+  width: auto;
+}
+.my-masonry-grid_column {
+  padding-left: 30px; /* gutter size */
+  background-clip: padding-box;
+}
+
+/* Style your items */
+.my-masonry-grid_column > div {
+  /* change div to reference your elements you put in <Masonry> */
+  background: grey;
+  margin-bottom: 30px;
+}
+
+.accordion {
+  .card {
+    .faq {
+      > .active-link {
+        color: $primary !important;
+      }
+    }
+  }
+}
+
+.hover-border {
+  .nav-link {
+    &:focus,
+    &.active,
+    &:active {
+      outline: none !important;
+      border: transparent !important;
+    }
+    &:hover {
+      border-color: transparent !important;
+    }
+  }
+}
+.custom-dots {
+  .indicator-active {
+    background-color: #2f55d4 !important;
+  }
+}
+.custom-dots {
+  .indicator-inactive {
+    background-color: #6486e4 !important;
+  }
+}
+
+.close {
+  background: transparent;
+  border: 0;
+  font-size: 24px;
+  padding: 1.35rem 1.25rem;
+  color: #000 !important;
+  background: transparent
+    escape-svg(
+      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#fff'><path d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/></svg>")
+    )
+    center / 1em auto no-repeat;
+  position: absolute !important;
+  top: -7px;
+  right: 20px;
+  opacity: 0.5;
+  width: 1em;
+  height: 1em;
+  z-index: 2;
+}
+
+[class^='uil-'],
+[class*=' uil-'] {
+  &:before {
+    margin: 0;
+  }
+}
+.footer-border-bottom {
+  border-bottom: 1px solid #283353;
+}

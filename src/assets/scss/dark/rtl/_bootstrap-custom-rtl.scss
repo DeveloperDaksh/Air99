@@ -1,0 +1,236 @@
+//
+// bootstrap-custom.scss
+//
+//li (list inline item)
+.list-inline-item:not(:last-child) {
+  margin-left: 0px;
+  margin-right: auto;
+}
+.list-unstyled {
+  padding-right: 0 !important;
+  padding-left: auto !important;
+}
+.list-inline {
+  padding-right: 0;
+  list-style: none;
+}
+//modal
+.modal-open {
+  padding-left: 0 !important;
+}
+.input-group > .custom-select:not(:last-child),
+.input-group > .form-control:not(:last-child) {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+//margin padding
+.ms-auto {
+  margin-right: auto;
+  margin-left: 0 !important;
+}
+.me-auto {
+  margin-left: auto;
+  margin-right: 0 !important;
+}
+.me-1,
+.mx-1 {
+  margin-left: 4px !important;
+  margin-right: auto !important;
+}
+.me-2,
+.mx-2 {
+  margin-left: 8px !important;
+  margin-right: auto !important;
+}
+.me-3,
+.mx-3 {
+  margin-left: 16px !important;
+  margin-right: auto !important;
+}
+.me-4,
+.mx-4 {
+  margin-left: 24px !important;
+  margin-right: auto !important;
+}
+.me-5,
+.mx-5 {
+  margin-left: 48px !important;
+  margin-right: auto !important;
+}
+
+.ms-1,
+.mx-1 {
+  margin-right: 4px !important;
+  margin-left: auto !important;
+}
+.ms-2,
+.mx-2 {
+  margin-right: 8px !important;
+  margin-left: auto !important;
+}
+.ms-3,
+.mx-3 {
+  margin-right: 16px !important;
+  margin-left: auto !important;
+}
+.ms-4,
+.mx-4 {
+  margin-right: 24px !important;
+  margin-left: auto !important;
+}
+.ms-5,
+.mx-5 {
+  margin-right: 48px !important;
+  margin-left: auto !important;
+}
+
+//padding
+.pe-1,
+.px-1 {
+  padding-left: 4px !important;
+  padding-right: auto !important;
+}
+.pe-2,
+.px-2 {
+  padding-left: 8px !important;
+  padding-right: auto !important;
+}
+.pe-3,
+.px-3 {
+  padding-left: 16px !important;
+  padding-right: auto !important;
+}
+.pe-4,
+.px-4 {
+  padding-left: 24px !important;
+  padding-right: auto !important;
+}
+.pe-5,
+.px-5 {
+  padding-left: 48px !important;
+  padding-right: auto !important;
+}
+
+.ps-1,
+.px-1 {
+  padding-right: 4px !important;
+  padding-left: auto !important;
+}
+.ps-2,
+.px-2 {
+  padding-right: 8px !important;
+  padding-left: auto !important;
+}
+.ps-3,
+.px-3 {
+  padding-right: 16px !important;
+  padding-left: auto !important;
+}
+.ps-4,
+.px-4 {
+  padding-right: 24px !important;
+  padding-left: auto !important;
+}
+.ps-5,
+.px-5 {
+  padding-right: 48px !important;
+  padding-left: auto !important;
+}
+
+@media (min-width: 992px) {
+  .me-lg-2,
+  .mx-lg-2 {
+    margin-left: 8px !important;
+    margin-right: auto !important;
+  }
+  .me-lg-3,
+  .mx-lg-3 {
+    margin-left: 16px !important;
+    margin-right: auto !important;
+  }
+  .me-lg-4,
+  .mx-lg-4 {
+    margin-left: 24px !important;
+    margin-right: auto !important;
+  }
+  .me-lg-5,
+  .mx-lg-5 {
+    margin-left: 48px !important;
+    margin-right: auto !important;
+  }
+
+  .ms-lg-3,
+  .mx-lg-3 {
+    margin-right: 16px !important;
+    margin-left: auto !important;
+  }
+  .ms-lg-4,
+  .mx-lg-4 {
+    margin-right: 24px !important;
+    margin-left: auto !important;
+  }
+  .ms-lg-5,
+  .mx-lg-5 {
+    margin-right: 48px !important;
+    margin-left: auto !important;
+  }
+
+  .ps-lg-3,
+  .px-lg-3 {
+    padding-right: 16px !important;
+    padding-left: auto !important;
+  }
+
+  .text-lg-left {
+    text-align: right !important;
+  }
+
+  .offset-lg-1 {
+    margin-left: auto;
+    margin-right: 8.333333%;
+  }
+
+  .offset-lg-4 {
+    margin-right: 33.333333%;
+  }
+
+  .offset-lg-6 {
+    margin-right: 50%;
+  }
+}
+
+@media (min-width: 768px) {
+  .ms-md-4,
+  .mx-md-4 {
+    margin-right: 24px !important;
+    margin-left: 0 !important;
+  }
+  .me-md-4,
+  .mx-md-4 {
+    margin-left: 24px !important;
+    margin-right: 0 !important;
+  }
+  .pe-md-3,
+  .px-md-3 {
+    padding-left: 16px !important;
+    padding-right: 0 !important;
+  }
+  .ps-md-3,
+  .px-md-3 {
+    padding-right: 16px !important;
+    padding-left: 0 !important;
+  }
+  .ps-lg-5,
+  .px-lg-5 {
+    padding-right: 48px !important;
+    padding-left: 0 !important;
+  }
+  .text-md-left {
+    text-align: right !important;
+  }
+  .text-md-right {
+    text-align: left !important;
+  }
+}

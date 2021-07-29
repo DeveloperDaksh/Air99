@@ -1,0 +1,72 @@
+{
+  "name": "landrick",
+  "version": "2.0.0",
+  "private": true,
+  "dependencies": {
+    "@iconscout/react-unicons": "^1.1.6",
+    "@material-ui/core": "^4.12.2",
+    "airline-codes": "^1.0.2",
+    "airlines": "^1.0.0",
+    "amadeus": "^5.7.0",
+    "aos": "^2.3.4",
+    "availity-reactstrap-validation": "^2.7.1",
+    "axios": "^0.21.1",
+    "bootstrap": "^5.0.0-beta2",
+    "feather-icons-react": "^0.4.3",
+    "iso8601-duration": "^1.3.0",
+    "jquery": "^3.6.0",
+    "node-sass": "^6.0.0",
+    "npm": "^7.13.0",
+    "number-counter": "^1.0.3",
+    "query-string": "^7.0.1",
+    "react": "^17.0.2",
+    "react-autocomplete-places": "^7.3.0",
+    "react-background-slider": "^2.0.0",
+    "react-countdown-now": "^2.1.2",
+    "react-countup": "^4.3.3",
+    "react-datepicker": "^3.8.0",
+    "react-dom": "^17.0.2",
+    "react-fade-in": "^2.0.1",
+    "react-flatpickr": "^3.10.7",
+    "react-hook-form": "^7.12.0",
+    "react-image-lightbox": "^5.1.1",
+    "react-modal-video": "^1.2.6",
+    "react-parallax": "^3.3.0",
+    "react-places-autocomplete": "^7.3.0",
+    "react-player": "^2.9.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^4.0.0",
+    "react-scroll-up-button": "^1.6.4",
+    "react-slick": "^0.28.1",
+    "react-star-ratings": "^2.3.0",
+    "react-text-rotator": "^1.1.0",
+    "react-typist": "^2.0.5",
+    "reactstrap": "^8.9.0",
+    "slick-carousel": "^1.8.1",
+    "webpack": "4.44.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "CI=false react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "gulp-sass": "^3.2.1"
+  }
+}
