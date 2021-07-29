@@ -931,7 +931,7 @@ class ShopProductDetail extends Component {
                             <img
                               src={product.image}
                               className="img-fluid"
-                              alt="Landrick"
+                              alt="Air99"
                             />
                           </Link>
                           <Link
@@ -941,7 +941,7 @@ class ShopProductDetail extends Component {
                             <img
                               src={product.imgOverlay}
                               className="img-fluid"
-                              alt="Landrick"
+                              alt="Air99"
                             />
                           </Link>
                           <ul className="list-unstyled shop-icons">

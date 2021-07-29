@@ -45,7 +45,7 @@ class Instructors extends Component {
                   <img
                     src={instructor.img}
                     className="avatar avatar-medium rounded-circle img-thumbnail"
-                    alt="Landrick"
+                    alt="Air99"
                   /> 
                   <div className="flex-1 content ms-3">
                     <h5 className="mb-0">

@@ -235,7 +235,7 @@ class PageWorkClassic extends Component {
                             <img
                               src={image}
                               className="img-fluid rounded work-image"
-                              alt="Landrick"
+                              alt="Air99"
                             />
                           </Link>
                           <div className="content pt-3">

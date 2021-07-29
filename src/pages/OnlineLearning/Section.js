@@ -99,7 +99,7 @@ class Section extends Component {
                         <img
                           src={hero}
                           className="rounded img-fluid mx-auto d-block"
-                          alt="Landrick"
+                          alt="Air99"
                         />
                         <div className="play-icon">
                           <Link

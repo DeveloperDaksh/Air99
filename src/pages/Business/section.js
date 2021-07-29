@@ -40,7 +40,7 @@ class Section extends Component {
                     <span className="content">
                       {" "}
                       Build <span className="text-primary">anything</span> you
-                      want - Landrick.
+                      want - Air99.
                     </span>
                   </Alert>
                   <h1 className="heading mb-3">

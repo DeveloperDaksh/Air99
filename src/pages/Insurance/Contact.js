@@ -46,7 +46,7 @@ class Contact extends Component {
                 <p className="text-muted para-desc">
                   Start working with{" "}
                   <span className="text-primary fw-bold">
-                    Landrick
+                    Air99
                   </span>{" "}
                   that can provide everything you need to generate awareness,
                   drive traffic, connect.
@@ -71,14 +71,14 @@ class Contact extends Component {
                     <img
                       src={client1}
                       className="avatar avatar-md-md rounded-circle shadow"
-                      alt="Landrick"
+                      alt="Air99"
                     />
                     <div className="section-title">
                       <h6 className="my-3">Calvin Carlo</h6>
                       <p className="text-muted para-desc mx-auto mb-0">
                         Start working with{" "}
                         <span className="text-primary fw-bold">
-                          Landrick
+                          Air99
                         </span>{" "}
                         that can provide everything you need.
                       </p>

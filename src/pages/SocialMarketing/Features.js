@@ -91,7 +91,7 @@ class Features extends Component {
                     <Row className="align-items-center">
                         <Col lg={5} md={{ size: 6, order: 2 }} xs={{ size: 12, order: 1 }}>
                             <div className="social-feature-right">
-                                <img src={social3} className="img-fluid" alt="Landrick" />
+                                <img src={social3} className="img-fluid" alt="Air99" />
                             </div>
                         </Col>
 

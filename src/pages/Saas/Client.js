@@ -90,7 +90,7 @@ class Client extends Component {
                 <p className="text-muted para-desc mx-auto mb-0">
                   Start working with{" "}
                   <span className="text-primary fw-bold">
-                    Landrick
+                    Air99
                   </span>{" "}
                   that can provide everything you need to generate awareness,
                   drive traffic, connect.
@@ -113,7 +113,7 @@ class Client extends Component {
                 <p className="text-muted para-desc mx-auto mb-0">
                   Start working with{" "}
                   <span className="text-primary fw-bold">
-                    Landrick
+                    Air99
                   </span>{" "}
                   that can provide everything you need to generate awareness,
                   drive traffic, connect.

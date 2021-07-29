@@ -62,7 +62,7 @@ class ContactForm extends Component {
                   <p className="text-light para-dark para-desc mb-0">
                     Start working with{" "}
                     <span className="text-success fw-bold">
-                      Landrick
+                      Air99
                     </span>{" "}
                     that can provide everything you need to generate awareness,
                     drive traffic, connect.

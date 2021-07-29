@@ -164,7 +164,7 @@ export default class Client extends Component {
                                 <img
                                   src={reviews.img}
                                   className="avatar avatar-small rounded-circle d-block mx-auto shadow-lg"
-                                  alt="Landrick"
+                                  alt="Air99"
                                 />
                                 <div className="content mt-4">
                                   <ul className="list-unstyled h6 text-warning mb-0">

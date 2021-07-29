@@ -48,7 +48,7 @@ class PageJobDetail extends Component {
       <React.Fragment>
         {/* breadcrumb */}
         <PageBreadcrumb pathItems={this.state.pathItems}>
-          <img src={logo} className="avatar avatar-small" alt="Landrick" />
+          <img src={logo} className="avatar avatar-small" alt="Air99" />
           <h4 className="title mt-4 mb-3"> Back-End Developer </h4>
           <p className="para-desc mx-auto text-muted">
             Launch your campaign and benefit from our expertise on designing and

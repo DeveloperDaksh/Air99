@@ -38,7 +38,7 @@ export default class Quick extends Component {
                 <p className="para-desc mx-auto text-muted mb-0">
                   Start working with{" "}
                   <span className="text-primary fw-bold">
-                    Landrick
+                    Air99
                   </span>{" "}
                   that can provide everything you need to generate awareness,
                   drive traffic, connect.

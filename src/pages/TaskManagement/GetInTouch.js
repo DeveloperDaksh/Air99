@@ -99,7 +99,7 @@ export default class GetInTouch extends Component {
                 <p className="text-muted para-desc mx-auto">
                   Start working with{" "}
                   <span className="text-primary fw-bold">
-                    Landrick
+                    Air99
                   </span>{" "}
                   that can provide everything you need to generate awareness,
                   drive traffic, connect.

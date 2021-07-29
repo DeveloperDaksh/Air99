@@ -72,7 +72,7 @@ class Features extends Component {
         <Container className="mt-100 mt-60">
           <Row className="align-items-center">
             <Col lg={5} md={6} className="mt-4 pt-2">
-              <img src={services} alt="Landrick" />
+              <img src={services} alt="Air99" />
             </Col>
 
             <Col lg={7} md={6} className="mt-4 pt-2">
@@ -104,7 +104,7 @@ class Features extends Component {
               xs={{ order: 1 }}
               className="mt-4 pt-2"
             >
-              <img src={marketing} alt="Landrick" />
+              <img src={marketing} alt="Air99" />
             </Col>
 
             <Col

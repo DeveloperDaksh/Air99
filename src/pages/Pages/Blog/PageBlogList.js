@@ -169,7 +169,7 @@ class PageBlogList extends Component {
                           <img
                             src={blog.image}
                             className="img-fluid"
-                            alt="Landrick"
+                            alt="Air99"
                           />
                           <div className="overlay bg-dark"></div>
                           <div className="author">
@@ -267,7 +267,7 @@ class PageBlogList extends Component {
                           <img
                             src={blog.image}
                             className="img-fluid"
-                            alt="Landrick"
+                            alt="Air99"
                           />
                           <div className="overlay bg-dark"></div>
                           <div className="author">

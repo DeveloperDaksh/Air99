@@ -147,7 +147,7 @@ class FeaturedItems extends Component {
                 <p className="text-muted mx-auto mx-lg-left para-desc mb-0">
                   Start working with{" "}
                   <span className="text-primary fw-bold">
-                    Landrick
+                    Air99
                   </span>{" "}
                   that can provide everything you need to generate awareness,
                   drive traffic, connect.
@@ -170,7 +170,7 @@ class FeaturedItems extends Component {
                             <img
                               src={product.image}
                               className="img-fluid"
-                              alt="Landrick"
+                              alt="Air99"
                             />
                           </Link>
                           <ul className="list-unstyled shop-icons">

@@ -150,7 +150,7 @@ class Faq extends Component {
                   <p className="text-muted para-desc mb-0">
                     Start working with{" "}
                     <span className="text-primary fw-bold">
-                      Landrick
+                      Air99
                     </span>{" "}
                     that can provide everything you need to generate awareness,
                     drive traffic, connect.
@@ -292,7 +292,7 @@ class Faq extends Component {
                           <h6 className="title mb-0">
                             {" "}
                             Is <span className="text-primary">
-                              Landrick
+                              Air99
                             </span>{" "}
                             safer to use with my account ?
                             <i

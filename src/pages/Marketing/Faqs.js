@@ -137,7 +137,7 @@ class Faqs extends Component {
                   <p className="text-muted para-desc mx-auto mb-0">
                     Start working with{" "}
                     <span className="text-primary fw-bold">
-                      Landrick
+                      Air99
                     </span>{" "}
                     that can provide everything you need to generate awareness,
                     drive traffic, connect.
@@ -290,7 +290,7 @@ class Faqs extends Component {
                           <h6 className="title mb-0">
                             {" "}
                             Is <span className="text-primary">
-                              Landrick
+                              Air99
                             </span>{" "}
                             safer to use with my account ?
                             <i
@@ -369,14 +369,14 @@ class Faqs extends Component {
                   <p className="text-muted para-desc mx-auto">
                     Start working with{" "}
                     <span className="text-primary fw-bold">
-                      Landrick
+                      Air99
                     </span>{" "}
                     that can provide everything you need to generate awareness,
                     drive traffic, connect.
                   </p>
 
                   <div className="watch-video mt-4 pt-2">
-                    <a href="https://1.envato.market/landrickreactjs" className="btn btn-primary m-1">Buy Now <span className="badge rounded-pill bg-danger ms-2">v3.1</span></a>
+                    <a href="https://1.envato.market/Air99reactjs" className="btn btn-primary m-1">Buy Now <span className="badge rounded-pill bg-danger ms-2">v3.1</span></a>
                     <Link to="#" onClick={this.openModal} className="btn btn-icon btn-pills btn-primary m-1 lightbox">
                       <FeatherIcon
                         icon="video"

@@ -194,7 +194,7 @@ class PageTeam extends Component {
                                 this.state.candidates2.map((candidate, key) =>
                                     <Col lg={4} md={6} xs={12} key={key} className="mt-4 pt-2">
                                         <div className="d-flex align-items-center">
-                                            <img src={candidate.image} className="avatar avatar-medium rounded-circle img-thumbnail" alt="Landrick"/>
+                                            <img src={candidate.image} className="avatar avatar-medium rounded-circle img-thumbnail" alt="Air99"/>
                                             <div className="content ms-3">
                                                 <h5 className="mb-0"><Link to="#" className="text-dark">{candidate.name}</Link></h5>
                                                 <small className="position text-muted">{candidate.designation}</small>

@@ -19,7 +19,7 @@ class Companies extends Component {
               <img
                 src={facebook}
                 className="avatar avatar-ex-sm"
-                alt="Landrick"
+                alt="Air99"
               />
             </Col>
 
@@ -27,7 +27,7 @@ class Companies extends Component {
               <img
                 src={instagram}
                 className="avatar avatar-ex-sm"
-                alt="Landrick"
+                alt="Air99"
               />
             </Col>
 
@@ -35,7 +35,7 @@ class Companies extends Component {
               <img
                 src={tinder}
                 className="avatar avatar-ex-sm"
-                alt="Landrick"
+                alt="Air99"
               />
             </Col>
 
@@ -43,7 +43,7 @@ class Companies extends Component {
               <img
                 src={whatsapp}
                 className="avatar avatar-ex-sm"
-                alt="Landrick"
+                alt="Air99"
               />
             </Col>
 
@@ -51,7 +51,7 @@ class Companies extends Component {
               <img
                 src={google}
                 className="avatar avatar-ex-sm"
-                alt="Landrick"
+                alt="Air99"
               />
             </Col>
 
@@ -59,7 +59,7 @@ class Companies extends Component {
               <img
                 src={dribble}
                 className="avatar avatar-ex-sm"
-                alt="Landrick"
+                alt="Air99"
               />
             </Col>
           </Row>

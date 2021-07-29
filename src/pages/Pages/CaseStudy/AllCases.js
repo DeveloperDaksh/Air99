@@ -261,7 +261,7 @@ class AllCases extends Component {
                         <img
                           src={cases.image}
                           className="img-fluid rounded work-image"
-                          alt="Landrick"
+                          alt="Air99"
                         />
                         <CardBody>
                           <div className="content">

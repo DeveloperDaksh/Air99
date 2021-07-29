@@ -85,7 +85,7 @@ class FeatureDescription extends Component {
                             <img
                               src={client01}
                               className="img-fluid avatar avatar-small rounded-circle shadow"
-                              alt="Landrick"
+                              alt="Air99"
                             />
                             <p className="text-muted mt-4">
                               " It seems that only fragments of the original
@@ -99,7 +99,7 @@ class FeatureDescription extends Component {
                             <img
                               src={client02}
                               className="img-fluid avatar avatar-small rounded-circle shadow"
-                              alt="Landrick"
+                              alt="Air99"
                             />
                             <p className="text-muted mt-4">
                               " It seems that only fragments of the original
@@ -113,7 +113,7 @@ class FeatureDescription extends Component {
                             <img
                               src={client03}
                               className="img-fluid avatar avatar-small rounded-circle shadow"
-                              alt="Landrick"
+                              alt="Air99"
                             />
                             <p className="text-muted mt-4">
                               " It seems that only fragments of the original
@@ -127,7 +127,7 @@ class FeatureDescription extends Component {
                             <img
                               src={client04}
                               className="img-fluid avatar avatar-small rounded-circle shadow"
-                              alt="Landrick"
+                              alt="Air99"
                             />
                             <p className="text-muted mt-4">
                               " It seems that only fragments of the original
@@ -141,7 +141,7 @@ class FeatureDescription extends Component {
                             <img
                               src={client05}
                               className="img-fluid avatar avatar-small rounded-circle shadow"
-                              alt="Landrick"
+                              alt="Air99"
                             />
                             <p className="text-muted mt-4">
                               " It seems that only fragments of the original
@@ -155,7 +155,7 @@ class FeatureDescription extends Component {
                             <img
                               src={client06}
                               className="img-fluid avatar avatar-small rounded-circle shadow"
-                              alt="Landrick"
+                              alt="Air99"
                             />
                             <p className="text-muted mt-4">
                               " It seems that only fragments of the original

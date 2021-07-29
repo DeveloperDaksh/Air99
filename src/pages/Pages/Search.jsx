@@ -3,10 +3,7 @@ import queryString from "query-string"
 import axios from 'axios'
 import { useLocation } from 'react-router'
 import FlightData from './FlightData'
-import {
-    Card, Button, CardImg, CardTitle, CardText, CardGroup,
-    CardSubtitle, CardBody
-  } from 'reactstrap';
+import { CardGroup} from 'reactstrap';
 import { makeStyles } from '@material-ui/core/styles';
 import LinearProgress from '@material-ui/core/LinearProgress';
 

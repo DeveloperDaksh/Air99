@@ -300,7 +300,7 @@ class PageContactOne extends Component {
               <Col lg={7} md={{ size: 6, order: 2 }} xs={{ order: 1 }}>
                 <Card className="border-0">
                   <CardBody className="p-0">
-                    <img src={contact} className="img-fluid" alt="Landrick" />
+                    <img src={contact} className="img-fluid" alt="Air99" />
                   </CardBody>
                 </Card>
               </Col>

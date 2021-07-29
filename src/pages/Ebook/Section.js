@@ -62,7 +62,7 @@ class Section extends Component {
 
               <Col lg={6} md={6} className="mt-4 mt-sm-0 pt-2 pt-sm-0">
                 <div className="bg-white p-5 rounded-md">
-                  <img src={book} className="img-fluid mx-auto d-block" alt="Landrick" />
+                  <img src={book} className="img-fluid mx-auto d-block" alt="Air99" />
                 </div>
               </Col>
             </Row>

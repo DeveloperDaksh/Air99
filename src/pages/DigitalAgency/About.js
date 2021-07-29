@@ -20,7 +20,7 @@ class About extends Component {
               xs={{ size: 12, order: 2 }}
               className="mt-4 mt-sm-0 pt-2 pt-sm-0"
             >
-              <img src={app} alt="Landrick" />
+              <img src={app} alt="Air99" />
             </Col>
 
             <Col lg={6} md={{ size: 6, order: 2 }} xs={{ size: 12, order: 2 }}>

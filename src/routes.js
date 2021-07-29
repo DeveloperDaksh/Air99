@@ -1,7 +1,7 @@
 import React from "react";
 
 // Root Include
-const Root = React.lazy(() => import("./pages/Home/indexRoot"));
+// const Root = React.lazy(() => import("./pages/Home/indexRoot"));
 
 //Main Index
 const Main = React.lazy(() => import("./pages/Home/indexMain"));

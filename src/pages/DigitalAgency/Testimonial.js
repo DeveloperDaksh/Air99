@@ -103,7 +103,7 @@ class Testimonial extends Component {
                               <img
                                 src={client1}
                                 className="avatar avatar-medium rounded-circle d-block mx-auto shadow-lg"
-                                alt="Landrick"
+                                alt="Air99"
                               />
                               <div className="content mt-4">
                                 <ul className="list-unstyled h6 text-warning mb-0">
@@ -145,7 +145,7 @@ class Testimonial extends Component {
                               <img
                                 src={client2}
                                 className="avatar avatar-medium rounded-circle d-block mx-auto shadow-lg"
-                                alt="Landrick"
+                                alt="Air99"
                               />
                               <div className="content mt-4">
                                 <ul className="list-unstyled h6 text-warning mb-0">
@@ -187,7 +187,7 @@ class Testimonial extends Component {
                               <img
                                 src={client4}
                                 className="avatar avatar-medium rounded-circle d-block mx-auto shadow-lg"
-                                alt="Landrick"
+                                alt="Air99"
                               />
                               <div className="content mt-4">
                                 <ul className="list-unstyled h6 text-warning mb-0">
@@ -229,7 +229,7 @@ class Testimonial extends Component {
                               <img
                                 src={client3}
                                 className="avatar avatar-medium rounded-circle d-block mx-auto shadow-lg"
-                                alt="Landrick"
+                                alt="Air99"
                               />
                               <div className="content mt-4">
                                 <ul className="list-unstyled h6 text-warning mb-0">
@@ -269,7 +269,7 @@ class Testimonial extends Component {
                               <img
                                 src={client5}
                                 className="avatar avatar-medium rounded-circle d-block mx-auto shadow-lg"
-                                alt="Landrick"
+                                alt="Air99"
                               />
                               <div className="content mt-4">
                                 <ul className="list-unstyled h6 text-warning mb-0">
@@ -311,7 +311,7 @@ class Testimonial extends Component {
                               <img
                                 src={client6}
                                 className="avatar avatar-medium rounded-circle d-block mx-auto shadow-lg"
-                                alt="Landrick"
+                                alt="Air99"
                               />
                               <div className="content mt-4">
                                 <ul className="list-unstyled h6 text-warning mb-0">

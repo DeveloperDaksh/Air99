@@ -22,13 +22,13 @@ export default class Pricing extends Component {
                 <p className="text-muted para-desc mx-auto mb-0">
                   Start working with{" "}
                   <span className="text-primary fw-bold">
-                    Landrick
+                    Air99
                     </span>{" "}
                     that can provide everything you need to generate awareness,
                     drive traffic, connect.
                   </p>
                 <Link
-                  to="https://1.envato.market/landrickreactjs"
+                  to="https://1.envato.market/Air99reactjs"
                   target="_blank"
                   className="btn btn-primary mt-4"
                 >

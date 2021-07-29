@@ -24,7 +24,7 @@ class AboutAuthor extends Component {
                     <img
                       src={client05}
                       className="img-fluid rounded-circle shadow-lg"
-                      alt="Landrick"
+                      alt="Air99"
                     />
                   </div>
                 </Col>

@@ -132,7 +132,7 @@ class Services extends Component {
                     <img
                       src={digital1}
                       className="img-fluid mx-auto d-block"
-                      alt="Landrick"
+                      alt="Air99"
                     />
                   </TabPane>
 
@@ -140,7 +140,7 @@ class Services extends Component {
                     <img
                       src={digital2}
                       className="img-fluid mx-auto d-block"
-                      alt="Landrick"
+                      alt="Air99"
                     />
                   </TabPane>
 
@@ -148,7 +148,7 @@ class Services extends Component {
                     <img
                       src={digital3}
                       className="img-fluid mx-auto d-block"
-                      alt="Landrick"
+                      alt="Air99"
                     />
                   </TabPane>
                 </TabContent>

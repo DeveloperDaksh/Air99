@@ -42,7 +42,7 @@ class SmallFeatures extends Component {
         <Container className="mt-100 mt-60">
           <Row className="align-items-center">
             <Col lg={5} md={{ size: 6, order: 2 }} xs={{ size: 12, order: 1 }}>
-              <img src={social} className="img-fluid" alt="Landrick" />
+              <img src={social} className="img-fluid" alt="Air99" />
             </Col>
 
             <Col

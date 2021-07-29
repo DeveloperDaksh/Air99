@@ -2356,7 +2356,7 @@ class Components extends Component {
                               <img
                                 src={blog1}
                                 className="img-fluid"
-                                alt="Landrick"
+                                alt="Air99"
                               />
                               <CardBody>
                                 <h5 className="card-title">
@@ -2404,7 +2404,7 @@ class Components extends Component {
                               <img
                                 src={blog1}
                                 className="img-fluid"
-                                alt="Landrick"
+                                alt="Air99"
                               />
                             </Card>
                           </Col>
@@ -2935,27 +2935,27 @@ class Components extends Component {
                         <img
                           src={client05}
                           className="img-fluid avatar avatar-ex-sm me-2 rounded"
-                          alt="Landrick"
+                          alt="Air99"
                         />
                         <img
                           src={client05}
                           className="img-fluid avatar avatar-md-sm me-2 rounded"
-                          alt="Landrick"
+                          alt="Air99"
                         />
                         <img
                           src={client05}
                           className="img-fluid avatar avatar-small me-2 rounded"
-                          alt="Landrick"
+                          alt="Air99"
                         />
                         <img
                           src={client05}
                           className="img-fluid avatar avatar-medium me-2 rounded"
-                          alt="Landrick"
+                          alt="Air99"
                         />
                         <img
                           src={client05}
                           className="img-fluid avatar avatar-large mt-3 mt-sm-0 me-2 rounded"
-                          alt="Landrick"
+                          alt="Air99"
                         />
                       </div>
                     </div>
@@ -2980,27 +2980,27 @@ class Components extends Component {
                         <img
                           src={client05}
                           className="img-fluid avatar avatar-ex-sm me-2 rounded-circle"
-                          alt="Landrick"
+                          alt="Air99"
                         />
                         <img
                           src={client05}
                           className="img-fluid avatar avatar-md-sm me-2 rounded-circle"
-                          alt="Landrick"
+                          alt="Air99"
                         />
                         <img
                           src={client05}
                           className="img-fluid avatar avatar-small me-2 rounded-circle"
-                          alt="Landrick"
+                          alt="Air99"
                         />
                         <img
                           src={client05}
                           className="img-fluid avatar avatar-medium me-2 rounded-circle"
-                          alt="Landrick"
+                          alt="Air99"
                         />
                         <img
                           src={client05}
                           className="img-fluid avatar avatar-large mt-3 mt-sm-0 me-2 rounded-circle"
-                          alt="Landrick"
+                          alt="Air99"
                         />
                       </div>
                     </div>
@@ -3513,25 +3513,25 @@ class Components extends Component {
                           src={Email}
                           height="50"
                           className="me-3"
-                          alt="Landrick"
+                          alt="Air99"
                         />
                         <img
                           src={bitcoin}
                           height="50"
                           className="me-3"
-                          alt="Landrick"
+                          alt="Air99"
                         />
                         <img
                           src={calendar}
                           height="50"
                           className="me-3"
-                          alt="Landrick"
+                          alt="Air99"
                         />
                         <img
                           src={location}
                           height="50"
                           className="me-3"
-                          alt="Landrick"
+                          alt="Air99"
                         />
                       </div>
                     </div>

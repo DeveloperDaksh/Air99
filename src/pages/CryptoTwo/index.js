@@ -71,7 +71,7 @@ export default class CryptoTwo extends Component {
                                     <img
                                         src={partner.image}
                                         className="avatar avatar-ex-sm"
-                                        alt="Landrick"
+                                        alt="Air99"
                                     />
                                 </Col>
                             ))}

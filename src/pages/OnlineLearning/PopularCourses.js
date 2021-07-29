@@ -143,7 +143,7 @@ class PopularCourses extends Component {
                       <img
                         src={course.profImg}
                         className="avatar avatar-md-sm rounded-circle shadow"
-                        alt="Landrick"
+                        alt="Air99"
                       />
                       <div className="ms-2">
                         <h6 className="mb-0">

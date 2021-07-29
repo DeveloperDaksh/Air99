@@ -152,7 +152,7 @@ class WorkProcess extends Component {
                   <p className="text-muted para-desc mx-auto mb-0">
                     Start working with{" "}
                     <span className="text-primary fw-bold">
-                      Landrick
+                      Air99
                     </span>{" "}
                     that can provide everything you need to generate awareness,
                     drive traffic, connect.
@@ -160,7 +160,7 @@ class WorkProcess extends Component {
 
                   <div className="mt-3">
                     <a
-                      href="https://1.envato.market/landrickreactjs"
+                      href="https://1.envato.market/Air99reactjs"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="btn btn-primary mt-2 me-2"

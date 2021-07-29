@@ -391,7 +391,7 @@ class ShopProducts extends Component {
                                 src={product.image}
                                 className="img-fluid avatar avatar-small rounded shadow"
                                 style={{ height: "auto" }}
-                                alt="Landrick"
+                                alt="Air99"
                               />
                             </Link>
                             <div className="flex-1 content ms-3">
@@ -494,7 +494,7 @@ class ShopProducts extends Component {
                             <img
                               src={product.image}
                               className="img-fluid"
-                              alt="Landrick"
+                              alt="Air99"
                             />
                           </Link>
                           <Link
@@ -504,7 +504,7 @@ class ShopProducts extends Component {
                             <img
                               src={product.imgOverlay}
                               className="img-fluid"
-                              alt="Landrick"
+                              alt="Air99"
                             />
                           </Link>
                           <ul className="list-unstyled shop-icons">

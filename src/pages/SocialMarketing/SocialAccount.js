@@ -26,7 +26,7 @@ class SocialAccount extends Component {
                   </span>{" "}
                   user using{" "}
                   <span className="fw-bold text-primary">
-                    Landrick.
+                    Air99.
                   </span>{" "}
                   to drive customer engagement, inspire brand loyalty, and grow
                   their business
@@ -167,7 +167,7 @@ class SocialAccount extends Component {
           <Row className="align-items-center">
             <Col lg={5} md={6} xs={12}>
               <div className="social-feature-left">
-                <img src={social} className="img-fluid" alt="Landrick" />
+                <img src={social} className="img-fluid" alt="Air99" />
               </div>
             </Col>
 

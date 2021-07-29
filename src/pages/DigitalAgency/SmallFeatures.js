@@ -39,7 +39,7 @@ class SmallFeatures extends Component {
         <Container className="mt-100 mt-60">
           <Row className="align-items-center">
             <Col md={6}>
-              <img src={about} className="img-fluid" alt="Landrick" />
+              <img src={about} className="img-fluid" alt="Air99" />
             </Col>
 
             <Col md={6} className="mt-4 mt-sm-0 pt-2 pt-sm-0">

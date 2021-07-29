@@ -100,7 +100,7 @@ class Testimonials extends Component {
                               <img
                                 src={client1}
                                 className="img-fluid"
-                                alt="Landrick"
+                                alt="Air99"
                               />
                             </Col>
 
@@ -148,7 +148,7 @@ class Testimonials extends Component {
                               <img
                                 src={client2}
                                 className="img-fluid"
-                                alt="Landrick"
+                                alt="Air99"
                               />
                             </Col>
 
@@ -196,7 +196,7 @@ class Testimonials extends Component {
                               <img
                                 src={client3}
                                 className="img-fluid"
-                                alt="Landrick"
+                                alt="Air99"
                               />
                             </Col>
 
@@ -244,7 +244,7 @@ class Testimonials extends Component {
                               <img
                                 src={client4}
                                 className="img-fluid"
-                                alt="Landrick"
+                                alt="Air99"
                               />
                             </Col>
 
@@ -292,7 +292,7 @@ class Testimonials extends Component {
                               <img
                                 src={client5}
                                 className="img-fluid"
-                                alt="Landrick"
+                                alt="Air99"
                               />
                             </Col>
 
@@ -340,7 +340,7 @@ class Testimonials extends Component {
                               <img
                                 src={client6}
                                 className="img-fluid"
-                                alt="Landrick"
+                                alt="Air99"
                               />
                             </Col>
 

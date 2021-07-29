@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import { Link } from 'react-router-dom';
 import queryString from 'query-string';
 import {
@@ -12,6 +11,7 @@ import {
   Card,
   CardBody,
   Col,
+  UncontrolledCollapse,
   Container,
   Form,
   Input,
@@ -25,9 +25,6 @@ import {
 
 //Import Icons
 import FeatherIcon from 'feather-icons-react';
-import Button from '@material-ui/core/Button';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 
 //Import Flatepicker
@@ -71,7 +68,8 @@ export default class Section extends Component {
       adult:0,
       children:0,
       infant:0,
-      infantLap:0
+      infantLap:0,
+      error:""
     };
     // this.toggleIt.bind(this)
     // this.setLastClicked.bind(this)
@@ -80,6 +78,7 @@ export default class Section extends Component {
     this.handleClose = this.handleClose.bind(this)
     this.handleTravellerCounter= this.handleTravellerCounter.bind(this)
     // this.findAcc = this.findAcc.bind(this)  
+    
   }
   handleTravellerCounter(event){
     console.log(event.target);
@@ -92,12 +91,22 @@ export default class Section extends Component {
   handleClose = ()=>{
     this.setState({open:false})
   }
-
+  
   // findAcc (){
-  //   var curr  = new Date()
-  //   if(this.state.checkin.getTime())
-  // }
+    //   var curr  = new Date()
+    //   if(this.state.checkin.getTime())
+    // }
   async formSubmit(event) {
+    this.setState({error:""})
+    event.preventDefault();
+    if(!(!!this.state.adult)){
+      setTimeout(()=>{
+        this.setState({error:"Minimum One Adult is Required"})
+      
+      },500)
+      return
+    }
+    this.setState({error:""})
     const qs = queryString.stringify({
       source: this.state.source,
       destination: this.state.destination,
@@ -109,14 +118,12 @@ export default class Section extends Component {
     console.log(qs);
     window.location.href = `search-result?${qs}`;
 
-    event.preventDefault();
     return;
     // console.log(this.state);
   }
   // const [dropdownOpen, setDropdownOpen] = useState(false);
 
   // const toggle = () => setDropdownOpen(prevState => !prevState);
-
   render() {
     let { address, coordinates } = this.state;
     const handleSelect = async (value) => {
@@ -125,6 +132,17 @@ export default class Section extends Component {
       this.state.setAddress(value);
       this.state.setCoordinates(latLng);
     };
+    const isValid = () =>{
+      return !!this.state.adult
+    }
+    const cDate = () =>{
+      let d = new Date()
+      d.setHours(0)
+      d.setMilliseconds(0)
+      d.setMinutes(0)
+      d.setSeconds(0)
+      return d;
+    }
     return (
       <React.Fragment>
         <section
@@ -134,30 +152,7 @@ export default class Section extends Component {
           <div className="bg-overlay"></div>
           <Container>
             <Row className="align-items-center">
-              <Col lg={7} md={6}>
-                <div className="title-heading mt-4">
-                  <h1 className="display-4 fw-bold text-white title-dark mb-3">
-                    Booking tour <br /> made easy
-                  </h1>
-                  <p className="para-desc text-white-50">
-                    Launch your campaign and benefit from our expertise on
-                    designing and managing conversion centered bootstrap v5 html
-                    page.
-                  </p>
-                  <div className="mt-4">
-                    <Link
-                      to="#"
-                      className="btn btn-icon btn-pills btn-lg btn-light"
-                    >
-                      <i>
-                        <FeatherIcon icon="arrow-down" className="icons" />
-                      </i>
-                    </Link>
-                  </div>
-                </div>
-              </Col>
-
-              <Col lg={5} md={6} className="mt-4 pt-2 mt-sm-0 pt-sm-0">
+              <Col lg={12} md={6} className="mt-4 pt-2 mt-sm-0 pt-sm-0">
                 <Card className="shadow rounded border-0 ms-lg-5">
                   <CardBody>
                     <h5 className="card-title">You can start search here</h5>
@@ -270,7 +265,7 @@ export default class Section extends Component {
                               className="flatpickr flatpickr-input form-control"
                               placeholder="Pick a date"
                               options={{
-                                minDate: new Date(),
+                                minDate: cDate(),
                                 altInput: true,
                                 // altFormat: "F j, Y",
                                 dateFormat: 'Y-m-d',
@@ -344,47 +339,39 @@ export default class Section extends Component {
                         </Col>
                         <Col md={6}>
                         <div>
-      <Button color="primary" variant="contained" onClick ={this.handleClickOpen}>
+                        
+      <button type="button" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle btn btn-secondary" id="toggler" toggle={()=>{}} onClick ={this.handleClickOpen}>
         Travellers
-      </Button>
-      
-      <Dialog
-        open={this.state.open}
-        onClose={this.handleClose}
-        aria-labelledby="alert-dialog-slide-title"
-        aria-describedby="alert-dialog-slide-description"
-      >
-        <DialogContent>
+      </button>
+      {isValid() &&<span> Adults:{this.state.adult} Children:{this.state.children+this.state.infant+this.state.infantLap}</span>}
+      {this.state.error && <p style={{color:"red"}}>{this.state.error}</p>}
+      <UncontrolledCollapse toggler="#toggler">
+      <DialogContent>
          <div style={{display:"flex",justifyContent:"space-between",alignContent:"center"}}>
          <h5>Adult : </h5>
         <div>
-        <button name="adult" type="button" value={-1} onClick={this.handleTravellerCounter}>-</button>{this.state.adult}<button name="adult" type="button" value={1} onClick={this.handleTravellerCounter}>+</button>
+        <button style={{padding:"5px",marginRight:"5px"}} name="adult" type="button" value={-1} onClick={this.handleTravellerCounter}>-</button>{this.state.adult}<button style={{padding:"5px",marginLeft:"5px"}} name="adult" type="button" value={1} onClick={this.handleTravellerCounter}>+</button>
         </div>
          </div>
          <div style={{display:"flex",justifyContent:"space-between",alignContent:"center"}}>
          <h5>Children : </h5>
-<div>         <button name="children" type="button" value={-1} onClick={this.handleTravellerCounter}>-</button>{this.state.children}<button name="children" type="button" value={1} onClick={this.handleTravellerCounter}>+</button>
+<div>         <button style={{padding:"5px",marginRight:"5px"}} name="children" type="button" value={-1} onClick={this.handleTravellerCounter}>-</button>{this.state.children}<button style={{padding:"5px",marginLeft:"5px"}} name="children" type="button" value={1} onClick={this.handleTravellerCounter}>+</button>
 </div>
          </div>
          <div style={{display:"flex",justifyContent:"space-between",alignContent:"center"}}>
          <h5>Infant(Below 2) : </h5>
 <div>
-<button name="infant" type="button" value={-1} onClick={this.handleTravellerCounter}>-</button>{this.state.infant}<button name="infant" type="button" value={1} onClick={this.handleTravellerCounter}>+</button>
+<button style={{padding:"5px",marginRight:"5px"}} name="infant" type="button" value={-1} onClick={this.handleTravellerCounter}>-</button>{this.state.infant}<button style={{padding:"5px",marginLeft:"5px"}} name="infant" type="button" value={1} onClick={this.handleTravellerCounter}>+</button>
 
 </div>
          </div>
          <div style={{display:"flex",justifyContent:"space-between",alignContent:"center"}}>
          <h5>Infant (Lap) : </h5>
-<div>         <button name="infantLap" type="button" value={-1} onClick={this.handleTravellerCounter}>-</button>{this.state.infantLap}<button name="infantLap" type="button" value={1} onClick={this.handleTravellerCounter}>+</button>
+<div>         <button style={{padding:"5px",marginRight:"5px"}} name="infantLap" type="button" value={-1} onClick={this.handleTravellerCounter}>-</button>{this.state.infantLap}<button style={{padding:"5px",marginLeft:"5px"}} name="infantLap" type="button" value={1} onClick={this.handleTravellerCounter}>+</button>
 </div>
          </div>
         </DialogContent>
-        <DialogActions>
-          <Button onClick={this.handleClose} color="primary">
-            Submit
-          </Button>
-        </DialogActions>
-      </Dialog>
+      </UncontrolledCollapse>
     </div>
                        </Col>
                         

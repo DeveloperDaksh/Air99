@@ -18,7 +18,7 @@ class Subscribe extends Component {
               <img
                 src={download}
                 className="img-fluid mx-auto d-block"
-                alt="Landrick"
+                alt="Air99"
               />
             </Col>
 
@@ -44,7 +44,7 @@ class Subscribe extends Component {
                 <p className="text-muted para-desc mb-0">
                   Start working with{" "}
                   <span className="text-primary fw-bold">
-                    Landrick
+                    Air99
                   </span>{" "}
                   that can provide everything you need to generate awareness,
                   drive traffic, connect.

@@ -106,7 +106,7 @@ class Testimonials extends Component {
                           <img
                             src={client6}
                             className="img-fluid avatar avatar-small mt-3 rounded-circle mx-auto shadow"
-                            alt="Landrick"
+                            alt="Air99"
                           />
                           <ul className="list-unstyled mb-0 mt-3">
                             <li className="list-inline-item">
@@ -143,7 +143,7 @@ class Testimonials extends Component {
                           <img
                             src={client5}
                             className="img-fluid avatar avatar-small mt-3 rounded-circle mx-auto shadow"
-                            alt="Landrick"
+                            alt="Air99"
                           />
                           <ul className="list-unstyled mb-0 mt-3">
                             <li className="list-inline-item">
@@ -181,7 +181,7 @@ class Testimonials extends Component {
                           <img
                             src={client4}
                             className="img-fluid avatar avatar-small mt-3 rounded-circle mx-auto shadow"
-                            alt="Landrick"
+                            alt="Air99"
                           />
                           <ul className="list-unstyled mb-0 mt-3">
                             <li className="list-inline-item">
@@ -219,7 +219,7 @@ class Testimonials extends Component {
                           <img
                             src={client3}
                             className="img-fluid avatar avatar-small mt-3 rounded-circle mx-auto shadow"
-                            alt="Landrick"
+                            alt="Air99"
                           />
                           <ul className="list-unstyled mb-0 mt-3">
                             <li className="list-inline-item">
@@ -256,7 +256,7 @@ class Testimonials extends Component {
                           <img
                             src={client2}
                             className="img-fluid avatar avatar-small mt-3 rounded-circle mx-auto shadow"
-                            alt="Landrick"
+                            alt="Air99"
                           />
                           <ul className="list-unstyled mb-0 mt-3">
                             <li className="list-inline-item">
@@ -293,7 +293,7 @@ class Testimonials extends Component {
                           <img
                             src={client1}
                             className="img-fluid avatar avatar-small mt-3 rounded-circle mx-auto shadow"
-                            alt="Landrick"
+                            alt="Air99"
                           />
                           <ul className="list-unstyled mb-0 mt-3">
                             <li className="list-inline-item">

@@ -56,7 +56,7 @@ class Section extends Component {
                               <img
                                 src={category.img}
                                 className="avatar avatar-md-sm"
-                                alt="Landrick"
+                                alt="Air99"
                               />
                             </div>
                             <div className="content mt-3">

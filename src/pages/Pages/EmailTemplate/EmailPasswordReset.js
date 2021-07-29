@@ -50,7 +50,7 @@ class EmailPasswordReset extends Component {
                 }}
               >
                 <th scope="col">
-                  <img src={logo} height="24" alt="Landrick" />
+                  <img src={logo} height="24" alt="Air99" />
                 </th>
               </tr>
             </thead>
