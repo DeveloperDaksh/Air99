@@ -5,6 +5,7 @@
   "dependencies": {
     "@iconscout/react-unicons": "^1.1.6",
     "@material-ui/core": "^4.12.2",
+    "@material-ui/lab": "^4.0.0-alpha.60",
     "airline-codes": "^1.0.2",
     "airlines": "^1.0.0",
     "amadeus": "^5.7.0",

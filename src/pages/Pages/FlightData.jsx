@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import airlines from 'airline-codes';
-import { parse } from 'iso8601-duration';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import airlines from "airline-codes";
+import { parse } from "iso8601-duration";
+import axios from "axios";
 import {
   Button,
   Card,
@@ -11,7 +11,7 @@ import {
   CardGroup,
   CardSubtitle,
   CardBody,
-} from 'reactstrap';
+} from "reactstrap";
 import {
   Input,
   TextField,
@@ -20,10 +20,10 @@ import {
   DialogContent,
   DialogContentText,
   DialogTitle,
-} from '@material-ui/core';
+} from "@material-ui/core";
 
-import Amadeus from 'amadeus';
-import UserDataForm from './userDataForm';
+import Amadeus from "amadeus";
+import UserDataForm from "./userDataForm";
 const FlightData = (props) => {
   const [details, setDetails] = useState(false);
   const [open, setOpen] = useState(false);
@@ -35,12 +35,13 @@ const FlightData = (props) => {
 
   const handleClose = () => {
     setOpen(false);
+    setArr([<UserDataForm />]);
   };
   const [arr, setArr] = useState([<UserDataForm />]);
   if (props.error === true) {
     return (
-      <div style={{ textAlign: 'center' }}>
-        <Card style={{ width: '85vw' }}>
+      <div style={{ textAlign: "center" }}>
+        <Card style={{ width: "85vw" }}>
           <CardBody>
             <h3>Unable to Find Flights for the Given Place</h3>
             <p>Check the Places or Try Again Later!</p>
@@ -53,13 +54,13 @@ const FlightData = (props) => {
   const segs = props.details.segments?.length;
   const dur = parse(props.details.itineraries[0].duration);
   return (
-    <div style={{ textAlign: 'center' }}>
-      <Card style={{ width: '85vw', marginBottom: '75px' }}>
+    <div style={{ textAlign: "center" }}>
+      <Card style={{ width: "85vw", marginBottom: "75px" }}>
         <CardBody>
-          <CardText style={{ display: 'flex', justifyContent: 'space-around' }}>
+          <CardText style={{ display: "flex", justifyContent: "space-around" }}>
             <div>
               <h4>
-                {' '}
+                {" "}
                 <strong>
                   {/* {airlines
                     .findWhere({
@@ -67,24 +68,24 @@ const FlightData = (props) => {
                         .code,
                     })
                     .get('name')} */}
-                </strong>{' '}
+                </strong>{" "}
               </h4>
               <h4>&#128337; : {`${dur.hours} Hours ${dur.minutes} Minutes`}</h4>
             </div>
-            <div style={{ textAlign: 'left' }}>
+            <div style={{ textAlign: "left" }}>
               <div>
-                From :{' '}
+                From :{" "}
                 <h3>
-                  {props.details.itineraries[0].segments[0].departure.iataCode}{' '}
+                  {props.details.itineraries[0].segments[0].departure.iataCode}{" "}
                 </h3>
               </div>
               <div>
                 <h6>
                   <strong>
                     <em>
-                      Departure :{' '}
+                      Departure :{" "}
                       {new Date(
-                        props.details.itineraries[0].segments[0].departure.at,
+                        props.details.itineraries[0].segments[0].departure.at
                       ).toString()}
                     </em>
                   </strong>
@@ -93,15 +94,15 @@ const FlightData = (props) => {
               <h6>
                 <strong>
                   <em>
-                    Landing :{' '}
+                    Landing :{" "}
                     {new Date(
-                      props.details.itineraries[0].segments[0].arrival.at,
+                      props.details.itineraries[0].segments[0].arrival.at
                     ).toString()}
                   </em>
-                </strong>{' '}
+                </strong>{" "}
               </h6>
               <div>
-                At :{' '}
+                At :{" "}
                 <h3>
                   {props.details.itineraries[0].segments[0].arrival.iataCode}
                 </h3>
@@ -114,11 +115,11 @@ const FlightData = (props) => {
                 </h5>
               </div>
               <Button onClick={() => setDetails((prev) => !prev)}>
-                {details ? 'Hide Details' : 'More Details'}
+                {details ? "Hide Details" : "More Details"}
               </Button>
               {details ? (
                 <h2>
-                  Price:{props.details.price.total}{' '}
+                  Price:{props.details.price.total}{" "}
                   {props.details.price.currency}
                 </h2>
               ) : (
@@ -139,16 +140,28 @@ const FlightData = (props) => {
           scroll="body"
         >
           {arr}
-          <Button
-            style={{ textAlign: 'center' }}
-            onClick={() => setArr((arr) => [...arr, <UserDataForm />])}
-            color="secondary"
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <Button
+              style={{ textAlign: "center", margin: "auto" }}
+              onClick={() => setArr((arr) => [...arr, <UserDataForm />])}
+              color="secondary"
+            >
+              Add Another Member
+            </Button>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-around",
+              margin: "15px 0",
+            }}
           >
-            Add Another Member
-          </Button>
+            <Button style={{ textAlign: "center" }}>Call Now</Button>
+            <Button style={{ textAlign: "center" }}>Contact Us</Button>
+          </div>
         </Dialog>
         {details && (
-          <div style={{ backgroundColor: '#ddd' }}>
+          <div style={{ backgroundColor: "#ddd" }}>
             <p>
               Number of Seats Available:{props.details.numberOfBookableSeats}
             </p>

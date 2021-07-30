@@ -1,12 +1,6 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import queryString from 'query-string';
-import {
-  geocodeByAddress,
-  geocodeByPlaceId,
-  getLatLng,
-} from 'react-autocomplete-places';
-import PlacesAutocomplete from 'react-autocomplete-places';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import queryString from "query-string";
 import {
   Card,
   CardBody,
@@ -21,17 +15,19 @@ import {
   DropdownToggle,
   DropdownItem,
   DropdownMenu,
-} from 'reactstrap';
-
+} from "reactstrap";
+import TextField from "@material-ui/core/TextField";
+import Autocomplete from "@material-ui/lab/Autocomplete";
 //Import Icons
-import FeatherIcon from 'feather-icons-react';
-import DialogContent from '@material-ui/core/DialogContent';
+import FeatherIcon from "feather-icons-react";
+import DialogContent from "@material-ui/core/DialogContent";
 
 //Import Flatepicker
-import 'flatpickr/dist/themes/material_blue.css';
-import Flatpickr from 'react-flatpickr';
+import "flatpickr/dist/themes/material_blue.css";
+import Flatpickr from "react-flatpickr";
 
-import travelBg from '../../assets/images/travel/bg.jpg';
+import travelBg from "../../assets/images/travel/bg.jpg";
+import axios from "axios";
 
 export default class Section extends Component {
   // constructor(props) {
@@ -44,7 +40,7 @@ export default class Section extends Component {
   //     dropdownOpen: false,
   //     lastClicked: null,
   //     flightClass: '',
-      
+
   //   };
   //   // this.toggleIt.bind(this)
   //   // this.setLastClicked.bind(this)
@@ -52,64 +48,74 @@ export default class Section extends Component {
 
   //   // this.findAcc = this.findAcc.bind(this)
   // }
+
   constructor(props) {
     super(props);
     this.state = {
       CheckIn: new Date(),
       CheckOut: new Date(),
-      source : "",
+      source: "",
       destination: "",
-      dropdownOpen:false,
-      lastClicked:null,
-      flightClass:"",
+      dropdownOpen: false,
+      lastClicked: null,
+      flightClass: "",
       coordinates: { lat: null, lng: null },
-      address: '',
-      open:false,
-      adult:0,
-      children:0,
-      infant:0,
-      infantLap:0,
-      error:""
+      address: "",
+      open: false,
+      adult: 0,
+      children: 0,
+      infant: 0,
+      infantLap: 0,
+      error: "",
+      AuthToken: "",
+      sourceSuggestions: [],
+      destinationSuggestions: [],
+      sourceCode: "",
+      destinationCode: "",
     };
     // this.toggleIt.bind(this)
     // this.setLastClicked.bind(this)
-    this.formSubmit = this.formSubmit.bind(this) 
-    this.handleClickOpen = this.handleClickOpen.bind(this)
-    this.handleClose = this.handleClose.bind(this)
-    this.handleTravellerCounter= this.handleTravellerCounter.bind(this)
-    // this.findAcc = this.findAcc.bind(this)  
-    
+    this.formSubmit = this.formSubmit.bind(this);
+    this.handleClickOpen = this.handleClickOpen.bind(this);
+    this.handleClose = this.handleClose.bind(this);
+    this.handleTravellerCounter = this.handleTravellerCounter.bind(this);
+    this.getToken = this.getToken.bind(this);
+    // this.findAcc = this.findAcc.bind(this)
   }
-  handleTravellerCounter(event){
+  handleTravellerCounter(event) {
     console.log(event.target);
-    this.setState((prev)=>({[event.target.name] : Math.max(0,prev[event.target.name] + parseInt(event.target.value))}))
+    this.setState((prev) => ({
+      [event.target.name]: Math.max(
+        0,
+        prev[event.target.name] + parseInt(event.target.value)
+      ),
+    }));
     console.log(this.state);
   }
   handleClickOpen = () => {
-    this.setState({open:true});
-  }
-  handleClose = ()=>{
-    this.setState({open:false})
-  }
-  
+    this.setState({ open: true });
+  };
+  handleClose = () => {
+    this.setState({ open: false });
+  };
+
   // findAcc (){
-    //   var curr  = new Date()
-    //   if(this.state.checkin.getTime())
-    // }
+  //   var curr  = new Date()
+  //   if(this.state.checkin.getTime())
+  // }
   async formSubmit(event) {
-    this.setState({error:""})
+    this.setState({ error: "" });
     event.preventDefault();
-    if(!(!!this.state.adult)){
-      setTimeout(()=>{
-        this.setState({error:"Minimum One Adult is Required"})
-      
-      },500)
-      return
+    if (!!!this.state.adult) {
+      setTimeout(() => {
+        this.setState({ error: "Minimum One Adult is Required" });
+      }, 500);
+      return;
     }
-    this.setState({error:""})
+    this.setState({ error: "" });
     const qs = queryString.stringify({
-      source: this.state.source,
-      destination: this.state.destination,
+      source: this.state.sourceCode,
+      destination: this.state.destinationCode,
       checkin: this.state.CheckIn.toISOString().slice(0, 10),
       flightClass: this.state.flightClass,
       // checkout : this.state.CheckOut.toISOString().slice(0,10)
@@ -124,25 +130,84 @@ export default class Section extends Component {
   // const [dropdownOpen, setDropdownOpen] = useState(false);
 
   // const toggle = () => setDropdownOpen(prevState => !prevState);
+
+  async getToken() {
+    try {
+      let resp = await axios.post(
+        "https://test.api.amadeus.com/v1/security/oauth2/token",
+        new URLSearchParams({
+          grant_type: "client_credentials",
+          client_id: `${process.env.REACT_APP_CLIENT_ID}`,
+          client_secret: `${process.env.REACT_APP_SECRET}`,
+        })
+      );
+      if (!resp.data.access_token) throw resp;
+      this.setState({ AuthToken: resp.data.access_token });
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  componentWillMount() {
+    this.getToken();
+  }
   render() {
-    let { address, coordinates } = this.state;
-    const handleSelect = async (value) => {
-      const results = await geocodeByAddress(value);
-      const latLng = await getLatLng(results[0]);
-      this.state.setAddress(value);
-      this.state.setCoordinates(latLng);
+    const searchSource = async (e, newValue) => {
+      await this.setState({ source: e?.target?.value });
+      let resp;
+      if (this.state.source !== "")
+        try {
+          resp = await axios.get(
+            `https://test.api.amadeus.com/v1/reference-data/locations?subType=AIRPORT&keyword=${this.state.source}`,
+            {
+              headers: {
+                Authorization: "Bearer " + this.state.AuthToken,
+              },
+            }
+          );
+          await this.setState({ sourceSuggestions: resp.data.data });
+        } catch (error) {
+          console.log(error);
+        }
+      else {
+        this.setState({ sourceSuggestions: [] });
+      }
     };
-    const isValid = () =>{
-      return !!this.state.adult
-    }
-    const cDate = () =>{
-      let d = new Date()
-      d.setHours(0)
-      d.setMilliseconds(0)
-      d.setMinutes(0)
-      d.setSeconds(0)
+    const searchDestination = async (e) => {
+      await this.setState({ destination: e?.target?.value });
+      let resp;
+      if (this.state.destination !== "")
+        try {
+          resp = await axios.get(
+            `https://test.api.amadeus.com/v1/reference-data/locations?subType=AIRPORT&keyword=${this.state.destination}`,
+            {
+              headers: {
+                Authorization: "Bearer " + this.state.AuthToken,
+              },
+            }
+          );
+          await this.setState({ destinationSuggestions: resp.data.data });
+        } catch (error) {
+          console.log(error);
+        }
+      else {
+        this.setState({ destinationSuggestions: [] });
+      }
+    };
+
+    const isValid = () => {
+      return !!this.state.adult;
+    };
+
+    const cDate = () => {
+      let d = new Date();
+      d.setHours(0);
+      d.setMilliseconds(0);
+      d.setMinutes(0);
+      d.setSeconds(0);
       return d;
-    }
+    };
+    const sourceSuggestions = this.state.sourceSuggestions;
+    const destinationSuggestions = this.state.destinationSuggestions;
     return (
       <React.Fragment>
         <section
@@ -163,72 +228,28 @@ export default class Section extends Component {
                           <div className="mb-3">
                             <Label className="form-label">From</Label>
                             <div className="form-icon position-relative">
-                              <i>
-                                <FeatherIcon
-                                  icon="map-pin"
-                                  className="fea icon-sm icons"
-                                />
-                              </i>
-                              {/* <Input
-                                type="text"
-                                className="form-control ps-5"
-                                placeholder="Where"
-                                name="s"
-                                required
-                                onChange={(place) => {
-                                  this.setState({ source: place.target.value });
-                                }}
-                              /> */}
-                              <PlacesAutocomplete
-                                value={address}
-                                onChange={(place) => {
+                              <Autocomplete
+                                fullWidth
+                                onChange={(event, newValue) => {
                                   this.setState({
-                                    address: place,
+                                    source: newValue?.address?.cityName || "",
+                                    sourceCode: newValue?.iataCode || "",
                                   });
                                 }}
-                                onSelect={handleSelect}
-                              >
-                                {({
-                                  getInputProps,
-                                  suggestions,
-                                  getSuggestionItemProps,
-                                  loading,
-                                }) => (
-                                  <div>
-                                    <p>Latitude: {coordinates.lat}</p>
-                                    <p>Longitude: {coordinates.lng}</p>
-
-                                    <input
-                                      {...getInputProps({
-                                        placeholder: 'Type address',
-                                      })}
-                                    />
-
-                                    <div>
-                                      {loading ? <div>...loading</div> : null}
-
-                                      {suggestions.map((suggestion) => {
-                                        const style = {
-                                          backgroundColor: suggestion.active
-                                            ? '#41b6e6'
-                                            : '#fff',
-                                        };
-
-                                        return (
-                                          <div
-                                            {...getSuggestionItemProps(
-                                              suggestion,
-                                              { style },
-                                            )}
-                                          >
-                                            {suggestion.description}
-                                          </div>
-                                        );
-                                      })}
-                                    </div>
-                                  </div>
+                                options={sourceSuggestions}
+                                onInputChange={searchSource}
+                                inputValue={this.state.source}
+                                getOptionLabel={(option) =>
+                                  `${option?.name} ${option?.subType}, ${option?.address?.cityName}`
+                                }
+                                renderInput={(params) => (
+                                  <TextField
+                                    {...params}
+                                    // label="Where"
+                                    // variant="outlined"
+                                  />
                                 )}
-                              </PlacesAutocomplete>
+                              />
                             </div>
                           </div>
                         </Col>
@@ -236,23 +257,28 @@ export default class Section extends Component {
                           <div className="mb-3">
                             <Label className="form-label">To</Label>
                             <div className="form-icon position-relative">
-                              <i>
-                                <FeatherIcon
-                                  icon="map-pin"
-                                  className="fea icon-sm icons"
-                                />
-                              </i>
-                              <Input
-                                type="text"
-                                className="form-control ps-5"
-                                placeholder="Where"
-                                name="s"
-                                required
-                                onChange={(place) => {
+                              <Autocomplete
+                                fullWidth
+                                onChange={(event, newValue) => {
                                   this.setState({
-                                    destination: place.target.value,
+                                    destination:
+                                      newValue?.address?.cityName || "",
+                                    destinationCode: newValue?.iataCode || "",
                                   });
                                 }}
+                                options={destinationSuggestions}
+                                onInputChange={searchDestination}
+                                inputValue={this.state.destination}
+                                getOptionLabel={(option) =>
+                                  `${option?.name} ${option?.subType}, ${option?.address?.cityName}`
+                                }
+                                renderInput={(params) => (
+                                  <TextField
+                                    {...params}
+                                    // label="Where"
+                                    // variant="outlined"
+                                  />
+                                )}
                               />
                             </div>
                           </div>
@@ -268,7 +294,7 @@ export default class Section extends Component {
                                 minDate: cDate(),
                                 altInput: true,
                                 // altFormat: "F j, Y",
-                                dateFormat: 'Y-m-d',
+                                dateFormat: "Y-m-d",
                               }}
                               onChange={(date) => {
                                 console.log(date[0]);
@@ -288,7 +314,7 @@ export default class Section extends Component {
                               options={{
                                 minDate: this.state.CheckIn,
                                 altInput: true,
-                                dateFormat: 'Y-m-d',
+                                dateFormat: "Y-m-d",
                               }}
                               onChange={(date) => {
                                 this.setState({ CheckOut: date[0] });
@@ -307,28 +333,28 @@ export default class Section extends Component {
                               }}
                             >
                               <DropdownToggle caret>
-                                {this.state.flightClass === ''
-                                  ? 'Class'
+                                {this.state.flightClass === ""
+                                  ? "Class"
                                   : this.state.flightClass}
                               </DropdownToggle>
                               <DropdownMenu container="body">
                                 <DropdownItem
                                   onClick={() =>
-                                    this.setState({ flightClass: 'Economy' })
+                                    this.setState({ flightClass: "Economy" })
                                   }
                                 >
                                   Economy
                                 </DropdownItem>
                                 <DropdownItem
                                   onClick={() =>
-                                    this.setState({ flightClass: 'Business' })
+                                    this.setState({ flightClass: "Business" })
                                   }
                                 >
                                   Business
                                 </DropdownItem>
                                 <DropdownItem
                                   onClick={() =>
-                                    this.setState({ flightClass: 'First' })
+                                    this.setState({ flightClass: "First" })
                                   }
                                 >
                                   First
@@ -338,44 +364,184 @@ export default class Section extends Component {
                           </div>
                         </Col>
                         <Col md={6}>
-                        <div>
-                        
-      <button type="button" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle btn btn-secondary" id="toggler" toggle={()=>{}} onClick ={this.handleClickOpen}>
-        Travellers
-      </button>
-      {isValid() &&<span> Adults:{this.state.adult} Children:{this.state.children+this.state.infant+this.state.infantLap}</span>}
-      {this.state.error && <p style={{color:"red"}}>{this.state.error}</p>}
-      <UncontrolledCollapse toggler="#toggler">
-      <DialogContent>
-         <div style={{display:"flex",justifyContent:"space-between",alignContent:"center"}}>
-         <h5>Adult : </h5>
-        <div>
-        <button style={{padding:"5px",marginRight:"5px"}} name="adult" type="button" value={-1} onClick={this.handleTravellerCounter}>-</button>{this.state.adult}<button style={{padding:"5px",marginLeft:"5px"}} name="adult" type="button" value={1} onClick={this.handleTravellerCounter}>+</button>
-        </div>
-         </div>
-         <div style={{display:"flex",justifyContent:"space-between",alignContent:"center"}}>
-         <h5>Children : </h5>
-<div>         <button style={{padding:"5px",marginRight:"5px"}} name="children" type="button" value={-1} onClick={this.handleTravellerCounter}>-</button>{this.state.children}<button style={{padding:"5px",marginLeft:"5px"}} name="children" type="button" value={1} onClick={this.handleTravellerCounter}>+</button>
-</div>
-         </div>
-         <div style={{display:"flex",justifyContent:"space-between",alignContent:"center"}}>
-         <h5>Infant(Below 2) : </h5>
-<div>
-<button style={{padding:"5px",marginRight:"5px"}} name="infant" type="button" value={-1} onClick={this.handleTravellerCounter}>-</button>{this.state.infant}<button style={{padding:"5px",marginLeft:"5px"}} name="infant" type="button" value={1} onClick={this.handleTravellerCounter}>+</button>
+                          <div>
+                            <button
+                              type="button"
+                              aria-haspopup="true"
+                              aria-expanded="false"
+                              class="dropdown-toggle btn btn-secondary"
+                              id="toggler"
+                              toggle={() => {}}
+                              onClick={this.handleClickOpen}
+                            >
+                              Travellers
+                            </button>
+                            {isValid() && (
+                              <span>
+                                {" "}
+                                Adults:{this.state.adult} Children:
+                                {this.state.children +
+                                  this.state.infant +
+                                  this.state.infantLap}
+                              </span>
+                            )}
+                            {this.state.error && (
+                              <p style={{ color: "red" }}>{this.state.error}</p>
+                            )}
+                            <UncontrolledCollapse toggler="#toggler">
+                              <DialogContent>
+                                <div
+                                  style={{
+                                    display: "flex",
+                                    justifyContent: "space-between",
+                                    alignContent: "center",
+                                  }}
+                                >
+                                  <h5>Adult : </h5>
+                                  <div>
+                                    <button
+                                      style={{
+                                        padding: "5px",
+                                        marginRight: "5px",
+                                      }}
+                                      name="adult"
+                                      type="button"
+                                      value={-1}
+                                      onClick={this.handleTravellerCounter}
+                                    >
+                                      -
+                                    </button>
+                                    {this.state.adult}
+                                    <button
+                                      style={{
+                                        padding: "5px",
+                                        marginLeft: "5px",
+                                      }}
+                                      name="adult"
+                                      type="button"
+                                      value={1}
+                                      onClick={this.handleTravellerCounter}
+                                    >
+                                      +
+                                    </button>
+                                  </div>
+                                </div>
+                                <div
+                                  style={{
+                                    display: "flex",
+                                    justifyContent: "space-between",
+                                    alignContent: "center",
+                                  }}
+                                >
+                                  <h5>Children : </h5>
+                                  <div>
+                                    {" "}
+                                    <button
+                                      style={{
+                                        padding: "5px",
+                                        marginRight: "5px",
+                                      }}
+                                      name="children"
+                                      type="button"
+                                      value={-1}
+                                      onClick={this.handleTravellerCounter}
+                                    >
+                                      -
+                                    </button>
+                                    {this.state.children}
+                                    <button
+                                      style={{
+                                        padding: "5px",
+                                        marginLeft: "5px",
+                                      }}
+                                      name="children"
+                                      type="button"
+                                      value={1}
+                                      onClick={this.handleTravellerCounter}
+                                    >
+                                      +
+                                    </button>
+                                  </div>
+                                </div>
+                                <div
+                                  style={{
+                                    display: "flex",
+                                    justifyContent: "space-between",
+                                    alignContent: "center",
+                                  }}
+                                >
+                                  <h5>Infant(Below 2) : </h5>
+                                  <div>
+                                    <button
+                                      style={{
+                                        padding: "5px",
+                                        marginRight: "5px",
+                                      }}
+                                      name="infant"
+                                      type="button"
+                                      value={-1}
+                                      onClick={this.handleTravellerCounter}
+                                    >
+                                      -
+                                    </button>
+                                    {this.state.infant}
+                                    <button
+                                      style={{
+                                        padding: "5px",
+                                        marginLeft: "5px",
+                                      }}
+                                      name="infant"
+                                      type="button"
+                                      value={1}
+                                      onClick={this.handleTravellerCounter}
+                                    >
+                                      +
+                                    </button>
+                                  </div>
+                                </div>
+                                <div
+                                  style={{
+                                    display: "flex",
+                                    justifyContent: "space-between",
+                                    alignContent: "center",
+                                  }}
+                                >
+                                  <h5>Infant (Lap) : </h5>
+                                  <div>
+                                    {" "}
+                                    <button
+                                      style={{
+                                        padding: "5px",
+                                        marginRight: "5px",
+                                      }}
+                                      name="infantLap"
+                                      type="button"
+                                      value={-1}
+                                      onClick={this.handleTravellerCounter}
+                                    >
+                                      -
+                                    </button>
+                                    {this.state.infantLap}
+                                    <button
+                                      style={{
+                                        padding: "5px",
+                                        marginLeft: "5px",
+                                      }}
+                                      name="infantLap"
+                                      type="button"
+                                      value={1}
+                                      onClick={this.handleTravellerCounter}
+                                    >
+                                      +
+                                    </button>
+                                  </div>
+                                </div>
+                              </DialogContent>
+                            </UncontrolledCollapse>
+                          </div>
+                        </Col>
 
-</div>
-         </div>
-         <div style={{display:"flex",justifyContent:"space-between",alignContent:"center"}}>
-         <h5>Infant (Lap) : </h5>
-<div>         <button style={{padding:"5px",marginRight:"5px"}} name="infantLap" type="button" value={-1} onClick={this.handleTravellerCounter}>-</button>{this.state.infantLap}<button style={{padding:"5px",marginLeft:"5px"}} name="infantLap" type="button" value={1} onClick={this.handleTravellerCounter}>+</button>
-</div>
-         </div>
-        </DialogContent>
-      </UncontrolledCollapse>
-    </div>
-                       </Col>
-                        
-                       <Col md={12}>
+                        <Col md={12}>
                           <div className="mb-3">
                             <Label className="form-label">Your Email</Label>
                             <div className="form-icon position-relative">
@@ -408,7 +574,7 @@ export default class Section extends Component {
                                 className="form-check-label"
                                 htmlFor="customCheck1"
                               >
-                                I Accept{' '}
+                                I Accept{" "}
                                 <Link to="#" className="text-primary">
                                   Terms And Condition
                                 </Link>
