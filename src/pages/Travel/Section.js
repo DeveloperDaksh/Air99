@@ -116,12 +116,12 @@ export default class Section extends Component {
     const qs = queryString.stringify({
       source: this.state.sourceCode,
       destination: this.state.destinationCode,
-      checkin: this.state.CheckIn.toISOString().slice(0, 10),
+      checkin:new Date(this.state.CheckIn.getTime() - (this.state.CheckIn.getTimezoneOffset() * 60000 )).toISOString().split("T")[0],
       flightClass: this.state.flightClass,
       // checkout : this.state.CheckOut.toISOString().slice(0,10)
     });
     // http://localhost:3000/
-    console.log(qs);
+    // console.log(this.state.CheckIn , qs);
     window.location.href = `search-result?${qs}`;
 
     return;

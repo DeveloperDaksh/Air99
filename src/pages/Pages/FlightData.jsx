@@ -1,25 +1,13 @@
-import React, { useState, useEffect } from "react";
-import airlines from "airline-codes";
+import React, { useState } from "react";
 import { parse } from "iso8601-duration";
-import axios from "axios";
 import {
   Button,
   Card,
-  CardImg,
-  CardTitle,
   CardText,
-  CardGroup,
-  CardSubtitle,
   CardBody,
 } from "reactstrap";
 import {
-  Input,
-  TextField,
   Dialog,
-  DialogActions,
-  DialogContent,
-  DialogContentText,
-  DialogTitle,
 } from "@material-ui/core";
 
 import Amadeus from "amadeus";
@@ -51,7 +39,8 @@ const FlightData = (props) => {
     );
   }
 
-  const segs = props.details.segments?.length;
+  const segs = props.details.itineraries[0].segments.length;
+  console.log(props.details , segs)
   const dur = parse(props.details.itineraries[0].duration);
   return (
     <div style={{ textAlign: "center" }}>
@@ -104,7 +93,7 @@ const FlightData = (props) => {
               <div>
                 At :{" "}
                 <h3>
-                  {props.details.itineraries[0].segments[0].arrival.iataCode}
+                  {props.details.itineraries[0].segments[segs - 1].arrival.iataCode}
                 </h3>
               </div>
             </div>
