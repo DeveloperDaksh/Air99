@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from "react";
 import queryString from "query-string";
-import axios from "axios";
 import { useLocation } from "react-router";
 import FlightData from "./FlightData";
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
+import FormLabel from '@material-ui/core/FormLabel';
 import Amadeus from "amadeus";
 import {
-  Card,
-  Button,
-  CardImg,
-  CardTitle,
-  CardText,
   CardGroup,
-  CardSubtitle,
-  CardBody,
 } from "reactstrap";
 import { makeStyles } from '@material-ui/core/styles';
 import LinearProgress from '@material-ui/core/LinearProgress';
+import Section from "..//Travel/Section"
+import { Box } from "@material-ui/core";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '80%',
@@ -30,10 +30,13 @@ const Search = () => {
   const [flights, setFlights] = useState([]);
   const [error, setError] = useState(false);
   const [loading,setLoading] = useState(false)
+  const [value, setValue] = React.useState('');
+  const handleChange = (event) => {
+    setValue(event.target.value);
+  };
   useEffect(() => {
     setLoading(true)
     const flights = async () => {
-      let resp;
       try {
         var amadeus = new Amadeus({
           clientId: `${process.env.REACT_APP_CLIENT_ID}`,
@@ -73,16 +76,33 @@ const Search = () => {
     const classes = useStyles();
   
     return (
-      <div className={classes.root} style={{margin:"100px"}}>
+      <div style ={{flexBasis:"50%"}}>
         <LinearProgress />
       </div>
     );
   }
   return (
     <div>
-      {loading && <LinearIndeterminate />}
+      <Section {...values} />
+      <Box display="flex" padding="100px" justifyContent="space-between">
+          <div style={{flexBasis:"200px"}}>
+            <div style={{
+              backgroundColor:"rgba(226, 226, 226, 0.7803921568627451)",
+              padding:"10px"
+            }}>
+            <FormControl component="fieldset">
+      <FormLabel component="legend">Filter By Stops</FormLabel>
+      <RadioGroup aria-label="Stops" name="stops" value={value} onChange={handleChange}>
+        <FormControlLabel value="0" control={<Radio />} label="0 Stops" />
+        <FormControlLabel value="1" control={<Radio />} label="1 Stops" />
+      </RadioGroup>
+    </FormControl>
+            </div>
+          </div>
+          <div style={{flexGrow:"0.4"}}>
+          {loading && <LinearIndeterminate />}
       {flights?.length > 0 ? (
-        <CardGroup style={{ marginTop: "100px", justifyContent: "center" }}>
+        <CardGroup style={{ display:"block", justifyContent: "center" }}>
           {flights.map((each) => (
             <FlightData details={each} flightClass={values.flightClass} />
           ))}
@@ -99,6 +119,8 @@ const Search = () => {
           <FlightData details={{}} error={true}></FlightData>
         </CardGroup>
       ) : null}
+          </div>
+      </Box>
     </div>
   );
 };

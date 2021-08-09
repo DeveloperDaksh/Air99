@@ -8,6 +8,7 @@
     "@material-ui/lab": "^4.0.0-alpha.60",
     "airline-codes": "^1.0.2",
     "airlines": "^1.0.0",
+    "airport-codes": "^1.0.2",
     "amadeus": "^5.7.0",
     "aos": "^2.3.4",
     "availity-reactstrap-validation": "^2.7.1",

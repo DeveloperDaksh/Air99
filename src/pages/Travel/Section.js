@@ -28,6 +28,7 @@ import Flatpickr from "react-flatpickr";
 
 import travelBg from "../../assets/images/travel/bg.jpg";
 import axios from "axios";
+import { Dialog } from "@material-ui/core";
 
 export default class Section extends Component {
   // constructor(props) {
@@ -52,13 +53,13 @@ export default class Section extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      CheckIn: new Date(),
-      CheckOut: new Date(),
+      CheckIn: new Date(props.checkin) || new Date(),
+      CheckOut: new Date(props.checkout) || new Date(),
       source: "",
       destination: "",
       dropdownOpen: false,
       lastClicked: null,
-      flightClass: "",
+      flightClass: props.flightClass|| "",
       coordinates: { lat: null, lng: null },
       address: "",
       open: false,
@@ -76,7 +77,9 @@ export default class Section extends Component {
     // this.toggleIt.bind(this)
     // this.setLastClicked.bind(this)
     this.formSubmit = this.formSubmit.bind(this);
+    this.handleClickOpenDropdown = this.handleClickOpenDropdown.bind(this);
     this.handleClickOpen = this.handleClickOpen.bind(this);
+    this.handleCloseDropdown = this.handleCloseDropdown.bind(this);
     this.handleClose = this.handleClose.bind(this);
     this.handleTravellerCounter = this.handleTravellerCounter.bind(this);
     this.getToken = this.getToken.bind(this);
@@ -93,10 +96,20 @@ export default class Section extends Component {
     console.log(this.state);
   }
   handleClickOpen = () => {
+    console.log("inside ");
     this.setState({ open: true });
   };
+  handleClickOpenDropdown = () => {
+    console.log("inside Dropdown");
+    this.setState({ dropdownOpen : true});
+  };
   handleClose = () => {
+    console.log("inside ");
     this.setState({ open: false });
+  };
+  handleCloseDropdown = () => {
+    console.log("inside Dropdown");
+    this.setState({ dropdownOpen: false });
   };
 
   // findAcc (){
@@ -117,6 +130,7 @@ export default class Section extends Component {
       source: this.state.sourceCode,
       destination: this.state.destinationCode,
       checkin:new Date(this.state.CheckIn.getTime() - (this.state.CheckIn.getTimezoneOffset() * 60000 )).toISOString().split("T")[0],
+      checkout:new Date(this.state.CheckOut.getTime() - (this.state.CheckOut  .getTimezoneOffset() * 60000 )).toISOString().split("T")[0],
       flightClass: this.state.flightClass,
       // checkout : this.state.CheckOut.toISOString().slice(0,10)
     });
@@ -215,21 +229,21 @@ export default class Section extends Component {
           style={{ background: `url(${travelBg}) center center` }}
         >
           <div className="bg-overlay"></div>
-          <Container>
-            <Row className="align-items-center">
+          <div style={{maxWidth:"95vw",margin:"0 auto"}}>
+            <Row className="align-items-center justify-content-space-around">
               <Col lg={12} md={6} className="mt-4 pt-2 mt-sm-0 pt-sm-0">
-                <Card className="shadow rounded border-0 ms-lg-5">
+                <Card>
                   <CardBody>
-                    <h5 className="card-title">You can start search here</h5>
 
-                    <Form className="login-form" onSubmit={this.formSubmit}>
-                      <Row>
-                        <Col md={12}>
+                    <Form className="login-form" onSubmit={this.formSubmit} >
+                      <Row style={{display:"flex",justifyContent:"space-around",alignContent:"center"}}> 
+                        <Col style={{width:"auto" ,flexGrow:"2.5", display:"flex",flexDirection:"column",justifyContent:"center"}} md={12}>
                           <div className="mb-3">
                             <Label className="form-label">From</Label>
                             <div className="form-icon position-relative">
                               <Autocomplete
                                 fullWidth
+                                style={{maxWidth:"100vw"}}
                                 onChange={(event, newValue) => {
                                   this.setState({
                                     source: newValue?.address?.cityName || "",
@@ -244,25 +258,27 @@ export default class Section extends Component {
                                 }
                                 renderInput={(params) => (
                                   <TextField
-                                    {...params}
-                                    // label="Where"
-                                    // variant="outlined"
+                                  {...params}
+                                  placeholder={this.props.source}
+                                  // label="Where"
+                                  // variant="outlined"
                                   />
-                                )}
-                              />
+                                  )}
+                                  />
                             </div>
                           </div>
                         </Col>
-                        <Col md={12}>
+                        <Col style={{width:"auto",flexGrow:"2.5", display:"flex",flexDirection:"column",justifyContent:"center"}} md={12}>
                           <div className="mb-3">
                             <Label className="form-label">To</Label>
                             <div className="form-icon position-relative">
                               <Autocomplete
                                 fullWidth
+                                style={{maxWidth:"100vw"}}
                                 onChange={(event, newValue) => {
                                   this.setState({
                                     destination:
-                                      newValue?.address?.cityName || "",
+                                    newValue?.address?.cityName || "",
                                     destinationCode: newValue?.iataCode || "",
                                   });
                                 }}
@@ -274,6 +290,7 @@ export default class Section extends Component {
                                 }
                                 renderInput={(params) => (
                                   <TextField
+                                    placeholder={this.props.destination}
                                     {...params}
                                     // label="Where"
                                     // variant="outlined"
@@ -283,8 +300,8 @@ export default class Section extends Component {
                             </div>
                           </div>
                         </Col>
-                        <Col md={6}>
-                          <div className="mb-3">
+                        <Col style={{width:"auto" , display:"flex",flexDirection:"column",justifyContent:"center"}} md={6}>
+                          <div className="mb-3" style={{width:"130px"}}>
                             <Label className="form-label"> Check in : </Label>
                             <Flatpickr
                               value={this.state.CheckIn}
@@ -304,8 +321,8 @@ export default class Section extends Component {
                           </div>
                         </Col>
 
-                        <Col md={6}>
-                          <div className="mb-3">
+                        <Col style={{width:"auto" , display:"flex",flexDirection:"column",justifyContent:"center"}} md={6}>
+                          <div className="mb-3"  style={{width:"130px"}}>
                             <Label className="form-label"> Check out : </Label>
                             <Flatpickr
                               value={this.state.CheckOut}
@@ -322,13 +339,13 @@ export default class Section extends Component {
                             />
                           </div>
                         </Col>
-                        <Col md={6}>
+                        <Col style={{width:"auto" , display:"flex",flexDirection:"column",justifyContent:"center"}} md={6}>
                           <div>
                             <Dropdown
-                              isOpen={this.state.dropdownOpen}
+                              isOpen={this.state.open}
                               toggle={() => {
                                 this.setState((prev) => ({
-                                  dropdownOpen: !prev.dropdownOpen,
+                                  open: !prev.open,
                                 }));
                               }}
                             >
@@ -363,32 +380,24 @@ export default class Section extends Component {
                             </Dropdown>
                           </div>
                         </Col>
-                        <Col md={6}>
+                        <Col style={{width:"auto" , display:"flex",flexDirection:"column",justifyContent:"center"}} md={6}>
                           <div>
                             <button
                               type="button"
                               aria-haspopup="true"
                               aria-expanded="false"
                               class="dropdown-toggle btn btn-secondary"
-                              id="toggler"
+
                               toggle={() => {}}
-                              onClick={this.handleClickOpen}
+                              onClick={this.handleClickOpenDropdown}
                             >
                               Travellers
                             </button>
-                            {isValid() && (
-                              <span>
-                                {" "}
-                                Adults:{this.state.adult} Children:
-                                {this.state.children +
-                                  this.state.infant +
-                                  this.state.infantLap}
-                              </span>
-                            )}
+
                             {this.state.error && (
                               <p style={{ color: "red" }}>{this.state.error}</p>
                             )}
-                            <UncontrolledCollapse toggler="#toggler">
+                            <Dialog open={this.state.dropdownOpen} onClose={this.handleCloseDropdown}>
                               <DialogContent>
                                 <div
                                   style={{
@@ -537,11 +546,22 @@ export default class Section extends Component {
                                   </div>
                                 </div>
                               </DialogContent>
-                            </UncontrolledCollapse>
+                            </Dialog>
+                                      <p style={{margin:"0"}}>
+                                      {isValid() && (
+                              <span>
+                                {" "}
+                                Adults:{this.state.adult} Children:
+                                {this.state.children +
+                                  this.state.infant +
+                                  this.state.infantLap}
+                              </span>
+                            )}
+                                      </p>
                           </div>
                         </Col>
 
-                        <Col md={12}>
+                        {/* <Col style={{width:"auto" , display:"flex",flexDirection:"column",justifyContent:"center"}} md={12}>
                           <div className="mb-3">
                             <Label className="form-label">Your Email</Label>
                             <div className="form-icon position-relative">
@@ -560,8 +580,8 @@ export default class Section extends Component {
                               />
                             </div>
                           </div>
-                        </Col>
-                        <Col md={12}>
+                        </Col> */}
+                        {/* <Col style={{width:"auto" , display:"flex",flexDirection:"column",justifyContent:"center"}} md={12}>
                           <div className="mb-3">
                             <div className="form-check">
                               <input
@@ -581,9 +601,9 @@ export default class Section extends Component {
                               </label>
                             </div>
                           </div>
-                        </Col>
-                        <Col md={12}>
-                          <div className="d-grid">
+                        </Col> */}
+                        <Col style={{width:"auto" ,flexBasis:"100%", display:"flex",flexDirection:"column",justifyContent:"center"}} md={12}>
+                          <div style={{margin:"0 auto"}}>
                             <button className="btn btn-primary">
                               Search Now
                             </button>
@@ -595,7 +615,7 @@ export default class Section extends Component {
                 </Card>
               </Col>
             </Row>
-          </Container>
+          </div>
         </section>
         <div className="position-relative">
           <div className="shape overflow-hidden text-white">

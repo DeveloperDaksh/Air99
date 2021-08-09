@@ -29,7 +29,7 @@ const FlightData = (props) => {
   if (props.error === true) {
     return (
       <div style={{ textAlign: "center" }}>
-        <Card style={{ width: "85vw" }}>
+        <Card style={{ width: "auto%" }}>
           <CardBody>
             <h3>Unable to Find Flights for the Given Place</h3>
             <p>Check the Places or Try Again Later!</p>
@@ -44,7 +44,7 @@ const FlightData = (props) => {
   const dur = parse(props.details.itineraries[0].duration);
   return (
     <div style={{ textAlign: "center" }}>
-      <Card style={{ width: "85vw", marginBottom: "75px" }}>
+      <Card style={{ width: "auto", marginBottom: "75px" }}>
         <CardBody>
           <CardText style={{ display: "flex", justifyContent: "space-around" }}>
             <div>
@@ -103,21 +103,13 @@ const FlightData = (props) => {
                   Layovers : {props.details.itineraries[0].segments.length}
                 </h5>
               </div>
-              <Button onClick={() => setDetails((prev) => !prev)}>
-                {details ? "Hide Details" : "More Details"}
-              </Button>
-              {details ? (
-                <h2>
-                  Price:{props.details.price.total}{" "}
+                <p>
+                Price: {" "}
+                  <strong style={{color:"#36d636"}}>
+                  {props.details.price.total}{" "}
                   {props.details.price.currency}
-                </h2>
-              ) : (
-                <>
-                  <br />
-                  <br />
-                  <br />
-                </>
-              )}
+                </strong>
+                </p>
               <Button onClick={handleClickOpen}>Book Now</Button>
             </div>
           </CardText>

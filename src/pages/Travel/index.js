@@ -17,6 +17,7 @@ import Guarantee from "./Guarantee";
 import SectionTitle from "../../components/Shared/SectionTitle";
 import ReviewsSlider from "../../components/Shared/ReviewsSlider";
 import { Container } from "reactstrap";
+import Recommended from "./Recommended";
 
 export default class index extends Component {
   constructor(props) {
@@ -107,7 +108,7 @@ export default class index extends Component {
       <React.Fragment>
         <Section />
         <section className="section">
-          <Benefit />
+          <Recommended />
           <PopularDestination />
         </section>
         <section className="section bg-light">
