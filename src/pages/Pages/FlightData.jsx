@@ -1,17 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { parse } from "iso8601-duration";
-import {
-  Button,
-  Card,
-  CardText,
-  CardBody,
-} from "reactstrap";
-import {
-  Dialog,
-} from "@material-ui/core";
+import { Button, Card, CardText, CardBody } from "reactstrap";
+import { Dialog } from "@material-ui/core";
 
 import Amadeus from "amadeus";
 import UserDataForm from "./userDataForm";
+
 const FlightData = (props) => {
   const [details, setDetails] = useState(false);
   const [open, setOpen] = useState(false);
@@ -25,6 +19,13 @@ const FlightData = (props) => {
     setOpen(false);
     setArr([<UserDataForm />]);
   };
+
+  // useEffect(() => {
+  //   // convertCurrency(1, "USD", "BRL").then((response) => console.log(response));
+  //   const data = getCurrencyRate("USD", "EUR");
+  //   console.log(data);
+  // }, []);
+
   const [arr, setArr] = useState([<UserDataForm />]);
   if (props.error === true) {
     return (
@@ -40,7 +41,6 @@ const FlightData = (props) => {
   }
 
   const segs = props.details.itineraries[0].segments.length;
-  console.log(props.details , segs)
   const dur = parse(props.details.itineraries[0].duration);
   return (
     <div style={{ textAlign: "center" }}>
@@ -93,23 +93,25 @@ const FlightData = (props) => {
               <div>
                 At :{" "}
                 <h3>
-                  {props.details.itineraries[0].segments[segs - 1].arrival.iataCode}
+                  {
+                    props.details.itineraries[0].segments[segs - 1].arrival
+                      .iataCode
+                  }
                 </h3>
               </div>
             </div>
             <div>
               <div>
                 <h5>
-                  Layovers : {props.details.itineraries[0].segments.length}
+                  Layovers : {props.details.itineraries[0].segments.length - 1}
                 </h5>
               </div>
-                <p>
-                Price: {" "}
-                  <strong style={{color:"#36d636"}}>
-                  {props.details.price.total}{" "}
-                  {props.details.price.currency}
+              <p>
+                Price:{" "}
+                <strong style={{ color: "#36d636" }}>
+                  {(props.details.price.total * props.rate).toFixed(2)} USD
                 </strong>
-                </p>
+              </p>
               <Button onClick={handleClickOpen}>Book Now</Button>
             </div>
           </CardText>
