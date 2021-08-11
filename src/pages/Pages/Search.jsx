@@ -85,9 +85,8 @@ const Search = () => {
     <div>
       <Section {...values} />
       <Box display="flex" padding="100px" justifyContent="space-between">
-          <div style={{flexBasis:"200px"}}>
-            <div style={{
-              backgroundColor:"rgba(226, 226, 226, 0.7803921568627451)",
+          <div  style={{flexBasis:"200px",border:"none"}}>
+            <div className="card" style={{
               padding:"10px"
             }}>
             <FormControl component="fieldset">
@@ -101,18 +100,17 @@ const Search = () => {
           </div>
           <div style={{flexGrow:"0.4"}}>
           {loading && <LinearIndeterminate />}
-      {flights?.length > 0 ? (
+          {flights?.length > 0 ? (
         <CardGroup style={{ display:"block", justifyContent: "center" }}>
           {flights.map((each) => (
             <FlightData details={each} flightClass={values.flightClass} />
           ))}
         </CardGroup>
       ) : null}
-      {error ? (
+        {error ? (
         <CardGroup
           style={{
-            marginTop: "150px",
-            marginBottom: "100px",
+            display:"block",
             justifyContent: "center",
           }}
         >
