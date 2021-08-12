@@ -550,19 +550,19 @@ class Topbar extends Component {
               } else if (this.props.location.pathname === "/index-seo-agency") {
                 return (
                   <div className="buy-button">
-                    <Link
+                    {/* <Link
                       to="//1.envato.market/landrickreactjs"
                       target="_blank"
                       className="btn btn-pills btn-primary"
                     >
                       Buy Now
-                    </Link>
+                    </Link> */}
                   </div>
                 );
               } else {
                 return (
                   <div className="buy-button">
-                    <Link
+                    {/* <Link
                       to="//1.envato.market/landrickreactjs"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -570,7 +570,7 @@ class Topbar extends Component {
                       className="btn btn-primary"
                     >
                       Buy Now
-                    </Link>
+                    </Link> */}
                   </div>
                 );
               }
@@ -808,14 +808,14 @@ class Topbar extends Component {
                 )}
               </ul>
               <div className="buy-menu-btn d-none">
-                <Link
+                {/* <Link
                   to="https://1.envato.market/landrickreactjs"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-primary"
                 >
                   Buy Now
-                </Link>
+                </Link> */}
               </div>
             </div>
           </Container>

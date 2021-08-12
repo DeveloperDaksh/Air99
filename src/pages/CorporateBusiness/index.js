@@ -13,7 +13,7 @@ export default class index extends Component {
   componentDidMount() {
     document.body.classList = "";
     document.getElementById("top-menu").classList.add("nav-light");
-    document.getElementById("buyButton").className = "btn btn-light";
+    //document.getElementById("buyButton").className = "btn btn-light";
     window.addEventListener("scroll", this.scrollNavigation, true);
   }
 
@@ -27,10 +27,10 @@ export default class index extends Component {
     var top = (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0);
     if (top > 80) {
       document.getElementById("topnav").classList.add("nav-sticky");
-      document.getElementById("buyButton").className = "btn btn-primary";
+      //document.getElementById("buyButton").className = "btn btn-primary";
     } else {
       document.getElementById("topnav").classList.remove("nav-sticky");
-      document.getElementById("buyButton").className = "btn btn-light";
+      //document.getElementById("buyButton").className = "btn btn-light";
     }
   };
   render() {

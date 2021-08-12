@@ -110,9 +110,22 @@ const Search = () => {
     <div>
       <Section {...values} searchPage />
       {/* {loading && <LinearIndeterminate />} */}
-      {loading && <div>
-        <img style={{display:"block", maxWidth:"320px",maxHeight:"500px",margin:"20px auto"}} src="https://cdn.dribbble.com/users/754789/screenshots/2381650/gif-aviao.gif"/>
-      </div>}
+      {loading && <div style={{
+        marginTop:"30px",
+        display:"flex",
+        flexDirection:"column",
+        justifyContent:"center",
+        alignItems:"center"
+      }}>
+        <Typography variant="h2" className="center">
+              {values.source} to {values.destination} 
+              <Box component="span" marginLeft={3}>
+              <Typography component="span" > {`${new Date(values.checkin).toDateString()} - ${new Date(values.checkout).toDateString()}`} </Typography>
+              </Box>
+        </Typography>
+        <img style={{ maxWidth:"320px",maxHeight:"500px"}} src="https://cdn.dribbble.com/users/754789/screenshots/2381650/gif-aviao.gif"/>
+      </div>
+      }
       {!loading && <Box display="flex" padding="50px 100px 100px 100px" justifyContent="space-between">
         <div style={{ flexBasis: "200px", border: "none" }}>
           <div
