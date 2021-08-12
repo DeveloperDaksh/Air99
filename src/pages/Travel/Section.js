@@ -222,13 +222,19 @@ export default class Section extends Component {
     };
     const sourceSuggestions = this.state.sourceSuggestions;
     const destinationSuggestions = this.state.destinationSuggestions;
+    const backgroundSearch = this.props.searchPage ? {
+      paddingBottom: "0",
+     
+    }:{
+      background: `url(${travelBg}) center center`
+    }
     return (
       <React.Fragment>
         <section
           className="bg-half-170 d-table w-100"
-          style={{ background: `url(${travelBg}) center center` }}
+          style={backgroundSearch}
         >
-          <div className="bg-overlay"></div>
+          {!this.props.searchPage && <div className="bg-overlay"></div>}
           <div style={{maxWidth:"95vw",margin:"0 auto"}}>
             <Row className="align-items-center justify-content-space-around">
               <Col lg={12} md={6} className="mt-4 pt-2 mt-sm-0 pt-sm-0">
@@ -617,7 +623,7 @@ export default class Section extends Component {
             </Row>
           </div>
         </section>
-        <div className="position-relative">
+        {!this.props.searchPage && <div className="position-relative">
           <div className="shape overflow-hidden text-white">
             <svg
               viewBox="0 0 2880 48"
@@ -630,7 +636,7 @@ export default class Section extends Component {
               ></path>
             </svg>
           </div>
-        </div>
+        </div>}
       </React.Fragment>
     );
   }

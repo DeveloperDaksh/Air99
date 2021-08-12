@@ -8,11 +8,11 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
 import FormLabel from "@material-ui/core/FormLabel";
 import Amadeus from "amadeus";
-import { CardGroup } from "reactstrap";
+import { CardGroup, Container } from "reactstrap";
 import { makeStyles } from "@material-ui/core/styles";
 import LinearProgress from "@material-ui/core/LinearProgress";
 import Section from "..//Travel/Section";
-import { Box } from "@material-ui/core";
+import { Box, Typography } from "@material-ui/core";
 import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
@@ -105,15 +105,21 @@ const Search = () => {
       </div>
     );
   }
+  console.log(values);
   return (
     <div>
-      <Section {...values} />
-      <Box display="flex" padding="100px" justifyContent="space-between">
+      <Section {...values} searchPage />
+      {/* {loading && <LinearIndeterminate />} */}
+      {loading && <div>
+        <img style={{display:"block", maxWidth:"320px",maxHeight:"500px",margin:"20px auto"}} src="https://cdn.dribbble.com/users/754789/screenshots/2381650/gif-aviao.gif"/>
+      </div>}
+      {!loading && <Box display="flex" padding="50px 100px 100px 100px" justifyContent="space-between">
         <div style={{ flexBasis: "200px", border: "none" }}>
           <div
             className="card"
             style={{
               padding: "10px",
+              margin:"67px 0 0 0"
             }}
           >
             <FormControl component="fieldset">
@@ -146,7 +152,15 @@ const Search = () => {
           </div>
         </div>
         <div style={{ flexGrow: "0.4" }}>
-          {loading && <LinearIndeterminate />}
+          {!loading && <Box marginBottom={3}>
+            <Typography variant="h2">
+              {values.source} to {values.destination} 
+              <Box component="span" marginLeft={3}>
+              <Typography component="span" > {`${new Date(values.checkin).toDateString()} - ${new Date(values.checkout).toDateString()}`} </Typography>
+              </Box>
+            </Typography>
+            
+            </Box>}
           {flightsToDisplay?.length > 0 ? (
             <CardGroup style={{ display: "block", justifyContent: "center" }}>
               {flightsToDisplay.map((each) => (
@@ -170,7 +184,9 @@ const Search = () => {
           ) : null}
         </div>
       </Box>
-    </div>
+   } 
+
+      </div>
   );
 };
 
