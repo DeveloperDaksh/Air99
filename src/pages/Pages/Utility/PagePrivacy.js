@@ -15,7 +15,7 @@ class PagePrivacy extends Component {
     this.state = {
       pathItems: [
         //id must required
-        { id: 1, name: "Landrick", link: "/index" },
+        { id: 1, name: "Air99", link: "/" },
         { id: 2, name: "Page", link: "#" },
         { id: 3, name: "Utility", link: "#" },
         { id: 4, name: "Privacy" },

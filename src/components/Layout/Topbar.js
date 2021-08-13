@@ -32,24 +32,19 @@ class Topbar extends Component {
         {
           id: 2,
           title: "About US",
-          link: "/",
+          link: "/page-aboutus",
          
         },
         {
           id: 3,
           title: "Services",
-          link: "/",
-          isOpenSubMenu: false,
-          child: [
-            {title : "Service 1"},
-            {title : "Service 2"},
-            {title : "Service 3"},
-          ],
+          link: "/page-services",
+          
         },
         {
           id: 4,
           title: "Pricing",
-          link: "/",
+          link: "/page-pricing",
           
         },
       ],
@@ -159,13 +154,13 @@ class Topbar extends Component {
             <div>
 
               {this.props.hasDarkTopBar ? (
-                <a className="logo" href="/index">
+                <a className="logo" href="/">
                   {/* <img src={logodark} height="24" className="logo-light-mode" alt="" />
                   <img src={logolight} height="24" className="logo-dark-mode" alt="" /> */}
                   Air99
                 </a>
               ) :
-                <a className="logo" href="/index">
+                <a className="logo" href="/">
                   {/* <span className="logo-light-mode">
                     <img src={logodark} className="l-dark" height="24" alt="" />
                     <img src={logolight} className="l-light" height="24" alt="" />

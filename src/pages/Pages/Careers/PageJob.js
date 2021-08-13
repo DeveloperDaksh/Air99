@@ -44,7 +44,7 @@ class PageJob extends Component {
     this.state = {
       pathItems: [
         //id must required
-        { id: 1, name: "Landrick", link: "/index" },
+        { id: 1, name: "Air99", link: "/" },
         { id: 2, name: "Page", link: "#" },
         { id: 3, name: "CAREERS", link: "#" },
         { id: 4, name: "Jobs" },

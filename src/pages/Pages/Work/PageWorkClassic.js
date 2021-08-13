@@ -28,7 +28,7 @@ class PageWorkClassic extends Component {
     this.state = {
       pathItems: [
         //id must required
-        { id: 1, name: "Landrick", link: "/index" },
+        { id: 1, name: "Air99", link: "/" },
         { id: 2, name: "Pages", link: "#" },
         { id: 3, name: "Work", link: "#" },
         { id: 4, name: "Classic" },

@@ -41,7 +41,7 @@ class Widget extends Component {
     this.state = {
       pathItems: [
         //id must required
-        { id: 1, name: "Landrick", link: "/index" },
+        { id: 1, name: "Air99", link: "/" },
         { id: 2, name: "Docs", link: "#" },
         { id: 3, name: "Widget" },
       ],

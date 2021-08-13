@@ -62,7 +62,7 @@ class ShopProductList extends Component {
       wishlistModal: false,
       pathItems: [
         //id must required
-        { id: 1, name: "Landrick", link: "/index" },
+        { id: 1, name: "Air99", link: "/" },
         { id: 2, name: "Shop", link: "#" },
         { id: 3, name: "Products" },
       ],
