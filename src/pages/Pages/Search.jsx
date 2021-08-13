@@ -14,6 +14,7 @@ import LinearProgress from "@material-ui/core/LinearProgress";
 import Section from "..//Travel/Section";
 import { Box, Typography } from "@material-ui/core";
 import axios from "axios";
+import { MobileView, BrowserView } from "react-device-detect";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -110,6 +111,7 @@ const Search = () => {
     <div>
       <Section {...values} searchPage />
       {/* {loading && <LinearIndeterminate />} */}
+      <BrowserView>
       {loading && <div style={{
         marginTop:"30px",
         display:"flex",
@@ -126,8 +128,8 @@ const Search = () => {
         <img style={{ maxWidth:"320px",maxHeight:"500px"}} src="https://cdn.dribbble.com/users/754789/screenshots/2381650/gif-aviao.gif"/>
       </div>
       }
-      {!loading && <Box display="flex" padding="50px 100px 100px 100px" justifyContent="space-between">
-        <div style={{ flexBasis: "200px", border: "none" }}>
+      {!loading && <Box display="flex" padding="50px 30px 100px 32px" justifyContent="space-between">
+        <div style={{ flexGrow:"2", border: "none" }}>
           <div
             className="card"
             style={{
@@ -164,7 +166,7 @@ const Search = () => {
             Total Results : {flightsToDisplay.length}
           </div>
         </div>
-        <div style={{ flexGrow: "0.4" }}>
+        <div style={{ flexGrow: "1" }}>
           {!loading && <Box marginBottom={3}>
             <Typography variant="h2">
               {values.source} to {values.destination} 
@@ -199,6 +201,104 @@ const Search = () => {
       </Box>
    } 
 
+      </BrowserView>
+      <MobileView>
+      {loading && <div style={{
+        marginTop:"30px",
+        display:"flex",
+        flexDirection:"column",
+        justifyContent:"center",
+        alignItems:"center"
+      }}>
+        <Typography variant="h2" className="center" style={{padding:"5px"}}>
+              {values.source} to {values.destination} 
+              <Box>
+              <Typography component="span" > {`${new Date(values.checkin).toDateString()} - ${new Date(values.checkout).toDateString()}`} </Typography>
+              </Box>
+        </Typography>
+        <img style={{ maxWidth:"320px",maxHeight:"500px"}} src="https://cdn.dribbble.com/users/754789/screenshots/2381650/gif-aviao.gif"/>
+      </div>
+      }
+      {!loading && <Box marginBottom={3} padding={2} marginTop={3} style={{
+        display:"flex",
+        flexDirection:"column",
+        justifyContent:'center',
+        alignItems:"center"
+      }}>
+            <Typography variant="h2" align="center">
+              {values.source} to {values.destination} 
+              <Box>
+              <Typography component="span" > {`${new Date(values.checkin).toDateString()} - ${new Date(values.checkout).toDateString()}`} </Typography>
+              </Box>
+            </Typography>
+            
+            </Box>}
+      {!loading && <Box display="flex" flexDirection="column" padding="20px 20px" justifyContent="space-between">
+        <div style={{ flexBasis: "200px", border: "none" }}>
+          <div
+            className="card"
+            style={{
+              padding: "10px",
+              marginBottom:"20px"
+            }}
+          >
+            <FormControl component="fieldset">
+              <FormLabel component="legend">Filter By Stops</FormLabel>
+              <RadioGroup
+                aria-label="Stops"
+                name="stops"
+                value={value}
+                onChange={handleChange}
+              >
+                <FormControlLabel
+                  checked={value == 99 && true}
+                  value="99"
+                  control={<Radio />}
+                  label="All"
+                />
+                <FormControlLabel
+                  value="0"
+                  control={<Radio />}
+                  label="0 Stop"
+                />
+                <FormControlLabel
+                  value="1"
+                  control={<Radio />}
+                  label="1 Stop"
+                />
+              </RadioGroup>
+            </FormControl>
+            Total Results : {flightsToDisplay.length}
+          </div>
+        </div>
+        <div style={{ flexGrow: "0.4" }}>
+          
+          {flightsToDisplay?.length > 0 ? (
+            <CardGroup style={{ display: "block", justifyContent: "center" }}>
+              {flightsToDisplay.map((each) => (
+                <FlightData
+                  details={each}
+                  flightClass={values.flightClass}
+                  rate={rate}
+                />
+              ))}
+            </CardGroup>
+          ) : null}
+          {error ? (
+            <CardGroup
+              style={{
+                display: "block",
+                justifyContent: "center",
+              }}
+            >
+              <FlightData details={{}} error={true}></FlightData>
+            </CardGroup>
+          ) : null}
+        </div>
+      </Box>
+   } 
+
+      </MobileView>
       </div>
   );
 };

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import queryString from "query-string";
+import { MobileView , BrowserView } from "react-device-detect";
 import {
   Card,
   CardBody,
@@ -240,8 +241,8 @@ export default class Section extends Component {
               <Col lg={12} md={6} className="mt-4 pt-2 mt-sm-0 pt-sm-0">
                 <Card>
                   <CardBody>
-
-                    <Form className="login-form" onSubmit={this.formSubmit} >
+                      <BrowserView>
+                      <Form className="login-form" onSubmit={this.formSubmit} >
                       <Row style={{display:"flex",justifyContent:"space-around",alignContent:"center"}}> 
                         <Col style={{width:"auto" ,flexGrow:"2.5", display:"flex",flexDirection:"column",justifyContent:"center"}} md={12}>
                           <div className="mb-3">
@@ -617,6 +618,387 @@ export default class Section extends Component {
                         </Col>
                       </Row>
                     </Form>
+                  
+                      </BrowserView>
+                   <MobileView>
+                   <Form className="login-form" onSubmit={this.formSubmit} >
+                      <Row style={{display:"flex",flexDirection:"column",justifyContent:"space-around",alignContent:"center"}}> 
+                        <Col style={{flexGrow:"2.5", display:"flex",flexDirection:"column",justifyContent:"center"}} md={12}>
+                          <div className="mb-3">
+                            <Label className="form-label">From</Label>
+                            <div className="form-icon position-relative">
+                              <Autocomplete
+                                fullWidth
+                                style={{maxWidth:"100vw"}}
+                                onChange={(event, newValue) => {
+                                  this.setState({
+                                    source: newValue?.address?.cityName || "",
+                                    sourceCode: newValue?.iataCode || "",
+                                  });
+                                }}
+                                options={sourceSuggestions}
+                                onInputChange={searchSource}
+                                inputValue={this.state.source}
+                                getOptionLabel={(option) =>
+                                  `${option?.name} ${option?.subType}, ${option?.address?.cityName}`
+                                }
+                                renderInput={(params) => (
+                                  <TextField
+                                  {...params}
+                                  placeholder={this.props.source}
+                                  // label="Where"
+                                  // variant="outlined"
+                                  />
+                                  )}
+                                  />
+                            </div>
+                          </div>
+                        </Col>
+                        <Col style={{flexGrow:"2.5", display:"flex",flexDirection:"column",justifyContent:"center"}} md={12}>
+                          <div className="mb-3">
+                            <Label className="form-label">To</Label>
+                            <div className="form-icon position-relative">
+                              <Autocomplete
+                                fullWidth
+                                style={{maxWidth:"100vw"}}
+                                onChange={(event, newValue) => {
+                                  this.setState({
+                                    destination:
+                                    newValue?.address?.cityName || "",
+                                    destinationCode: newValue?.iataCode || "",
+                                  });
+                                }}
+                                options={destinationSuggestions}
+                                onInputChange={searchDestination}
+                                inputValue={this.state.destination}
+                                getOptionLabel={(option) =>
+                                  `${option?.name} ${option?.subType}, ${option?.address?.cityName}`
+                                }
+                                renderInput={(params) => (
+                                  <TextField
+                                    placeholder={this.props.destination}
+                                    {...params}
+                                    // label="Where"
+                                    // variant="outlined"
+                                  />
+                                )}
+                              />
+                            </div>
+                          </div>
+                        </Col>
+                        <Col style={{display:"flex",flexDirection:"column",justifyContent:"center"}} md={6}>
+                          <div className="mb-3" >
+                            <Label className="form-label"> Check in : </Label>
+                            <Flatpickr
+                              value={this.state.CheckIn}
+                              className="flatpickr flatpickr-input form-control"
+                              placeholder="Pick a date"
+                              options={{
+                                minDate: cDate(),
+                                altInput: true,
+                                // altFormat: "F j, Y",
+                                dateFormat: "Y-m-d",
+                              }}
+                              onChange={(date) => {
+                                console.log(date[0]);
+                                this.setState({ CheckIn: date[0] });
+                              }}
+                            />
+                          </div>
+                        </Col>
+
+                        <Col style={{ display:"flex",flexDirection:"column",justifyContent:"center",marginBottom:"20px"}} md={6}>
+                          <div className="mb-3">
+                            <Label className="form-label"> Check out : </Label>
+                            <Flatpickr
+                              value={this.state.CheckOut}
+                              className="flatpickr flatpickr-input form-control"
+                              placeholder="Pick a date"
+                              options={{
+                                minDate: this.state.CheckIn,
+                                altInput: true,
+                                dateFormat: "Y-m-d",
+                              }}
+                              onChange={(date) => {
+                                this.setState({ CheckOut: date[0] });
+                              }}
+                            />
+                          </div>
+                        </Col>
+                        <Col style={{display:"flex",justifyContent:"center",marginBottom:"20px"}} md={12}>
+                          <div>
+                            <Dropdown
+                              isOpen={this.state.open}
+                              toggle={() => {
+                                this.setState((prev) => ({
+                                  open: !prev.open,
+                                }));
+                              }}
+                            >
+                              <DropdownToggle caret>
+                                {this.state.flightClass === ""
+                                  ? "Class"
+                                  : this.state.flightClass}
+                              </DropdownToggle>
+                              <DropdownMenu container="body">
+                                <DropdownItem
+                                  onClick={() =>
+                                    this.setState({ flightClass: "Economy" })
+                                  }
+                                >
+                                  Economy
+                                </DropdownItem>
+                                <DropdownItem
+                                  onClick={() =>
+                                    this.setState({ flightClass: "Business" })
+                                  }
+                                >
+                                  Business
+                                </DropdownItem>
+                                <DropdownItem
+                                  onClick={() =>
+                                    this.setState({ flightClass: "First" })
+                                  }
+                                >
+                                  First
+                                </DropdownItem>
+                              </DropdownMenu>
+                            </Dropdown>
+                          </div>
+                        </Col>
+                        <Col style={{ display:"flex",justifyContent:"center",marginBottom:"20px"}} md={12}>
+                          <div>
+                            <button
+                              type="button"
+                              aria-haspopup="true"
+                              aria-expanded="false"
+                              class="dropdown-toggle btn btn-secondary"
+
+                              toggle={() => {}}
+                              onClick={this.handleClickOpenDropdown}
+                            >
+                              Travellers
+                            </button>
+
+                            {this.state.error && (
+                              <p style={{ color: "red" }}>{this.state.error}</p>
+                            )}
+                            <Dialog open={this.state.dropdownOpen} onClose={this.handleCloseDropdown}>
+                              <DialogContent>
+                                <div
+                                  style={{
+                                    display: "flex",
+                                    justifyContent: "space-between",
+                                    alignContent: "center",
+                                  }}
+                                >
+                                  <h5>Adult : </h5>
+                                  <div>
+                                    <button
+                                      style={{
+                                        padding: "5px",
+                                        marginRight: "5px",
+                                      }}
+                                      name="adult"
+                                      type="button"
+                                      value={-1}
+                                      onClick={this.handleTravellerCounter}
+                                    >
+                                      -
+                                    </button>
+                                    {this.state.adult}
+                                    <button
+                                      style={{
+                                        padding: "5px",
+                                        marginLeft: "5px",
+                                      }}
+                                      name="adult"
+                                      type="button"
+                                      value={1}
+                                      onClick={this.handleTravellerCounter}
+                                    >
+                                      +
+                                    </button>
+                                  </div>
+                                </div>
+                                <div
+                                  style={{
+                                    display: "flex",
+                                    justifyContent: "space-between",
+                                    alignContent: "center",
+                                  }}
+                                >
+                                  <h5>Children : </h5>
+                                  <div>
+                                    {" "}
+                                    <button
+                                      style={{
+                                        padding: "5px",
+                                        marginRight: "5px",
+                                      }}
+                                      name="children"
+                                      type="button"
+                                      value={-1}
+                                      onClick={this.handleTravellerCounter}
+                                    >
+                                      -
+                                    </button>
+                                    {this.state.children}
+                                    <button
+                                      style={{
+                                        padding: "5px",
+                                        marginLeft: "5px",
+                                      }}
+                                      name="children"
+                                      type="button"
+                                      value={1}
+                                      onClick={this.handleTravellerCounter}
+                                    >
+                                      +
+                                    </button>
+                                  </div>
+                                </div>
+                                <div
+                                  style={{
+                                    display: "flex",
+                                    justifyContent: "space-between",
+                                    alignContent: "center",
+                                  }}
+                                >
+                                  <h5>Infant(Below 2) : </h5>
+                                  <div>
+                                    <button
+                                      style={{
+                                        padding: "5px",
+                                        marginRight: "5px",
+                                      }}
+                                      name="infant"
+                                      type="button"
+                                      value={-1}
+                                      onClick={this.handleTravellerCounter}
+                                    >
+                                      -
+                                    </button>
+                                    {this.state.infant}
+                                    <button
+                                      style={{
+                                        padding: "5px",
+                                        marginLeft: "5px",
+                                      }}
+                                      name="infant"
+                                      type="button"
+                                      value={1}
+                                      onClick={this.handleTravellerCounter}
+                                    >
+                                      +
+                                    </button>
+                                  </div>
+                                </div>
+                                <div
+                                  style={{
+                                    display: "flex",
+                                    justifyContent: "space-between",
+                                    alignContent: "center",
+                                  }}
+                                >
+                                  <h5>Infant (Lap) : </h5>
+                                  <div>
+                                    {" "}
+                                    <button
+                                      style={{
+                                        padding: "5px",
+                                        marginRight: "5px",
+                                      }}
+                                      name="infantLap"
+                                      type="button"
+                                      value={-1}
+                                      onClick={this.handleTravellerCounter}
+                                    >
+                                      -
+                                    </button>
+                                    {this.state.infantLap}
+                                    <button
+                                      style={{
+                                        padding: "5px",
+                                        marginLeft: "5px",
+                                      }}
+                                      name="infantLap"
+                                      type="button"
+                                      value={1}
+                                      onClick={this.handleTravellerCounter}
+                                    >
+                                      +
+                                    </button>
+                                  </div>
+                                </div>
+                              </DialogContent>
+                            </Dialog>
+                                      <p style={{margin:"0"}}>
+                                      {isValid() && (
+                              <span>
+                                {" "}
+                                Adults:{this.state.adult} Children:
+                                {this.state.children +
+                                  this.state.infant +
+                                  this.state.infantLap}
+                              </span>
+                            )}
+                                      </p>
+                          </div>
+                        </Col>
+
+                        {/* <Col style={{width:"auto" , display:"flex",flexDirection:"column",justifyContent:"center"}} md={12}>
+                          <div className="mb-3">
+                            <Label className="form-label">Your Email</Label>
+                            <div className="form-icon position-relative">
+                              <i>
+                                <FeatherIcon
+                                  icon="mail"
+                                  className="fea icon-sm icons"
+                                />
+                              </i>
+                              <input
+                                type="email"
+                                className="form-control ps-5"
+                                placeholder="Email"
+                                name="email"
+                                required
+                              />
+                            </div>
+                          </div>
+                        </Col> */}
+                        {/* <Col style={{width:"auto" , display:"flex",flexDirection:"column",justifyContent:"center"}} md={12}>
+                          <div className="mb-3">
+                            <div className="form-check">
+                              <input
+                                type="checkbox"
+                                className="form-check-input"
+                                id="customCheck1"
+                                required
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="customCheck1"
+                              >
+                                I Accept{" "}
+                                <Link to="#" className="text-primary">
+                                  Terms And Condition
+                                </Link>
+                              </label>
+                            </div>
+                          </div>
+                        </Col> */}
+                        <Col style={{flexBasis:"100%", display:"flex",justifyContent:"center",marginBottom:"10px"}}  md={12}>
+                          <div >
+                            <button className="btn btn-primary">
+                              Search Now
+                            </button>
+                          </div>
+                        </Col>
+                      </Row>
+                    </Form>
+                  
+                   </MobileView>
                   </CardBody>
                 </Card>
               </Col>

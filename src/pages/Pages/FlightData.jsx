@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { parse } from "iso8601-duration";
 import { Button, Card, CardText, CardBody } from "reactstrap";
 import { Dialog } from "@material-ui/core";
-
+import { isMobile } from "react-device-detect";
 import Amadeus from "amadeus";
 import UserDataForm from "./userDataForm";
 
@@ -39,14 +39,14 @@ const FlightData = (props) => {
       </div>
     );
   }
-
+  const cardStyle = isMobile ? { display: "flex",flexDirection:"column", justifyContent: "space-around"} : { display: "flex", justifyContent: "space-around"}
   const segs = props.details.itineraries[0].segments.length;
   const dur = parse(props.details.itineraries[0].duration);
   return (
     <div style={{ textAlign: "center" }}>
       <Card style={{ width: "auto", marginBottom: "75px" }}>
         <CardBody>
-          <CardText style={{ display: "flex", justifyContent: "space-around" }}>
+          <CardText style={cardStyle}>
             <div>
               <h4>
                 {" "}
