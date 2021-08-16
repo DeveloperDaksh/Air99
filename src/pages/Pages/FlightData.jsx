@@ -39,7 +39,13 @@ const FlightData = (props) => {
       </div>
     );
   }
-  const cardStyle = isMobile ? { display: "flex",flexDirection:"column", justifyContent: "space-around"} : { display: "flex", justifyContent: "space-around"}
+  const cardStyle = isMobile
+    ? {
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-around",
+      }
+    : { display: "flex", justifyContent: "space-around" };
   const segs = props.details.itineraries[0].segments.length;
   const dur = parse(props.details.itineraries[0].duration);
   return (
