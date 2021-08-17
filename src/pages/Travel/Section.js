@@ -493,11 +493,6 @@ export default class Section extends Component {
                                 Travellers
                               </button>
 
-                              {this.state.error && (
-                                <p style={{ color: "red" }}>
-                                  {this.state.error}
-                                </p>
-                              )}
                               <Dialog
                                 open={this.state.dropdownOpen}
                                 onClose={this.handleCloseDropdown}
@@ -651,61 +646,9 @@ export default class Section extends Component {
                                   </div>
                                 </DialogContent>
                               </Dialog>
-                              <p style={{ margin: "0" }}>
-                                {isValid() && (
-                                  <span>
-                                    {" "}
-                                    Adults:{this.state.adult} Children:
-                                    {this.state.children +
-                                      this.state.infant +
-                                      this.state.infantLap}
-                                  </span>
-                                )}
-                              </p>
+
                             </div>
                           </Col>
-
-                          {/* <Col style={{width:"auto" , display:"flex",flexDirection:"column",justifyContent:"center"}} md={12}>
-                          <div className="mb-3">
-                            <Label className="form-label">Your Email</Label>
-                            <div className="form-icon position-relative">
-                              <i>
-                                <FeatherIcon
-                                  icon="mail"
-                                  className="fea icon-sm icons"
-                                />
-                              </i>
-                              <input
-                                type="email"
-                                className="form-control ps-5"
-                                placeholder="Email"
-                                name="email"
-                                required
-                              />
-                            </div>
-                          </div>
-                        </Col> */}
-                          {/* <Col style={{width:"auto" , display:"flex",flexDirection:"column",justifyContent:"center"}} md={12}>
-                          <div className="mb-3">
-                            <div className="form-check">
-                              <input
-                                type="checkbox"
-                                className="form-check-input"
-                                id="customCheck1"
-                                required
-                              />
-                              <label
-                                className="form-check-label"
-                                htmlFor="customCheck1"
-                              >
-                                I Accept{" "}
-                                <Link to="#" className="text-primary">
-                                  Terms And Condition
-                                </Link>
-                              </label>
-                            </div>
-                          </div>
-                        </Col> */}
                           <Col
                             style={{
                               width: "auto",
@@ -720,6 +663,37 @@ export default class Section extends Component {
                               <button className="btn btn-primary">
                                 Search Now
                               </button>
+                            </div>
+                          </Col>
+                          <Col
+                            style={{
+                              width: "auto",
+                              flexBasis: "100%",
+                              display: "flex",
+                              flexDirection: "column",
+                              justifyContent: "center",
+                            }}
+                            md={12}
+                          >
+                            <div style={{ margin: "0 auto",marginTop:"10px" }}>
+                              
+                            {this.state.error && (
+                                <p style={{ color: "red" }}>
+                                  {this.state.error}
+                                </p>
+                              )}
+                          <p style={{ margin: "0" }}>
+                                {isValid() && (
+                                  <span>
+                                    {" "}
+                                    Adults:{this.state.adult} Children:
+                                    {this.state.children +
+                                      this.state.infant +
+                                      this.state.infantLap}
+                                  </span>
+                                )}
+                              </p>
+
                             </div>
                           </Col>
                         </Row>
@@ -841,7 +815,6 @@ export default class Section extends Component {
                               />
                             </div>
                           </Col>
-
                           <Col
                             style={{
                               display: "flex",
@@ -938,12 +911,6 @@ export default class Section extends Component {
                               >
                                 Travellers
                               </button>
-
-                              {this.state.error && (
-                                <p style={{ color: "red" }}>
-                                  {this.state.error}
-                                </p>
-                              )}
                               <Dialog
                                 open={this.state.dropdownOpen}
                                 onClose={this.handleCloseDropdown}
@@ -1097,61 +1064,9 @@ export default class Section extends Component {
                                   </div>
                                 </DialogContent>
                               </Dialog>
-                              <p style={{ margin: "0" }}>
-                                {isValid() && (
-                                  <span>
-                                    {" "}
-                                    Adults:{this.state.adult} Children:
-                                    {this.state.children +
-                                      this.state.infant +
-                                      this.state.infantLap}
-                                  </span>
-                                )}
-                              </p>
+                              
                             </div>
                           </Col>
-
-                          {/* <Col style={{width:"auto" , display:"flex",flexDirection:"column",justifyContent:"center"}} md={12}>
-                          <div className="mb-3">
-                            <Label className="form-label">Your Email</Label>
-                            <div className="form-icon position-relative">
-                              <i>
-                                <FeatherIcon
-                                  icon="mail"
-                                  className="fea icon-sm icons"
-                                />
-                              </i>
-                              <input
-                                type="email"
-                                className="form-control ps-5"
-                                placeholder="Email"
-                                name="email"
-                                required
-                              />
-                            </div>
-                          </div>
-                        </Col> */}
-                          {/* <Col style={{width:"auto" , display:"flex",flexDirection:"column",justifyContent:"center"}} md={12}>
-                          <div className="mb-3">
-                            <div className="form-check">
-                              <input
-                                type="checkbox"
-                                className="form-check-input"
-                                id="customCheck1"
-                                required
-                              />
-                              <label
-                                className="form-check-label"
-                                htmlFor="customCheck1"
-                              >
-                                I Accept{" "}
-                                <Link to="#" className="text-primary">
-                                  Terms And Condition
-                                </Link>
-                              </label>
-                            </div>
-                          </div>
-                        </Col> */}
                           <Col
                             style={{
                               flexBasis: "100%",
@@ -1165,6 +1080,34 @@ export default class Section extends Component {
                               <button className="btn btn-primary">
                                 Search Now
                               </button>
+                            </div>
+                          </Col>
+                          <Col
+                            style={{
+                              flexBasis: "100%",
+                              display: "flex",
+                              justifyContent: "center",
+                              marginBottom: "10px",
+                            }}
+                            md={12}
+                          >
+                            <div>
+                            {this.state.error && (
+                                <p style={{ color: "red" }}>
+                                  {this.state.error}
+                                </p>
+                              )}
+                              <p style={{ margin: "0",textAlign:"center" }}>
+                                {isValid() && (
+                                  <span>
+                                    {" "}
+                                    Adults:{this.state.adult} Children:
+                                    {this.state.children +
+                                      this.state.infant +
+                                      this.state.infantLap}
+                                  </span>
+                                )}
+                              </p>
                             </div>
                           </Col>
                         </Row>
