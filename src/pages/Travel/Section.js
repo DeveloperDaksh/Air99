@@ -179,30 +179,14 @@ export default class Section extends Component {
     const searchSource = async (e, newValue) => {
       await this.setState({ source: e?.target?.value });
       let resp;
-      // if (this.state.source !== "")
-      //   try {
-      //     resp = await axios.get(
-      //       `https://test.api.amadeus.com/v1/reference-data/locations?subType=AIRPORT&keyword=${this.state.source}`,
-      //       {
-      //         headers: {
-      //           Authorization: "Bearer " + this.state.AuthToken,
-      //         },
-      //       }
-      //     );
-      //     await this.setState({ sourceSuggestions: resp.data.data });
-      //   } catch (error) {
-      //     console.log(error);
-      //   }
-      // else {
-      //   this.setState({ sourceSuggestions: [] });
-      // }
       if (this.state.source !== "")
         try {
           resp = await axios.get(
             `https://www.in.cheapflights.com/mv/marvel?f=j&where=${this.state.source}&s=72&lc_cc=IN&lc=en&v=v1&cv=5`
           );
-          console.log(resp.data);
           await this.setState({ sourceSuggestions: resp.data });
+          console.log(this.state.sourceSuggestions);
+          console.log(this.state.source);
         } catch (error) {
           console.log(error);
         }
@@ -214,29 +198,11 @@ export default class Section extends Component {
     const searchDestination = async (e) => {
       await this.setState({ destination: e?.target?.value });
       let resp;
-      // if (this.state.destination !== "")
-      //   try {
-      //     resp = await axios.get(
-      //       `https://test.api.amadeus.com/v1/reference-data/locations?subType=AIRPORT&keyword=${this.state.destination}`,
-      //       {
-      //         headers: {
-      //           Authorization: "Bearer " + this.state.AuthToken,
-      //         },
-      //       }
-      //     );
-      //     await this.setState({ destinationSuggestions: resp.data.data });
-      //   } catch (error) {
-      //     console.log(error);
-      //   }
-      // else {
-      //   this.setState({ destinationSuggestions: [] });
-      // }
       if (this.state.destination !== "")
         try {
           resp = await axios.get(
             `https://www.in.cheapflights.com/mv/marvel?f=j&where=${this.state.destination}&s=72&lc_cc=IN&lc=en&v=v1&cv=5`
           );
-          console.log(resp.data);
           await this.setState({ destinationSuggestions: resp.data });
         } catch (error) {
           console.log(error);
@@ -311,7 +277,6 @@ export default class Section extends Component {
                                   onInputChange={searchSource}
                                   inputValue={this.state.source}
                                   getOptionLabel={(option) =>
-                                    // `${option?.name} ${option?.subType}, ${option?.address?.cityName}`
                                     `${option?.displayname}`
                                   }
                                   renderInput={(params) => (
@@ -326,6 +291,7 @@ export default class Section extends Component {
                               </div>
                             </div>
                           </Col>
+
                           <Col
                             style={{
                               width: "auto",
@@ -352,7 +318,6 @@ export default class Section extends Component {
                                   onInputChange={searchDestination}
                                   inputValue={this.state.destination}
                                   getOptionLabel={(option) =>
-                                    // `${option?.name} ${option?.subType}, ${option?.address?.cityName}`
                                     `${option?.displayname}`
                                   }
                                   renderInput={(params) => (
@@ -395,7 +360,6 @@ export default class Section extends Component {
                               />
                             </div>
                           </Col>
-
                           <Col
                             style={{
                               width: "auto",
@@ -646,7 +610,6 @@ export default class Section extends Component {
                                   </div>
                                 </DialogContent>
                               </Dialog>
-
                             </div>
                           </Col>
                           <Col
@@ -675,14 +638,15 @@ export default class Section extends Component {
                             }}
                             md={12}
                           >
-                            <div style={{ margin: "0 auto",marginTop:"10px" }}>
-                              
-                            {this.state.error && (
+                            <div
+                              style={{ margin: "0 auto", marginTop: "10px" }}
+                            >
+                              {this.state.error && (
                                 <p style={{ color: "red" }}>
                                   {this.state.error}
                                 </p>
                               )}
-                          <p style={{ margin: "0" }}>
+                              <p style={{ margin: "0" }}>
                                 {isValid() && (
                                   <span>
                                     {" "}
@@ -693,7 +657,6 @@ export default class Section extends Component {
                                   </span>
                                 )}
                               </p>
-
                             </div>
                           </Col>
                         </Row>
@@ -726,15 +689,15 @@ export default class Section extends Component {
                                   style={{ maxWidth: "100vw" }}
                                   onChange={(event, newValue) => {
                                     this.setState({
-                                      source: newValue?.address?.cityName || "",
-                                      sourceCode: newValue?.iataCode || "",
+                                      source: newValue?.cityname || "",
+                                      sourceCode: newValue?.apicode || "",
                                     });
                                   }}
                                   options={sourceSuggestions}
                                   onInputChange={searchSource}
                                   inputValue={this.state.source}
                                   getOptionLabel={(option) =>
-                                    `${option?.name} ${option?.subType}, ${option?.address?.cityName}`
+                                    `${option?.displayname}`
                                   }
                                   renderInput={(params) => (
                                     <TextField
@@ -765,16 +728,15 @@ export default class Section extends Component {
                                   style={{ maxWidth: "100vw" }}
                                   onChange={(event, newValue) => {
                                     this.setState({
-                                      destination:
-                                        newValue?.address?.cityName || "",
-                                      destinationCode: newValue?.iataCode || "",
+                                      destination: newValue?.cityname || "",
+                                      destinationCode: newValue?.apicode || "",
                                     });
                                   }}
                                   options={destinationSuggestions}
                                   onInputChange={searchDestination}
                                   inputValue={this.state.destination}
                                   getOptionLabel={(option) =>
-                                    `${option?.name} ${option?.subType}, ${option?.address?.cityName}`
+                                    `${option?.displayname}`
                                   }
                                   renderInput={(params) => (
                                     <TextField
@@ -1064,7 +1026,6 @@ export default class Section extends Component {
                                   </div>
                                 </DialogContent>
                               </Dialog>
-                              
                             </div>
                           </Col>
                           <Col
@@ -1092,12 +1053,12 @@ export default class Section extends Component {
                             md={12}
                           >
                             <div>
-                            {this.state.error && (
+                              {this.state.error && (
                                 <p style={{ color: "red" }}>
                                   {this.state.error}
                                 </p>
                               )}
-                              <p style={{ margin: "0",textAlign:"center" }}>
+                              <p style={{ margin: "0", textAlign: "center" }}>
                                 {isValid() && (
                                   <span>
                                     {" "}
