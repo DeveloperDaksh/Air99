@@ -283,12 +283,17 @@ const ShopMyAccount = React.lazy(() =>
   import("./pages/Pages/Shop/ShopMyAccount")
 );
 
+const Payment = React.lazy(() => 
+  import ("./pages/Travel/Payment")
+)
+
 //SearchPage
 const Search= React.lazy(()=>import('./pages/Pages/Search'));
 
 const routes = [
   //routes without Layout
 
+  {path: "/payments", component: Payment},
   //Contct without layout
   {
     path: "/page-contact-detail",
