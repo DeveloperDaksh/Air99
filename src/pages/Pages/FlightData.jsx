@@ -118,7 +118,7 @@ const FlightData = (props) => {
                   {(props.details.price.total * props.rate).toFixed(2)} USD
                 </strong>
               </p>
-              <Button onClick={handleClickOpen}>Book Now</Button>
+              <Button onClick={() => window.location.href="/payments"}>Book Now</Button>
             </div>
           </CardText>
         </CardBody>
