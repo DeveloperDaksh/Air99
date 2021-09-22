@@ -262,7 +262,7 @@ export default class Section extends Component {
                             md={12}
                           >
                             <div className="mb-3">
-                              <Label className="form-label">From</Label>
+                              <Label className="form-label color" >From</Label>
                               <div className="form-icon position-relative">
                                 <Autocomplete
                                   fullWidth
@@ -303,7 +303,7 @@ export default class Section extends Component {
                             md={12}
                           >
                             <div className="mb-3">
-                              <Label className="form-label">To</Label>
+                              <Label className="form-label color" >To</Label>
                               <div className="form-icon position-relative">
                                 <Autocomplete
                                   fullWidth

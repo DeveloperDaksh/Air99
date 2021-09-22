@@ -38,23 +38,46 @@ const Search = () => {
   };
 
   useEffect(() => {
+    // console.log(arr);
     axios
       .get(
-        "https://free.currconv.com/api/v7/convert?q=USD_EUR,EUR_USD&compact=ultra&apiKey=e0f56b9529cbbe90fee3"
+        "https://free.currconv.com/api/v7/convert?q=USD_EUR,EUR_USD&compact=ultra&apiKey=e0f56b9529cbbe90fee3"//Api for conversion
       )
       .then((resp) => setRate(resp.data.EUR_USD));
   }, []);
+  function compare(a,b){return (parseInt(a.price.grandTotal)-parseInt(b.price.grandTotal));}
+  function compareS(b,a){return (parseInt(a.price.grandTotal)-parseInt(b.price.grandTotal));}
 
   useEffect(() => {
-    console.log(value);
+    
+    console.log(value+"value");
     if (value == 99) setFlightsToDisplay(flights);
     else if (value == 0) {
+      
       const arr = flights.filter((f) => f.itineraries[0].segments.length === 1);
       setFlightsToDisplay(arr);
-      console.log(arr.length);
+     
+      console.log(arr);
+      
     } else if (value == 1) {
       const arr = flights.filter((f) => f.itineraries[0].segments.length === 2);
       setFlightsToDisplay(arr);
+    }
+    //Sorting the cards with Low to High
+    else if(value ==4)
+    { 
+   
+      const LowtoHigh=flights.sort(compare);
+     
+      setFlightsToDisplay(LowtoHigh);
+    }
+     //Sorting the cards with High to Low
+    else if(value ==5)
+    { 
+      
+      const HighToLow=flights.sort(compareS);
+     
+      setFlightsToDisplay(HighToLow);
     }
   }, [value]);
 
@@ -106,7 +129,7 @@ const Search = () => {
       </div>
     );
   }
-  console.log(values);
+  // console.log(values);
   return (
     <div>
       <Section {...values} searchPage />
@@ -176,6 +199,16 @@ const Search = () => {
                       value="1"
                       control={<Radio />}
                       label="1 Stop"
+                    />
+                    <FormControlLabel
+                      value="4"
+                      control={<Radio />}
+                      label="Low to high"
+                    />
+                    <FormControlLabel
+                      value="5"
+                      control={<Radio />}
+                      label="High to Low"
                     />
                   </RadioGroup>
                 </FormControl>
@@ -322,6 +355,16 @@ const Search = () => {
                       value="1"
                       control={<Radio />}
                       label="1 Stop"
+                    />
+                    <FormControlLabel
+                      value="1"
+                      control={<Radio />}
+                      label="Low to high"
+                    />
+                    <FormControlLabel
+                      value="1"
+                      control={<Radio />}
+                      label="High to Low"
                     />
                   </RadioGroup>
                 </FormControl>

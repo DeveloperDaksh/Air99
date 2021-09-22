@@ -7,7 +7,8 @@
   left: 0;
   top: 0;
   z-index: 999;
-  background-color: transparent;
+  background-color: white;
+  color: $dark !important;
   border: 0;
   transition: all 0.5s ease;
   .logo {
@@ -28,11 +29,11 @@
   .has-submenu {
     &.active {
       a {
-        color: $white;
+        color: $dark;
       }
       .submenu {
         li.active > a {
-          color: $primary !important;
+          color: $dark !important;
         }
       }
       &.active {
@@ -457,22 +458,22 @@
           }
         }
       }
-      &.nav-light {
+      &.nav-dark{
         > li {
           > a {
             color: rgba($white, 0.5);
           }
           &.active {
             > a {
-              color: $white !important;
+              color: $dark !important;
             }
           }
           &:hover {
             > .menu-arrow {
-              border-color: $white !important;
+              border-color: $dark !important;
             }
             > a {
-              color: $white !important;
+              color: $dark !important;
             }
           }
         }

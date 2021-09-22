@@ -221,7 +221,7 @@ class Topbar extends Component {
                         </DropdownToggle>
                         <DropdownMenu
                           direction="left"
-                          className="dd-menu bg-white shadow rounded border-0 mt-3 p-4"
+                          className="dd-menu bg-black shadow rounded border-0 mt-3 p-4"
                           style={{ width: "300px" }}
                         >
                           <div className="pb-4">
