@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Container, Row, Col, Form, Input, Label } from "reactstrap";
-
+//Logo
+import air99 from '../../assets/air99.jpg';
 //Import Icons
 import FeatherIcon from "feather-icons-react";
 
@@ -41,8 +42,8 @@ class Footer extends Component {
               >
                 <Link to="#" className="logo-footer">
                   <img
-                    src='src\assets\images\app\logoair99.png'
-                    height="24"
+                    src={air99}
+                    height="48"
                     alt="Air99"
                   />
                 </Link>
@@ -225,7 +226,7 @@ class Footer extends Component {
             </Row>
           </Container>
         </footer>
-     </React.Fragment>
+      </React.Fragment>
     );
   }
 }

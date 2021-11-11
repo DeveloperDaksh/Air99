@@ -11,7 +11,8 @@ import {
   DropdownToggle,
   UncontrolledDropdown
 } from "reactstrap";
-
+//Logo
+import air99 from '../../assets/air99.jpg';
 //Import images
 import logodark from "../../assets/images/logo-dark.png";
 import logolight from "../../assets/images/logo-light.png";
@@ -33,19 +34,19 @@ class Topbar extends Component {
           id: 2,
           title: "About US",
           link: "/page-aboutus",
-         
+
         },
         {
           id: 3,
           title: "Services",
           link: "/page-services",
-          
+
         },
         {
           id: 4,
           title: "Pricing",
           link: "/page-pricing",
-          
+
         },
       ],
       wishlistModal: false,
@@ -155,19 +156,18 @@ class Topbar extends Component {
 
               {this.props.hasDarkTopBar ? (
                 <a className="logo" href="/">
-                  {/* <img src={logodark} height="24" className="logo-light-mode" alt="" />
-                  <img src={logolight} height="24" className="logo-dark-mode" alt="" /> */}
-                  Air99
+                  {/* <img src={logodark} height="24" className="logo-light-mode" alt="" />*/
+                    <img src={air99} height="48" alt="" />}
                 </a>
               ) :
                 <a className="logo" href="/">
                   {/* <span className="logo-light-mode">
                     <img src={logodark} className="l-dark" height="24" alt="" />
                     <img src={logolight} className="l-light" height="24" alt="" />
-                  </span>
-                  
-                  <img src={logolight} height="24" className="logo-dark-mode" alt="" /> */}
-                  Air99
+                  </span>*/
+
+                    <img src={air99} height="48" alt="" />}
+
                 </a>
               }
             </div>

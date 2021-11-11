@@ -17,6 +17,7 @@ import {
   DropdownItem,
   DropdownMenu,
 } from "reactstrap";
+import Button from '@material-ui/core/Button';
 import TextField from "@material-ui/core/TextField";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 //Import Icons
@@ -132,13 +133,13 @@ export default class Section extends Component {
       destination: this.state.destinationCode,
       checkin: new Date(
         this.state.CheckIn.getTime() -
-          this.state.CheckIn.getTimezoneOffset() * 60000
+        this.state.CheckIn.getTimezoneOffset() * 60000
       )
         .toISOString()
         .split("T")[0],
       checkout: new Date(
         this.state.CheckOut.getTime() -
-          this.state.CheckOut.getTimezoneOffset() * 60000
+        this.state.CheckOut.getTimezoneOffset() * 60000
       )
         .toISOString()
         .split("T")[0],
@@ -228,29 +229,34 @@ export default class Section extends Component {
     const destinationSuggestions = this.state.destinationSuggestions;
     const backgroundSearch = this.props.searchPage
       ? {
-          paddingBottom: "0",
-        }
+        paddingBottom: "0",
+      }
       : {
-          background: `url(${travelBg}) center center`,
-        };
+        background: `url(${travelBg})`,
+        backgroundPosition: '0% 60%',
+        backgroundSize: 'cover',
+        backgroundColor: '#5c6ea1'
+      };
     return (
       <React.Fragment>
         <section className="bg-half-170 d-table w-100" style={backgroundSearch}>
-          {!this.props.searchPage && <div className="bg-overlay"></div>}
-          <div style={{ maxWidth: "95vw", margin: "0 auto" }}>
-            <Row className="align-items-center justify-content-space-around">
-              <Col lg={12} md={6} className="mt-4 pt-2 mt-sm-0 pt-sm-0">
-                <Card>
-                  <CardBody>
-                    <BrowserView>
-                      <Form className="login-form" onSubmit={this.formSubmit}>
-                        <Row
-                          style={{
-                            display: "flex",
-                            justifyContent: "space-around",
-                            alignContent: "center",
-                          }}
-                        >
+          {!this.props.searchPage}
+          <Row className="justify-content-center">
+            <div className="col-md-6 col-sm-12" style={{
+              maxWidth: "400px",
+              padding: 'calc(1.25rem * 1.5) calc(1.25rem * 1.5) 1.25rem calc(1.25rem * 1.5)',
+              backgroundColor: '#005ba9',
+              borderRadius: '20px',
+              boxShadow: '0 0 2px #005ba9'
+            }}>
+              <Row className="align-items-center justify-content-center">
+                <Col lg={12} md={6} className="mt-4 pt-2 mt-sm-0 pt-sm-0">
+                  <Card>
+                    <CardBody style={{ padding: 0 }}>
+                      <BrowserView>
+                        <Form className="login-form" onSubmit={this.formSubmit
+                        } style={{ fontFamily: '"Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;' }}>
+
                           <Col
                             style={{
                               width: "auto",
@@ -259,14 +265,13 @@ export default class Section extends Component {
                               flexDirection: "column",
                               justifyContent: "center",
                             }}
-                            md={12}
                           >
                             <div className="mb-3">
-                              <Label className="form-label color" >From</Label>
+                              <Label className="form-label text-white" >From</Label>
                               <div className="form-icon position-relative">
                                 <Autocomplete
                                   fullWidth
-                                  style={{ maxWidth: "100vw" }}
+                                  style={{ maxWidth: "100vw", backgroundColor: 'white', borderRadius: '3px' }}
                                   onChange={(event, newValue) => {
                                     this.setState({
                                       source: newValue?.cityname || "",
@@ -283,8 +288,8 @@ export default class Section extends Component {
                                     <TextField
                                       {...params}
                                       placeholder={this.props.source}
-                                      // label="Where"
-                                      // variant="outlined"
+                                    // label="Where"
+                                    // variant="outlined"
                                     />
                                   )}
                                 />
@@ -300,14 +305,13 @@ export default class Section extends Component {
                               flexDirection: "column",
                               justifyContent: "center",
                             }}
-                            md={12}
                           >
                             <div className="mb-3">
-                              <Label className="form-label color" >To</Label>
+                              <Label className="form-label text-white" >To</Label>
                               <div className="form-icon position-relative">
                                 <Autocomplete
                                   fullWidth
-                                  style={{ maxWidth: "100vw" }}
+                                  style={{ maxWidth: "100vw", backgroundColor: 'white', borderRadius: '3px' }}
                                   onChange={(event, newValue) => {
                                     this.setState({
                                       destination: newValue?.cityname || "",
@@ -324,295 +328,295 @@ export default class Section extends Component {
                                     <TextField
                                       placeholder={this.props.destination}
                                       {...params}
-                                      // label="Where"
-                                      // variant="outlined"
+                                    // label="Where"
+                                    // variant="outlined"
                                     />
                                   )}
                                 />
                               </div>
                             </div>
                           </Col>
-                          <Col
-                            style={{
-                              width: "auto",
-                              display: "flex",
-                              flexDirection: "column",
-                              justifyContent: "center",
-                            }}
-                            md={6}
-                          >
-                            <div className="mb-3" style={{ width: "130px" }}>
-                              <Label className="form-label"> Check in : </Label>
-                              <Flatpickr
-                                value={this.state.CheckIn}
-                                className="flatpickr flatpickr-input form-control"
-                                placeholder="Pick a date"
-                                options={{
-                                  minDate: cDate(),
-                                  altInput: true,
-                                  // altFormat: "F j, Y",
-                                  dateFormat: "Y-m-d",
-                                }}
-                                onChange={(date) => {
-                                  console.log(date[0]);
-                                  this.setState({ CheckIn: date[0] });
-                                }}
-                              />
-                            </div>
-                          </Col>
-                          <Col
-                            style={{
-                              width: "auto",
-                              display: "flex",
-                              flexDirection: "column",
-                              justifyContent: "center",
-                            }}
-                            md={6}
-                          >
-                            <div className="mb-3" style={{ width: "130px" }}>
-                              <Label className="form-label">
-                                {" "}
-                                Check out :{" "}
-                              </Label>
-                              <Flatpickr
-                                value={this.state.CheckOut}
-                                className="flatpickr flatpickr-input form-control"
-                                placeholder="Pick a date"
-                                options={{
-                                  minDate: this.state.CheckIn,
-                                  altInput: true,
-                                  dateFormat: "Y-m-d",
-                                }}
-                                onChange={(date) => {
-                                  this.setState({ CheckOut: date[0] });
-                                }}
-                              />
-                            </div>
-                          </Col>
-                          <Col
-                            style={{
-                              width: "auto",
-                              display: "flex",
-                              flexDirection: "column",
-                              justifyContent: "center",
-                            }}
-                            md={6}
-                          >
-                            <div>
-                              <Dropdown
-                                isOpen={this.state.open}
-                                toggle={() => {
-                                  this.setState((prev) => ({
-                                    open: !prev.open,
-                                  }));
-                                }}
-                              >
-                                <DropdownToggle caret>
-                                  {this.state.flightClass}
-                                </DropdownToggle>
-                                <DropdownMenu container="body">
-                                  <DropdownItem
-                                    onClick={() =>
-                                      this.setState({ flightClass: "Economy" })
-                                    }
-                                  >
-                                    Economy
-                                  </DropdownItem>
-                                  <DropdownItem
-                                    onClick={() =>
-                                      this.setState({ flightClass: "Business" })
-                                    }
-                                  >
-                                    Business
-                                  </DropdownItem>
-                                  <DropdownItem
-                                    onClick={() =>
-                                      this.setState({ flightClass: "First" })
-                                    }
-                                  >
-                                    First
-                                  </DropdownItem>
-                                </DropdownMenu>
-                              </Dropdown>
-                            </div>
-                          </Col>
-                          <Col
-                            style={{
-                              width: "auto",
-                              display: "flex",
-                              flexDirection: "column",
-                              justifyContent: "center",
-                            }}
-                            md={6}
-                          >
-                            <div>
-                              <button
-                                type="button"
-                                aria-haspopup="true"
-                                aria-expanded="false"
-                                class="dropdown-toggle btn btn-secondary"
-                                toggle={() => {}}
-                                onClick={this.handleClickOpenDropdown}
-                              >
-                                Travellers
-                              </button>
+                          <div className="row my-2">
+                            <Col
+                              style={{
+                                width: "auto",
+                                display: "flex",
+                                flexDirection: "column",
+                                justifyContent: "center",
+                              }}
+                            >
+                              <div className="mb-3" style={{ width: "auto" }}>
+                                <Flatpickr
+                                  value={this.state.CheckIn}
+                                  className="flatpickr flatpickr-input form-control"
+                                  placeholder="Check in date"
+                                  options={{
+                                    minDate: cDate(),
+                                    altInput: true,
+                                    // altFormat: "F j, Y",
+                                    dateFormat: "Y-m-d",
+                                  }}
+                                  onChange={(date) => {
+                                    console.log(date[0]);
+                                    this.setState({ CheckIn: date[0] });
+                                  }}
+                                />
+                              </div>
+                            </Col>
+                            <Col
+                              style={{
+                                width: "auto",
+                                display: "flex",
+                                flexDirection: "column",
+                                justifyContent: "center",
+                              }}
+                            >
+                              <div className="mb-3" style={{ width: "auto" }}>
 
-                              <Dialog
-                                open={this.state.dropdownOpen}
-                                onClose={this.handleCloseDropdown}
-                              >
-                                <DialogContent>
-                                  <div
-                                    style={{
-                                      display: "flex",
-                                      justifyContent: "space-between",
-                                      alignContent: "center",
-                                    }}
+                                <Flatpickr
+                                  value={this.state.CheckOut}
+                                  className="flatpickr flatpickr-input form-control"
+                                  placeholder="Check out date"
+                                  options={{
+                                    minDate: this.state.CheckIn,
+                                    altInput: true,
+                                    dateFormat: "Y-m-d",
+                                  }}
+                                  onChange={(date) => {
+                                    this.setState({ CheckOut: date[0] });
+                                  }}
+                                />
+                              </div>
+                            </Col>
+                          </div>
+                          <div className="row my-2">
+                            <Col
+                              style={{
+                                width: "auto",
+                                display: "flex",
+                                justifyContent: "center",
+                              }}
+                            >
+                              <div>
+                                <Dropdown
+                                  isOpen={this.state.open}
+                                  toggle={() => {
+                                    this.setState((prev) => ({
+                                      open: !prev.open,
+                                    }));
+                                  }}
+                                >
+                                  <DropdownToggle caret style={{ width: '150px' }}
                                   >
-                                    <h5>Adult : </h5>
-                                    <div>
-                                      <button
-                                        style={{
-                                          padding: "5px",
-                                          marginRight: "5px",
-                                        }}
-                                        name="adult"
-                                        type="button"
-                                        value={-1}
-                                        onClick={this.handleTravellerCounter}
-                                      >
-                                        -
-                                      </button>
-                                      {this.state.adult}
-                                      <button
-                                        style={{
-                                          padding: "5px",
-                                          marginLeft: "5px",
-                                        }}
-                                        name="adult"
-                                        type="button"
-                                        value={1}
-                                        onClick={this.handleTravellerCounter}
-                                      >
-                                        +
-                                      </button>
+                                    {this.state.flightClass}
+                                  </DropdownToggle>
+                                  <DropdownMenu container="body">
+                                    <DropdownItem
+                                      onClick={() =>
+                                        this.setState({ flightClass: "Economy" })
+                                      }
+                                    >
+                                      Economy
+                                    </DropdownItem>
+                                    <DropdownItem
+                                      onClick={() =>
+                                        this.setState({ flightClass: "Business" })
+                                      }
+                                    >
+                                      Business
+                                    </DropdownItem>
+                                    <DropdownItem
+                                      onClick={() =>
+                                        this.setState({ flightClass: "First" })
+                                      }
+                                    >
+                                      First
+                                    </DropdownItem>
+                                  </DropdownMenu>
+                                </Dropdown>
+                              </div>
+                            </Col>
+                            <Col
+                              style={{
+                                width: "auto",
+                                display: "flex",
+                                justifyContent: "center",
+                              }}
+                            >
+                              <div>
+                                <button
+                                  type="button"
+                                  aria-haspopup="true"
+                                  aria-expanded="false"
+                                  class="dropdown-toggle btn btn-secondary"
+                                  toggle={() => { }}
+                                  onClick={this.handleClickOpenDropdown}
+                                  style={{ width: '150px' }}
+                                >
+                                  Travellers
+                                </button>
+
+                                <Dialog
+                                  open={this.state.dropdownOpen}
+                                  onClose={this.handleCloseDropdown}
+                                >
+                                  <DialogContent>
+                                    <div
+                                      style={{
+                                        display: "flex",
+                                        justifyContent: "space-between",
+                                        alignContent: "center",
+                                      }}
+                                    >
+                                      <h5>Adult : </h5>
+                                      <div>
+                                        <button
+                                          style={{
+                                            padding: "5px",
+                                            marginRight: "5px",
+                                          }}
+                                          name="adult"
+                                          type="button"
+                                          value={-1}
+                                          onClick={this.handleTravellerCounter}
+                                        >
+                                          -
+                                        </button>
+                                        {this.state.adult}
+                                        <button
+                                          style={{
+                                            padding: "5px",
+                                            marginLeft: "5px",
+                                          }}
+                                          name="adult"
+                                          type="button"
+                                          value={1}
+                                          onClick={this.handleTravellerCounter}
+                                        >
+                                          +
+                                        </button>
+                                      </div>
                                     </div>
-                                  </div>
-                                  <div
-                                    style={{
-                                      display: "flex",
-                                      justifyContent: "space-between",
-                                      alignContent: "center",
-                                    }}
-                                  >
-                                    <h5>Children : </h5>
-                                    <div>
-                                      {" "}
-                                      <button
-                                        style={{
-                                          padding: "5px",
-                                          marginRight: "5px",
-                                        }}
-                                        name="children"
-                                        type="button"
-                                        value={-1}
-                                        onClick={this.handleTravellerCounter}
-                                      >
-                                        -
-                                      </button>
-                                      {this.state.children}
-                                      <button
-                                        style={{
-                                          padding: "5px",
-                                          marginLeft: "5px",
-                                        }}
-                                        name="children"
-                                        type="button"
-                                        value={1}
-                                        onClick={this.handleTravellerCounter}
-                                      >
-                                        +
-                                      </button>
+                                    <div
+                                      style={{
+                                        display: "flex",
+                                        justifyContent: "space-between",
+                                        alignContent: "center",
+                                      }}
+                                    >
+                                      <h5>Children : </h5>
+                                      <div>
+                                        {" "}
+                                        <button
+                                          style={{
+                                            padding: "5px",
+                                            marginRight: "5px",
+                                          }}
+                                          name="children"
+                                          type="button"
+                                          value={-1}
+                                          onClick={this.handleTravellerCounter}
+                                        >
+                                          -
+                                        </button>
+                                        {this.state.children}
+                                        <button
+                                          style={{
+                                            padding: "5px",
+                                            marginLeft: "5px",
+                                          }}
+                                          name="children"
+                                          type="button"
+                                          value={1}
+                                          onClick={this.handleTravellerCounter}
+                                        >
+                                          +
+                                        </button>
+                                      </div>
                                     </div>
-                                  </div>
-                                  <div
-                                    style={{
-                                      display: "flex",
-                                      justifyContent: "space-between",
-                                      alignContent: "center",
-                                    }}
-                                  >
-                                    <h5>Infant(Below 2) : </h5>
-                                    <div>
-                                      <button
-                                        style={{
-                                          padding: "5px",
-                                          marginRight: "5px",
-                                        }}
-                                        name="infant"
-                                        type="button"
-                                        value={-1}
-                                        onClick={this.handleTravellerCounter}
-                                      >
-                                        -
-                                      </button>
-                                      {this.state.infant}
-                                      <button
-                                        style={{
-                                          padding: "5px",
-                                          marginLeft: "5px",
-                                        }}
-                                        name="infant"
-                                        type="button"
-                                        value={1}
-                                        onClick={this.handleTravellerCounter}
-                                      >
-                                        +
-                                      </button>
+                                    <div
+                                      style={{
+                                        display: "flex",
+                                        justifyContent: "space-between",
+                                        alignContent: "center",
+                                      }}
+                                    >
+                                      <h5>Infant(Below 2) : </h5>
+                                      <div>
+                                        <button
+                                          style={{
+                                            padding: "5px",
+                                            marginRight: "5px",
+                                          }}
+                                          name="infant"
+                                          type="button"
+                                          value={-1}
+                                          onClick={this.handleTravellerCounter}
+                                        >
+                                          -
+                                        </button>
+                                        {this.state.infant}
+                                        <button
+                                          style={{
+                                            padding: "5px",
+                                            marginLeft: "5px",
+                                          }}
+                                          name="infant"
+                                          type="button"
+                                          value={1}
+                                          onClick={this.handleTravellerCounter}
+                                        >
+                                          +
+                                        </button>
+                                      </div>
                                     </div>
-                                  </div>
-                                  <div
-                                    style={{
-                                      display: "flex",
-                                      justifyContent: "space-between",
-                                      alignContent: "center",
-                                    }}
-                                  >
-                                    <h5>Infant (Lap) : </h5>
-                                    <div>
-                                      {" "}
-                                      <button
-                                        style={{
-                                          padding: "5px",
-                                          marginRight: "5px",
-                                        }}
-                                        name="infantLap"
-                                        type="button"
-                                        value={-1}
-                                        onClick={this.handleTravellerCounter}
-                                      >
-                                        -
-                                      </button>
-                                      {this.state.infantLap}
-                                      <button
-                                        style={{
-                                          padding: "5px",
-                                          marginLeft: "5px",
-                                        }}
-                                        name="infantLap"
-                                        type="button"
-                                        value={1}
-                                        onClick={this.handleTravellerCounter}
-                                      >
-                                        +
-                                      </button>
+                                    <div
+                                      style={{
+                                        display: "flex",
+                                        justifyContent: "space-between",
+                                        alignContent: "center",
+                                      }}
+                                    >
+                                      <h5>Infant (Lap) : </h5>
+                                      <div>
+                                        {" "}
+                                        <button
+                                          style={{
+                                            padding: "5px",
+                                            marginRight: "5px",
+                                          }}
+                                          name="infantLap"
+                                          type="button"
+                                          value={-1}
+                                          onClick={this.handleTravellerCounter}
+                                        >
+                                          -
+                                        </button>
+                                        {this.state.infantLap}
+                                        <button
+                                          style={{
+                                            padding: "5px",
+                                            marginLeft: "5px",
+                                          }}
+                                          name="infantLap"
+                                          type="button"
+                                          value={1}
+                                          onClick={this.handleTravellerCounter}
+                                        >
+                                          +
+                                        </button>
+                                      </div>
                                     </div>
-                                  </div>
-                                </DialogContent>
-                              </Dialog>
-                            </div>
-                          </Col>
-                          <Col
+                                  </DialogContent>
+                                </Dialog>
+                              </div>
+                            </Col>
+                          </div>
+
+                          <button className="btn text-light mt-3" style={{ width: '100%', background: 'transparent linear-gradient(257deg, #f79c34 0%, #ff6c1d 100%) 0% 0% no-repeat padding-box' }}>
+                            Search Now
+                          </button>
+                          <div className="col-md-12 text-white"
                             style={{
                               width: "auto",
                               flexBasis: "100%",
@@ -620,23 +624,6 @@ export default class Section extends Component {
                               flexDirection: "column",
                               justifyContent: "center",
                             }}
-                            md={12}
-                          >
-                            <div style={{ margin: "0 auto" }}>
-                              <button className="btn btn-primary">
-                                Search Now
-                              </button>
-                            </div>
-                          </Col>
-                          <Col
-                            style={{
-                              width: "auto",
-                              flexBasis: "100%",
-                              display: "flex",
-                              flexDirection: "column",
-                              justifyContent: "center",
-                            }}
-                            md={12}
                           >
                             <div
                               style={{ margin: "0 auto", marginTop: "10px" }}
@@ -658,427 +645,448 @@ export default class Section extends Component {
                                 )}
                               </p>
                             </div>
-                          </Col>
-                        </Row>
-                      </Form>
-                    </BrowserView>
-                    <MobileView>
-                      <Form className="login-form" onSubmit={this.formSubmit}>
-                        <Row
-                          style={{
-                            display: "flex",
-                            flexDirection: "column",
-                            justifyContent: "space-around",
-                            alignContent: "center",
-                          }}
-                        >
-                          <Col
+                          </div>
+                          <div className="d-flex text-white mt-2" style={{ justifyContent: 'space-around' }}>
+                            <span class="search-form__benefits-item">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-patch-check-fill" viewBox="0 0 16 16">
+                                <path d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708z" />
+                              </svg> Trusted Choice
+                            </span>
+                            <span class="search-form__benefits-item">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-patch-check-fill" viewBox="0 0 16 16">
+                                <path d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708z" />
+                              </svg>  Secure payments
+                            </span>
+                          </div>
+                        </Form>
+                      </BrowserView>
+                      <MobileView>
+                        <Form className="login-form" onSubmit={this.formSubmit}>
+                          <Row
                             style={{
-                              flexGrow: "2.5",
                               display: "flex",
                               flexDirection: "column",
-                              justifyContent: "center",
+                              justifyContent: "space-around",
+                              alignContent: "center",
                             }}
-                            md={12}
                           >
-                            <div className="mb-3">
-                              <Label className="form-label">From</Label>
-                              <div className="form-icon position-relative">
-                                <Autocomplete
-                                  fullWidth
-                                  style={{ maxWidth: "100vw" }}
-                                  onChange={(event, newValue) => {
-                                    this.setState({
-                                      source: newValue?.cityname || "",
-                                      sourceCode: newValue?.apicode || "",
-                                    });
-                                  }}
-                                  options={sourceSuggestions}
-                                  onInputChange={searchSource}
-                                  inputValue={this.state.source}
-                                  getOptionLabel={(option) =>
-                                    `${option?.displayname}`
-                                  }
-                                  renderInput={(params) => (
-                                    <TextField
-                                      {...params}
-                                      placeholder={this.props.source}
+                            <Col
+                              style={{
+                                flexGrow: "2.5",
+                                display: "flex",
+                                flexDirection: "column",
+                                justifyContent: "center",
+                              }}
+                              md={12}
+                            >
+                              <div className="mb-3">
+                                <Label className="form-label">From</Label>
+                                <div className="form-icon position-relative">
+                                  <Autocomplete
+                                    fullWidth
+                                    style={{ maxWidth: "100vw" }}
+                                    onChange={(event, newValue) => {
+                                      this.setState({
+                                        source: newValue?.cityname || "",
+                                        sourceCode: newValue?.apicode || "",
+                                      });
+                                    }}
+                                    options={sourceSuggestions}
+                                    onInputChange={searchSource}
+                                    inputValue={this.state.source}
+                                    getOptionLabel={(option) =>
+                                      `${option?.displayname}`
+                                    }
+                                    renderInput={(params) => (
+                                      <TextField
+                                        {...params}
+                                        placeholder={this.props.source}
                                       // label="Where"
                                       // variant="outlined"
-                                    />
-                                  )}
-                                />
+                                      />
+                                    )}
+                                  />
+                                </div>
                               </div>
-                            </div>
-                          </Col>
-                          <Col
-                            style={{
-                              flexGrow: "2.5",
-                              display: "flex",
-                              flexDirection: "column",
-                              justifyContent: "center",
-                            }}
-                            md={12}
-                          >
-                            <div className="mb-3">
-                              <Label className="form-label">To</Label>
-                              <div className="form-icon position-relative">
-                                <Autocomplete
-                                  fullWidth
-                                  style={{ maxWidth: "100vw" }}
-                                  onChange={(event, newValue) => {
-                                    this.setState({
-                                      destination: newValue?.cityname || "",
-                                      destinationCode: newValue?.apicode || "",
-                                    });
-                                  }}
-                                  options={destinationSuggestions}
-                                  onInputChange={searchDestination}
-                                  inputValue={this.state.destination}
-                                  getOptionLabel={(option) =>
-                                    `${option?.displayname}`
-                                  }
-                                  renderInput={(params) => (
-                                    <TextField
-                                      placeholder={this.props.destination}
-                                      {...params}
+                            </Col>
+                            <Col
+                              style={{
+                                flexGrow: "2.5",
+                                display: "flex",
+                                flexDirection: "column",
+                                justifyContent: "center",
+                              }}
+                              md={12}
+                            >
+                              <div className="mb-3">
+                                <Label className="form-label">To</Label>
+                                <div className="form-icon position-relative">
+                                  <Autocomplete
+                                    fullWidth
+                                    style={{ maxWidth: "100vw" }}
+                                    onChange={(event, newValue) => {
+                                      this.setState({
+                                        destination: newValue?.cityname || "",
+                                        destinationCode: newValue?.apicode || "",
+                                      });
+                                    }}
+                                    options={destinationSuggestions}
+                                    onInputChange={searchDestination}
+                                    inputValue={this.state.destination}
+                                    getOptionLabel={(option) =>
+                                      `${option?.displayname}`
+                                    }
+                                    renderInput={(params) => (
+                                      <TextField
+                                        placeholder={this.props.destination}
+                                        {...params}
                                       // label="Where"
                                       // variant="outlined"
-                                    />
-                                  )}
+                                      />
+                                    )}
+                                  />
+                                </div>
+                              </div>
+                            </Col>
+                            <Col
+                              style={{
+                                display: "flex",
+                                flexDirection: "column",
+                                justifyContent: "center",
+                              }}
+                              md={6}
+                            >
+                              <div className="mb-3">
+                                <Label className="form-label"> Check in : </Label>
+                                <Flatpickr
+                                  value={this.state.CheckIn}
+                                  className="flatpickr flatpickr-input form-control"
+                                  placeholder="Pick a date"
+                                  options={{
+                                    minDate: cDate(),
+                                    altInput: true,
+                                    // altFormat: "F j, Y",
+                                    dateFormat: "Y-m-d",
+                                  }}
+                                  onChange={(date) => {
+                                    console.log(date[0]);
+                                    this.setState({ CheckIn: date[0] });
+                                  }}
                                 />
                               </div>
-                            </div>
-                          </Col>
-                          <Col
-                            style={{
-                              display: "flex",
-                              flexDirection: "column",
-                              justifyContent: "center",
-                            }}
-                            md={6}
-                          >
-                            <div className="mb-3">
-                              <Label className="form-label"> Check in : </Label>
-                              <Flatpickr
-                                value={this.state.CheckIn}
-                                className="flatpickr flatpickr-input form-control"
-                                placeholder="Pick a date"
-                                options={{
-                                  minDate: cDate(),
-                                  altInput: true,
-                                  // altFormat: "F j, Y",
-                                  dateFormat: "Y-m-d",
-                                }}
-                                onChange={(date) => {
-                                  console.log(date[0]);
-                                  this.setState({ CheckIn: date[0] });
-                                }}
-                              />
-                            </div>
-                          </Col>
-                          <Col
-                            style={{
-                              display: "flex",
-                              flexDirection: "column",
-                              justifyContent: "center",
-                              marginBottom: "20px",
-                            }}
-                            md={6}
-                          >
-                            <div className="mb-3">
-                              <Label className="form-label">
-                                {" "}
-                                Check out :{" "}
-                              </Label>
-                              <Flatpickr
-                                value={this.state.CheckOut}
-                                className="flatpickr flatpickr-input form-control"
-                                placeholder="Pick a date"
-                                options={{
-                                  minDate: this.state.CheckIn,
-                                  altInput: true,
-                                  dateFormat: "Y-m-d",
-                                }}
-                                onChange={(date) => {
-                                  this.setState({ CheckOut: date[0] });
-                                }}
-                              />
-                            </div>
-                          </Col>
-                          <Col
-                            style={{
-                              display: "flex",
-                              justifyContent: "center",
-                              marginBottom: "20px",
-                            }}
-                            md={12}
-                          >
-                            <div>
-                              <Dropdown
-                                isOpen={this.state.open}
-                                toggle={() => {
-                                  this.setState((prev) => ({
-                                    open: !prev.open,
-                                  }));
-                                }}
-                              >
-                                <DropdownToggle caret>
-                                  {this.state.flightClass === ""
-                                    ? "Class"
-                                    : this.state.flightClass}
-                                </DropdownToggle>
-                                <DropdownMenu container="body">
-                                  <DropdownItem
-                                    onClick={() =>
-                                      this.setState({ flightClass: "Economy" })
-                                    }
-                                  >
-                                    Economy
-                                  </DropdownItem>
-                                  <DropdownItem
-                                    onClick={() =>
-                                      this.setState({ flightClass: "Business" })
-                                    }
-                                  >
-                                    Business
-                                  </DropdownItem>
-                                  <DropdownItem
-                                    onClick={() =>
-                                      this.setState({ flightClass: "First" })
-                                    }
-                                  >
-                                    First
-                                  </DropdownItem>
-                                </DropdownMenu>
-                              </Dropdown>
-                            </div>
-                          </Col>
-                          <Col
-                            style={{
-                              display: "flex",
-                              justifyContent: "center",
-                              marginBottom: "20px",
-                            }}
-                            md={12}
-                          >
-                            <div>
-                              <button
-                                type="button"
-                                aria-haspopup="true"
-                                aria-expanded="false"
-                                class="dropdown-toggle btn btn-secondary"
-                                toggle={() => {}}
-                                onClick={this.handleClickOpenDropdown}
-                              >
-                                Travellers
-                              </button>
-                              <Dialog
-                                open={this.state.dropdownOpen}
-                                onClose={this.handleCloseDropdown}
-                              >
-                                <DialogContent>
-                                  <div
-                                    style={{
-                                      display: "flex",
-                                      justifyContent: "space-between",
-                                      alignContent: "center",
-                                    }}
-                                  >
-                                    <h5>Adult : </h5>
-                                    <div>
-                                      <button
-                                        style={{
-                                          padding: "5px",
-                                          marginRight: "5px",
-                                        }}
-                                        name="adult"
-                                        type="button"
-                                        value={-1}
-                                        onClick={this.handleTravellerCounter}
-                                      >
-                                        -
-                                      </button>
-                                      {this.state.adult}
-                                      <button
-                                        style={{
-                                          padding: "5px",
-                                          marginLeft: "5px",
-                                        }}
-                                        name="adult"
-                                        type="button"
-                                        value={1}
-                                        onClick={this.handleTravellerCounter}
-                                      >
-                                        +
-                                      </button>
+                            </Col>
+                            <Col
+                              style={{
+                                display: "flex",
+                                flexDirection: "column",
+                                justifyContent: "center",
+                                marginBottom: "20px",
+                              }}
+                              md={6}
+                            >
+                              <div className="mb-3">
+                                <Label className="form-label">
+                                  {" "}
+                                  Check out :{" "}
+                                </Label>
+                                <Flatpickr
+                                  value={this.state.CheckOut}
+                                  className="flatpickr flatpickr-input form-control"
+                                  placeholder="Pick a date"
+                                  options={{
+                                    minDate: this.state.CheckIn,
+                                    altInput: true,
+                                    dateFormat: "Y-m-d",
+                                  }}
+                                  onChange={(date) => {
+                                    this.setState({ CheckOut: date[0] });
+                                  }}
+                                />
+                              </div>
+                            </Col>
+                            <Col
+                              style={{
+                                display: "flex",
+                                justifyContent: "center",
+                                marginBottom: "20px",
+                              }}
+                              md={12}
+                            >
+                              <div>
+                                <Dropdown
+                                  isOpen={this.state.open}
+                                  toggle={() => {
+                                    this.setState((prev) => ({
+                                      open: !prev.open,
+                                    }));
+                                  }}
+                                >
+                                  <DropdownToggle caret>
+                                    {this.state.flightClass === ""
+                                      ? "Class"
+                                      : this.state.flightClass}
+                                  </DropdownToggle>
+                                  <DropdownMenu container="body">
+                                    <DropdownItem
+                                      onClick={() =>
+                                        this.setState({ flightClass: "Economy" })
+                                      }
+                                    >
+                                      Economy
+                                    </DropdownItem>
+                                    <DropdownItem
+                                      onClick={() =>
+                                        this.setState({ flightClass: "Business" })
+                                      }
+                                    >
+                                      Business
+                                    </DropdownItem>
+                                    <DropdownItem
+                                      onClick={() =>
+                                        this.setState({ flightClass: "First" })
+                                      }
+                                    >
+                                      First
+                                    </DropdownItem>
+                                  </DropdownMenu>
+                                </Dropdown>
+                              </div>
+                            </Col>
+                            <Col
+                              style={{
+                                display: "flex",
+                                justifyContent: "center",
+                                marginBottom: "20px",
+                              }}
+                              md={12}
+                            >
+                              <div>
+                                <button
+                                  type="button"
+                                  aria-haspopup="true"
+                                  aria-expanded="false"
+                                  class="dropdown-toggle btn btn-secondary"
+                                  toggle={() => { }}
+                                  onClick={this.handleClickOpenDropdown}
+                                >
+                                  Travellers
+                                </button>
+                                <Dialog
+                                  open={this.state.dropdownOpen}
+                                  onClose={this.handleCloseDropdown}
+                                >
+                                  <DialogContent>
+                                    <div
+                                      style={{
+                                        display: "flex",
+                                        justifyContent: "space-between",
+                                        alignContent: "center",
+                                      }}
+                                    >
+                                      <h5>Adult : </h5>
+                                      <div>
+                                        <button
+                                          style={{
+                                            padding: "5px",
+                                            marginRight: "5px",
+                                          }}
+                                          name="adult"
+                                          type="button"
+                                          value={-1}
+                                          onClick={this.handleTravellerCounter}
+                                        >
+                                          -
+                                        </button>
+                                        {this.state.adult}
+                                        <button
+                                          style={{
+                                            padding: "5px",
+                                            marginLeft: "5px",
+                                          }}
+                                          name="adult"
+                                          type="button"
+                                          value={1}
+                                          onClick={this.handleTravellerCounter}
+                                        >
+                                          +
+                                        </button>
+                                      </div>
                                     </div>
-                                  </div>
-                                  <div
-                                    style={{
-                                      display: "flex",
-                                      justifyContent: "space-between",
-                                      alignContent: "center",
-                                    }}
-                                  >
-                                    <h5>Children : </h5>
-                                    <div>
-                                      {" "}
-                                      <button
-                                        style={{
-                                          padding: "5px",
-                                          marginRight: "5px",
-                                        }}
-                                        name="children"
-                                        type="button"
-                                        value={-1}
-                                        onClick={this.handleTravellerCounter}
-                                      >
-                                        -
-                                      </button>
-                                      {this.state.children}
-                                      <button
-                                        style={{
-                                          padding: "5px",
-                                          marginLeft: "5px",
-                                        }}
-                                        name="children"
-                                        type="button"
-                                        value={1}
-                                        onClick={this.handleTravellerCounter}
-                                      >
-                                        +
-                                      </button>
+                                    <div
+                                      style={{
+                                        display: "flex",
+                                        justifyContent: "space-between",
+                                        alignContent: "center",
+                                      }}
+                                    >
+                                      <h5>Children : </h5>
+                                      <div>
+                                        {" "}
+                                        <button
+                                          style={{
+                                            padding: "5px",
+                                            marginRight: "5px",
+                                          }}
+                                          name="children"
+                                          type="button"
+                                          value={-1}
+                                          onClick={this.handleTravellerCounter}
+                                        >
+                                          -
+                                        </button>
+                                        {this.state.children}
+                                        <button
+                                          style={{
+                                            padding: "5px",
+                                            marginLeft: "5px",
+                                          }}
+                                          name="children"
+                                          type="button"
+                                          value={1}
+                                          onClick={this.handleTravellerCounter}
+                                        >
+                                          +
+                                        </button>
+                                      </div>
                                     </div>
-                                  </div>
-                                  <div
-                                    style={{
-                                      display: "flex",
-                                      justifyContent: "space-between",
-                                      alignContent: "center",
-                                    }}
-                                  >
-                                    <h5>Infant(Below 2) : </h5>
-                                    <div>
-                                      <button
-                                        style={{
-                                          padding: "5px",
-                                          marginRight: "5px",
-                                        }}
-                                        name="infant"
-                                        type="button"
-                                        value={-1}
-                                        onClick={this.handleTravellerCounter}
-                                      >
-                                        -
-                                      </button>
-                                      {this.state.infant}
-                                      <button
-                                        style={{
-                                          padding: "5px",
-                                          marginLeft: "5px",
-                                        }}
-                                        name="infant"
-                                        type="button"
-                                        value={1}
-                                        onClick={this.handleTravellerCounter}
-                                      >
-                                        +
-                                      </button>
+                                    <div
+                                      style={{
+                                        display: "flex",
+                                        justifyContent: "space-between",
+                                        alignContent: "center",
+                                      }}
+                                    >
+                                      <h5>Infant(Below 2) : </h5>
+                                      <div>
+                                        <button
+                                          style={{
+                                            padding: "5px",
+                                            marginRight: "5px",
+                                          }}
+                                          name="infant"
+                                          type="button"
+                                          value={-1}
+                                          onClick={this.handleTravellerCounter}
+                                        >
+                                          -
+                                        </button>
+                                        {this.state.infant}
+                                        <button
+                                          style={{
+                                            padding: "5px",
+                                            marginLeft: "5px",
+                                          }}
+                                          name="infant"
+                                          type="button"
+                                          value={1}
+                                          onClick={this.handleTravellerCounter}
+                                        >
+                                          +
+                                        </button>
+                                      </div>
                                     </div>
-                                  </div>
-                                  <div
-                                    style={{
-                                      display: "flex",
-                                      justifyContent: "space-between",
-                                      alignContent: "center",
-                                    }}
-                                  >
-                                    <h5>Infant (Lap) : </h5>
-                                    <div>
-                                      {" "}
-                                      <button
-                                        style={{
-                                          padding: "5px",
-                                          marginRight: "5px",
-                                        }}
-                                        name="infantLap"
-                                        type="button"
-                                        value={-1}
-                                        onClick={this.handleTravellerCounter}
-                                      >
-                                        -
-                                      </button>
-                                      {this.state.infantLap}
-                                      <button
-                                        style={{
-                                          padding: "5px",
-                                          marginLeft: "5px",
-                                        }}
-                                        name="infantLap"
-                                        type="button"
-                                        value={1}
-                                        onClick={this.handleTravellerCounter}
-                                      >
-                                        +
-                                      </button>
+                                    <div
+                                      style={{
+                                        display: "flex",
+                                        justifyContent: "space-between",
+                                        alignContent: "center",
+                                      }}
+                                    >
+                                      <h5>Infant (Lap) : </h5>
+                                      <div>
+                                        {" "}
+                                        <button
+                                          style={{
+                                            padding: "5px",
+                                            marginRight: "5px",
+                                          }}
+                                          name="infantLap"
+                                          type="button"
+                                          value={-1}
+                                          onClick={this.handleTravellerCounter}
+                                        >
+                                          -
+                                        </button>
+                                        {this.state.infantLap}
+                                        <button
+                                          style={{
+                                            padding: "5px",
+                                            marginLeft: "5px",
+                                          }}
+                                          name="infantLap"
+                                          type="button"
+                                          value={1}
+                                          onClick={this.handleTravellerCounter}
+                                        >
+                                          +
+                                        </button>
+                                      </div>
                                     </div>
-                                  </div>
-                                </DialogContent>
-                              </Dialog>
-                            </div>
-                          </Col>
-                          <Col
-                            style={{
-                              flexBasis: "100%",
-                              display: "flex",
-                              justifyContent: "center",
-                              marginBottom: "10px",
-                            }}
-                            md={12}
-                          >
-                            <div>
-                              <button className="btn btn-primary">
-                                Search Now
-                              </button>
-                            </div>
-                          </Col>
-                          <Col
-                            style={{
-                              flexBasis: "100%",
-                              display: "flex",
-                              justifyContent: "center",
-                              marginBottom: "10px",
-                            }}
-                            md={12}
-                          >
-                            <div>
-                              {this.state.error && (
-                                <p style={{ color: "red" }}>
-                                  {this.state.error}
-                                </p>
-                              )}
-                              <p style={{ margin: "0", textAlign: "center" }}>
-                                {isValid() && (
-                                  <span>
-                                    {" "}
-                                    Adults:{this.state.adult} Children:
-                                    {this.state.children +
-                                      this.state.infant +
-                                      this.state.infantLap}
-                                  </span>
+                                  </DialogContent>
+                                </Dialog>
+                              </div>
+                            </Col>
+                            <Col
+                              style={{
+                                flexBasis: "100%",
+                                display: "flex",
+                                justifyContent: "center",
+                                marginBottom: "10px",
+                              }}
+                              md={12}
+                            >
+                              <div>
+                                <button className="btn btn-block">
+                                  Search Now
+                                </button>
+                              </div>
+                            </Col>
+                            <div className="col-md-12 text-light"
+                              style={{
+                                flexBasis: "100%",
+                                display: "flex",
+                                justifyContent: "center",
+                                marginBottom: "10px",
+                              }}
+                            >
+                              <div>
+                                {this.state.error && (
+                                  <p style={{ color: "red" }}>
+                                    {this.state.error}
+                                  </p>
                                 )}
-                              </p>
+                                <p style={{
+                                  margin: "0", textAlign: "center"
+                                }}>
+                                  {isValid() && (
+                                    <span>
+                                      {" "}
+                                      Adults:{this.state.adult} Children:
+                                      {this.state.children +
+                                        this.state.infant +
+                                        this.state.infantLap}
+                                    </span>
+                                  )}
+                                </p>
+                              </div>
                             </div>
-                          </Col>
-                        </Row>
-                      </Form>
-                    </MobileView>
-                  </CardBody>
-                </Card>
-              </Col>
-            </Row>
-          </div>
+                          </Row>
+                        </Form>
+                      </MobileView>
+                    </CardBody>
+                  </Card>
+                </Col>
+              </Row>
+            </div>
+            <div className="col-md-6 col-sm-12 justify-content-center">
+              <div className="d-flex text-white text-center m-5 flex-column">
+                <h1><span>Search & Book Flights</span><br />
+                  <span><strong>cancellation protection</strong> available</span>
+                </h1>
+                <button className="btn mx-auto text-white" style={{ maxWidth: '200px', backgroundColor: '#2990e6' }}>More info</button>
+              </div>
+            </div>
+          </Row>
         </section>
         {!this.props.searchPage && (
           <div className="position-relative">
