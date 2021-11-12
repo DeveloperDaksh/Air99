@@ -15,6 +15,8 @@ import Section from "..//Travel/Section";
 import { Box, Typography } from "@material-ui/core";
 import axios from "axios";
 import { MobileView, BrowserView } from "react-device-detect";
+import travelBg from "../../assets/images/travel/bg.jpg";
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -45,38 +47,36 @@ const Search = () => {
       )
       .then((resp) => setRate(resp.data.EUR_USD));
   }, []);
-  function compare(a,b){return (parseInt(a.price.grandTotal)-parseInt(b.price.grandTotal));}
-  function compareS(b,a){return (parseInt(a.price.grandTotal)-parseInt(b.price.grandTotal));}
+  function compare(a, b) { return (parseInt(a.price.grandTotal) - parseInt(b.price.grandTotal)); }
+  function compareS(b, a) { return (parseInt(a.price.grandTotal) - parseInt(b.price.grandTotal)); }
 
   useEffect(() => {
-    
-    console.log(value+"value");
+
+    console.log(value + "value");
     if (value == 99) setFlightsToDisplay(flights);
     else if (value == 0) {
-      
+
       const arr = flights.filter((f) => f.itineraries[0].segments.length === 1);
       setFlightsToDisplay(arr);
-     
+
       console.log(arr);
-      
+
     } else if (value == 1) {
       const arr = flights.filter((f) => f.itineraries[0].segments.length === 2);
       setFlightsToDisplay(arr);
     }
     //Sorting the cards with Low to High
-    else if(value ==4)
-    { 
-   
-      const LowtoHigh=flights.sort(compare);
-     
+    else if (value == 4) {
+
+      const LowtoHigh = flights.sort(compare);
+
       setFlightsToDisplay(LowtoHigh);
     }
-     //Sorting the cards with High to Low
-    else if(value ==5)
-    { 
-      
-      const HighToLow=flights.sort(compareS);
-     
+    //Sorting the cards with High to Low
+    else if (value == 5) {
+
+      const HighToLow = flights.sort(compareS);
+
       setFlightsToDisplay(HighToLow);
     }
   }, [value]);
@@ -131,7 +131,14 @@ const Search = () => {
   }
   // console.log(values);
   return (
-    <div>
+    <div style={{
+      background: `url(${travelBg})`,
+      backgroundPosition: '80%',
+      backgroundSize: 'cover',
+      backgroundColor: '#5c6ea1',
+      color: '#ffff',
+      padding: '3rem'
+    }}>
       <Section {...values} searchPage />
       {/* {loading && <LinearIndeterminate />} */}
       <BrowserView>
@@ -168,7 +175,7 @@ const Search = () => {
             padding="50px 30px 100px 32px"
             justifyContent="space-between"
           >
-            <div style={{ flexGrow: "2", border: "none" }}>
+            <div style={{ border: "none" }}>
               <div
                 className="card"
                 style={{
@@ -215,7 +222,7 @@ const Search = () => {
                 Total Results : {flightsToDisplay.length}
               </div>
             </div>
-            <div style={{ flexGrow: "1" }}>
+            <div style={{ flexGrow: "1", textAlign: 'center' }}>
               {!loading && (
                 <Box marginBottom={3}>
                   <Typography variant="h2">
