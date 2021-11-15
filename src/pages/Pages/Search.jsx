@@ -132,8 +132,6 @@ const Search = () => {
   return (
     <div style={flightsToDisplay.length ? {
       background: `url(${travelBg})`,
-      backgroundSize: 'cover',
-      backgroundRepeat: 'no-repeat',
       backgroundColor: '#5c6ea1',
       color: '#ffff',
       padding: '3rem'
@@ -255,7 +253,7 @@ const Search = () => {
               )}
               {flightsToDisplay?.length > 0 ? (
                 <CardGroup
-                  style={{ display: "block", justifyContent: "center" }}
+                  style={{ display: "block", justifyContent: "center", margin: 'auto 2rem' }}
                 >
                   {flightsToDisplay.map((each) => (
                     <FlightData
@@ -394,8 +392,7 @@ const Search = () => {
             <div style={{ flexGrow: "0.4" }}>
               {flightsToDisplay?.length > 0 ? (
                 <CardGroup
-                  style={{ display: "block", justifyContent: "center" }}
-                >
+                  style={{ display: "block", justifyContent: "center", margin: 'auto 2rem' }}>
                   {flightsToDisplay.map((each) => (
                     <FlightData
                       details={each}

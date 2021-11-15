@@ -106,7 +106,7 @@ const FlightData = (props) => {
                 </h3>
               </div>
             </div>
-            <div className="d-flex flex-column justify-center">
+            <div className="d-flex flex-column justify-content-center">
               <div>
                 <h5>
                   Layovers : {props.details.itineraries[0].segments.length - 1}
