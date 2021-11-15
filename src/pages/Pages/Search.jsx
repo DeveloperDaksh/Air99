@@ -8,7 +8,7 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
 import FormLabel from "@material-ui/core/FormLabel";
 import Amadeus from "amadeus";
-import { CardGroup, Container } from "reactstrap";
+import { CardFooter, CardGroup, Container, Card, CardBody } from "reactstrap";
 import { makeStyles } from "@material-ui/core/styles";
 import LinearProgress from "@material-ui/core/LinearProgress";
 import Section from "..//Travel/Section";
@@ -16,7 +16,6 @@ import { Box, Typography } from "@material-ui/core";
 import axios from "axios";
 import { MobileView, BrowserView } from "react-device-detect";
 import travelBg from "../../assets/images/travel/bg.jpg";
-
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -133,8 +132,9 @@ const Search = () => {
   return (
     <div style={{
       background: `url(${travelBg})`,
-      backgroundPosition: '80%',
+      backgroundPosition: '0% 60%',
       backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
       backgroundColor: '#5c6ea1',
       color: '#ffff',
       padding: '3rem'
@@ -175,16 +175,19 @@ const Search = () => {
             padding="50px 30px 100px 32px"
             justifyContent="space-between"
           >
-            <div style={{ border: "none" }}>
-              <div
-                className="card"
-                style={{
-                  padding: "10px",
-                  margin: "67px 0 0 0",
-                }}
-              >
+            <Card
+              style={{
+                padding: "10px",
+                margin: "67px auto auto auto",
+                backgroundColor: '#fff',
+                color: 'black',
+                minWidth: '300px',
+                maxHeight: '350px'
+              }}
+            >
+              <CardBody>
                 <FormControl component="fieldset">
-                  <FormLabel component="legend">Filter By Stops</FormLabel>
+                  <FormLabel component="legend" className="text-bold">Filter By Stops</FormLabel>
                   <RadioGroup
                     aria-label="Stops"
                     name="stops"
@@ -218,10 +221,13 @@ const Search = () => {
                       label="High to Low"
                     />
                   </RadioGroup>
+
                 </FormControl>
-                Total Results : {flightsToDisplay.length}
-              </div>
-            </div>
+
+              </CardBody>
+              <CardFooter className="text-bold">Total Results : {flightsToDisplay.length}</CardFooter>
+
+            </Card>
             <div style={{ flexGrow: "1", textAlign: 'center' }}>
               {!loading && (
                 <Box marginBottom={3}>

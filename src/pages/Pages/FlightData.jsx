@@ -30,27 +30,27 @@ const FlightData = (props) => {
   if (props.error === true) {
     return (
       <div style={{ textAlign: "center" }}>
-        <Card style={{ width: "auto%" }}>
-          <CardBody>
-            <h3>Unable to Find Flights for the Given Place</h3>
-            <p>Check the Places or Try Again Later!</p>
-          </CardBody>
-        </Card>
+        <h3>Unable to Find Flights for the Given Place</h3>
+        <p>Check the Places or Try Again Later!</p>
       </div>
     );
   }
   const cardStyle = isMobile
     ? {
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-around",
-      }
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "space-around",
+    }
     : { display: "flex", justifyContent: "space-around" };
   const segs = props.details.itineraries[0].segments.length;
   const dur = parse(props.details.itineraries[0].duration);
   return (
     <div style={{ textAlign: "center" }}>
-      <Card style={{ width: "auto", marginBottom: "75px" }}>
+      <Card style={{
+        width: "auto", marginBottom: "75px", backgroundColor: '#fff',
+        color: 'black',
+
+      }}>
         <CardBody>
           <CardText style={cardStyle}>
             <div>
@@ -118,7 +118,7 @@ const FlightData = (props) => {
                   {(props.details.price.total * props.rate).toFixed(2)} USD
                 </strong>
               </p>
-              <Button onClick={() => window.location.href="/payments"}>Book Now</Button>
+              <Button onClick={() => window.location.href = "/payments"}>Book Now</Button>
             </div>
           </CardText>
         </CardBody>
