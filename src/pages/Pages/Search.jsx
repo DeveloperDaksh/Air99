@@ -19,7 +19,7 @@ import travelBg from "../../assets/images/travel/bg.jpg";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: "80%",
+    width: "100%",
     "& > * + *": {
       marginTop: theme.spacing(2),
     },
@@ -130,7 +130,14 @@ const Search = () => {
   }
   // console.log(values);
   return (
-    <div style={{
+    <div style={flightsToDisplay.length ? {
+      background: `url(${travelBg})`,
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+      backgroundColor: '#5c6ea1',
+      color: '#ffff',
+      padding: '3rem'
+    } : {
       background: `url(${travelBg})`,
       backgroundPosition: '0% 60%',
       backgroundSize: 'cover',
