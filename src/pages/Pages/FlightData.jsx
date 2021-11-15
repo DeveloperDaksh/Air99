@@ -41,7 +41,10 @@ const FlightData = (props) => {
       flexDirection: "column",
       justifyContent: "space-around",
     }
-    : { display: "flex", justifyContent: "space-around" };
+    : {
+      display: "flex", flexDirection: "column",
+      justifyContent: "space-around"
+    };
   const segs = props.details.itineraries[0].segments.length;
   const dur = parse(props.details.itineraries[0].duration);
   return (
@@ -65,45 +68,50 @@ const FlightData = (props) => {
                     .get('name')} */}
                 </strong>{" "}
               </h4>
-              <h4>&#128337; : {`${dur.hours} Hours ${dur.minutes} Minutes`}</h4>
+              <h4 style={{ textAlign: 'left' }} className="mx-3">&#128337; : {`${dur.hours} Hours ${dur.minutes} Minutes`}</h4>
             </div>
-            <div style={{ textAlign: "left" }}>
-              <div>
-                From :{" "}
-                <h3>
-                  {props.details.itineraries[0].segments[0].departure.iataCode}{" "}
-                </h3>
+            <div className="m-3 row" style={{ textAlign: "left" }}>
+              <div className="col">
+                <div >
+                  {<h3 className="d-inline">
+                    From : {props.details.itineraries[0].segments[0].departure.iataCode}{" "}
+                  </h3>}
+
+                </div>
+                <div>
+                  <h6>
+                    <strong>
+                      <em>
+                        Departure :{" "}
+                        {new Date(
+                          props.details.itineraries[0].segments[0].departure.at
+                        ).toString()}
+                      </em>
+                    </strong>
+                  </h6>
+                </div>
               </div>
-              <div>
+              <div className="col">
+                <div>
+                  <h3 className="d-inline">
+                    At :{" "}
+
+                    {
+                      props.details.itineraries[0].segments[segs - 1].arrival
+                        .iataCode
+                    }
+                  </h3>
+                </div>
                 <h6>
                   <strong>
                     <em>
-                      Departure :{" "}
+                      Landing :{" "}
                       {new Date(
-                        props.details.itineraries[0].segments[0].departure.at
+                        props.details.itineraries[0].segments[0].arrival.at
                       ).toString()}
                     </em>
-                  </strong>
+                  </strong>{" "}
                 </h6>
-              </div>
-              <h6>
-                <strong>
-                  <em>
-                    Landing :{" "}
-                    {new Date(
-                      props.details.itineraries[0].segments[0].arrival.at
-                    ).toString()}
-                  </em>
-                </strong>{" "}
-              </h6>
-              <div>
-                At :{" "}
-                <h3>
-                  {
-                    props.details.itineraries[0].segments[segs - 1].arrival
-                      .iataCode
-                  }
-                </h3>
               </div>
             </div>
             <div className="d-flex flex-column justify-content-center">

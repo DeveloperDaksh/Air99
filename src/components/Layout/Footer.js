@@ -43,7 +43,8 @@ class Footer extends Component {
                 <Link to="#" className="logo-footer">
                   <img
                     src={air99}
-                    height="48"
+                    height="50"
+                    width="170"
                     alt="Air99"
                   />
                 </Link>

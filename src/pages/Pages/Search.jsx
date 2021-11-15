@@ -130,9 +130,8 @@ const Search = () => {
   }
   // console.log(values);
   return (
-    <div style={flightsToDisplay.length ? {
-      background: `url(${travelBg})`,
-      backgroundColor: '#5c6ea1',
+    <div style={flightsToDisplay.length > 0 ? {
+      background: '#265396',
       color: '#ffff',
       padding: '3rem'
     } : {
@@ -343,51 +342,59 @@ const Search = () => {
             justifyContent="space-between"
           >
             <div style={{ flexBasis: "200px", border: "none" }}>
-              <div
-                className="card"
+              <Card
                 style={{
                   padding: "10px",
-                  marginBottom: "20px",
+                  margin: "67px auto auto auto",
+                  backgroundColor: '#fff',
+                  color: 'black',
+                  minWidth: '300px',
+                  maxHeight: '350px'
                 }}
               >
-                <FormControl component="fieldset">
-                  <FormLabel component="legend">Filter By Stops</FormLabel>
-                  <RadioGroup
-                    aria-label="Stops"
-                    name="stops"
-                    value={value}
-                    onChange={handleChange}
-                  >
-                    <FormControlLabel
-                      checked={value == 99 && true}
-                      value="99"
-                      control={<Radio />}
-                      label="All"
-                    />
-                    <FormControlLabel
-                      value="0"
-                      control={<Radio />}
-                      label="0 Stop"
-                    />
-                    <FormControlLabel
-                      value="1"
-                      control={<Radio />}
-                      label="1 Stop"
-                    />
-                    <FormControlLabel
-                      value="1"
-                      control={<Radio />}
-                      label="Low to high"
-                    />
-                    <FormControlLabel
-                      value="1"
-                      control={<Radio />}
-                      label="High to Low"
-                    />
-                  </RadioGroup>
-                </FormControl>
-                Total Results : {flightsToDisplay.length}
-              </div>
+                <CardBody>
+                  <FormControl component="fieldset">
+                    <FormLabel component="legend" className="text-bold">Filter By Stops</FormLabel>
+                    <RadioGroup
+                      aria-label="Stops"
+                      name="stops"
+                      value={value}
+                      onChange={handleChange}
+                    >
+                      <FormControlLabel
+                        checked={value == 99 && true}
+                        value="99"
+                        control={<Radio />}
+                        label="All"
+                      />
+                      <FormControlLabel
+                        value="0"
+                        control={<Radio />}
+                        label="0 Stop"
+                      />
+                      <FormControlLabel
+                        value="1"
+                        control={<Radio />}
+                        label="1 Stop"
+                      />
+                      <FormControlLabel
+                        value="4"
+                        control={<Radio />}
+                        label="Low to high"
+                      />
+                      <FormControlLabel
+                        value="5"
+                        control={<Radio />}
+                        label="High to Low"
+                      />
+                    </RadioGroup>
+
+                  </FormControl>
+
+                </CardBody>
+                <CardFooter className="text-bold">Total Results : {flightsToDisplay.length}</CardFooter>
+
+              </Card>
             </div>
             <div style={{ flexGrow: "0.4" }}>
               {flightsToDisplay?.length > 0 ? (

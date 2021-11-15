@@ -17,6 +17,7 @@
     "bootstrap": "^5.0.0-beta2",
     "currencies-exchange-rates": "^1.0.2",
     "currency-converter-lt": "^1.1.4",
+    "dotenv": "^10.0.0",
     "feather-icons-react": "^0.4.3",
     "iso8601-duration": "^1.3.0",
     "jquery": "^3.6.0",
