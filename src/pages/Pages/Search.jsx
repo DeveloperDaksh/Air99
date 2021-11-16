@@ -46,6 +46,7 @@ const Search = () => {
       )
       .then((resp) => setRate(resp.data.EUR_USD));
   }, []);
+
   function compare(a, b) { return (parseInt(a.price.grandTotal) - parseInt(b.price.grandTotal)); }
   function compareS(b, a) { return (parseInt(a.price.grandTotal) - parseInt(b.price.grandTotal)); }
 
@@ -78,6 +79,9 @@ const Search = () => {
 
       setFlightsToDisplay(HighToLow);
     }
+
+
+
   }, [value]);
 
   useEffect(() => {
@@ -119,6 +123,8 @@ const Search = () => {
     };
     flights();
   }, []);
+
+
   function LinearIndeterminate() {
     const classes = useStyles();
 
